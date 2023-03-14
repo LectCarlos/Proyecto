@@ -1,0 +1,1926 @@
+/* ============================ Sección ============================ */
+/* ----------------------- Type Font ----------------------- */
+@font-face {
+    font-family: QuickSand;
+    src: url('../Package/Fonts/Quicksand.ttf');
+}
+
+/* ----------------------- Font ----------------------- */
+@mixin Font($MinSize, $Size, $MaxSize, $Family, $Bold) {
+    font: {
+        weight: $Bold;
+        family: $Family;
+        size: clamp($MinSize, $Size, $MaxSize);
+    }
+}
+
+/* ----------------------- Espacio ----------------------- */
+@mixin Espacio() {
+    width: 86%;
+    margin: 0 auto;
+}
+
+/* ----------------------- Column ----------------------- */
+@mixin Hitbox() {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+/* ----------------------- Column ----------------------- */
+@mixin Column($Columnas) {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: $Columnas;
+}
+
+/* ----------------------- Row ----------------------- */
+@mixin Row($Filas) {
+    display: grid;
+    grid-row-gap: 10px;
+    grid-template-rows: $Filas;
+}
+
+/* ----------------------- Icon ----------------------- */
+@mixin Icon($MinIcon, $Icon, $MaxIcon) {
+    min-width: $MinIcon;
+    min-height: $MinIcon;
+    width: $Icon;
+    height: $Icon;
+    max-width: $MaxIcon;
+    max-height: $MaxIcon;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* ============================ Variables ============================ */
+/* ----------------------- Neutral ----------------------- */
+$None: rgba(0, 0, 0, 0);
+
+/* ----------------------- Colores Solidos ----------------------- */
+$ColorN1: rgb(20, 25, 40);
+$ColorN2: rgb(13, 19, 36);
+
+/* ----------------------- Colores Transparentes -----------------------*/
+$ColorT1: rgba(20, 25, 40, .5);
+$ColorT2: rgba(13, 19, 36, .5);
+
+/* ----------------------- Font size ----------------------- */
+$MinTextSize: 15px;
+$TextSize: 2vw;
+$MaxTextSize: 26px;
+
+$MinTitleSize: 26px;
+$TitleSize: 2.6vw;
+$MaxTitleSize: 46px;
+
+/* ----------------------- Font family ----------------------- */
+$FamilyFont: 'QuickSand';
+
+/* ----------------------- Font color ----------------------- */
+$FontColorW: rgb(255, 255, 255);
+$FontColorD: rgb(0, 0, 0);
+
+/* ----------------------- Icon ----------------------- */
+$MinIcon: 20px;
+$Icon: 1.8vw;
+$MaxIcon: 30px;
+
+/* ============================ Comodines ============================ */
+/* ----------------------- * ----------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ----------------------- Title ----------------------- */
+.Title {
+    margin: 0;
+    color: $ColorN1;
+    @include Font($MinTitleSize, $TitleSize, $MaxTitleSize, $FamilyFont, bold);
+}
+
+/* ----------------------- Text ----------------------- */
+.Text {
+    margin: 0;
+    @include Font($MinTextSize, $TextSize, $MaxTextSize, $FamilyFont, 0);
+}
+
+/* ----------------------- Space ----------------------- */
+.Space {
+    height: 100px;
+    @include Espacio();
+
+    &[data-title="true"] {
+        margin: 50px auto;
+        margin-top: 100px;
+        height: max-content;
+
+        .Title {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+
+    &[data-wave="true"] {
+        width: 100%;
+        position: relative;
+        margin-bottom: 0;
+
+        .Wave {
+            path {
+                fill: $ColorN1;
+            }
+        }
+
+        .Title {
+            background: {
+                color: $ColorT1;
+            }
+
+            left: 40px;
+            padding: 5px;
+            bottom: 10px;
+            color: white;
+            position: absolute;
+            @include Espacio();
+            border-radius: 10px;
+        }
+    }
+}
+
+/* ============================ Models ============================ */
+/* ------------------- Header ------------------- */
+#Header {
+    position: relative;
+
+    .carousel {
+        .carousel-indicators {
+            bottom: 20px;
+
+            button {
+                background: {
+                    color: $ColorN1;
+                }
+
+                width: 10px;
+                height: 10px;
+                border-radius: 100%;
+                border: 2px solid $ColorN2;
+            }
+        }
+
+        .carousel-inner {
+            height: 54vw;
+
+            .carousel-item {
+                height: 100%;
+
+                .carousel-caption {
+                    bottom: 50px;
+
+                    .Title,
+                    .Text {
+                        color: white;
+                        margin: 0 auto;
+                        max-width: 80%;
+                        padding: 5px 10px;
+                        width: max-content;
+                        border-radius: 10px;
+                        background-color: $ColorT2;
+                    }
+
+                    .Text {
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 100px;
+
+            img {
+                transform: rotate(90deg);
+                @include Icon(50px, 5vw, 70px);
+            }
+        }
+
+        .carousel-control-next {
+            img {
+                transform: rotate(-90deg);
+            }
+        }
+    }
+
+    .Wave {
+        bottom: 0;
+        position: absolute;
+
+        path {
+            fill: $ColorN2;
+        }
+    }
+}
+
+/* ------------------- Menu ------------------- */
+#Menu {
+    background: {
+        color: $ColorN2;
+    }
+
+    top: 0;
+    margin: 0;
+    padding: 0;
+    height: 6vw;
+    z-index: 100;
+    position: sticky;
+    min-height: 50px;
+
+    .container-fluid {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        .navbar-toggler {
+            padding: 0;
+            border: $None;
+            border-radius: 0;
+            @include Icon(40px, 5vw, 70px);
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .nav {
+            margin-left: 10px;
+
+            .nav-item {
+                .nav-link {
+                    transition: .1s;
+                    padding: 0 5px;
+                }
+
+                .nav-link:hover {
+                    font: {
+                        weight: bold;
+                    }
+
+                    padding: 0 10px;
+                    color: rgb(0, 100, 255);
+                }
+            }
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .navbar-brand {
+            right: 55px;
+            color: white;
+            position: absolute;
+        }
+
+        .EscudoJF {
+            right: 15px;
+            position: absolute;
+            @include Icon(40px, 5vw, 70px);
+        }
+    }
+
+    .offcanvas {
+        background: {
+            color: $ColorN2;
+        }
+
+        padding: 0;
+        width: 340px;
+        border-right: 2px solid black;
+
+        .Title,
+        .Text {
+            color: white;
+        }
+
+        .offcanvas-body {
+            position: relative;
+            padding: 5px 10px;
+
+            .btn-close {
+                background: {
+                    size: 100%;
+                    image: url('../Icons/Cerrar.png');
+                }
+
+                top: 5px;
+                z-index: 2;
+                right: 5px;
+                padding: 0;
+                position: absolute;
+                @include Icon(30px, 3.5vw, 60px);
+            }
+
+            .btn-close:hover {
+                filter: opacity(1);
+            }
+
+            .btn-close:focus {
+                box-shadow: none;
+            }
+
+            .Barra {
+                width: 100%;
+                position: relative;
+                display: inline-flex;
+
+                #Buscador {
+                    width: 60px;
+                    height: 40px;
+                    border: $None;
+                    margin-bottom: 20px;
+                    background-color: $None;
+
+                    .Busqueda {
+                        top: 0;
+                        z-index: 1;
+                        width: 40px;
+                        padding: 5px;
+                        height: 40px;
+                        border: $None;
+                        position: absolute;
+
+                        img {
+                            width: 30px;
+                            height: 30px;
+                            position: absolute;
+                        }
+                    }
+
+                    .Contenedor {
+                        top: 0;
+                        width: 0;
+                        z-index: 1;
+                        left: 45px;
+                        height: 40px;
+                        transition: 2s;
+                        overflow: hidden;
+                        position: absolute;
+
+                        #Search {
+                            border: {
+                                style: solid;
+                                width: 2px;
+                                image-slice: 1;
+                                image-source: linear-gradient(to top, #FFF, rgba(0, 0, 0, 0));
+                            }
+
+                            outline: none;
+                            height: 40px;
+                            width: 220px;
+                            border-radius: 0;
+                            position: absolute;
+                            padding: 2px 10px;
+                            background-color: $None;
+                        }
+
+                        #Search::placeholder {
+                            color: rgba(255, 255, 255, .8);
+                        }
+                    }
+
+                    .SubContenedor {
+                        top: 0;
+                        left: 45px;
+                        height: 40px;
+                        width: 220px;
+                        overflow: hidden;
+                        position: relative;
+
+                        .Title {
+                            left: 0;
+                            width: 100%;
+                            padding: 5px;
+                            height: 100%;
+                            transition: 2s;
+                            position: absolute;
+                            text-align: center;
+                        }
+                    }
+                }
+
+                #Buscador.Bus {
+                    .Contenedor {
+                        width: 220px;
+                    }
+
+                    .SubContenedor {
+                        .Title {
+                            left: 100%;
+                        }
+                    }
+                }
+            }
+
+            .navbar-nav {
+                padding: 0;
+                padding-right: 0 !important;
+
+                .nav-item {
+                    ul {
+                        padding: 0;
+                        list-style: none;
+                        margin-bottom: 20px;
+
+                        li {
+                            width: 100%;
+                            padding-left: 0;
+                            height: max-content;
+
+                            .nav-link {
+                                padding: 0;
+                                transition: .2s;
+                                margin-top: 5px;
+                                display: inline-flex;
+                                align-items: center;
+                                width: max-content;
+                                height: max-content;
+
+                                img {
+                                    margin-right: 10px;
+                                    @include Icon(30px, 3vw, 50px);
+                                }
+                            }
+
+                            .nav-link:hover {
+                                padding-left: 10px;
+                            }
+
+                            .Boton {
+                                font: {
+                                    size: 25px;
+                                }
+
+                                width: 100%;
+                                color: white;
+                                margin-top: 5px;
+                                position: relative;
+                                display: inline-flex;
+                                transition: .2s ease;
+                                text-decoration: none;
+
+                                .Content {
+                                    transition: .2s;
+                                    display: inline-flex;
+
+                                    img {
+                                        width: 30px;
+                                        height: 30px;
+                                    }
+                                }
+
+                                .Content:hover {
+                                    padding-left: 10px;
+                                }
+                            }
+                        }
+
+                        li.Titulo {
+                            width: 100%;
+                            margin: 0 auto;
+                            margin-bottom: 10px;
+                            border-bottom: 2px solid #FFF;
+
+                            .Title {
+                                margin: 0 auto;
+                                width: max-content;
+                            }
+                        }
+                    }
+                }
+
+                .nav-item.dropdown {
+                    ul {
+                        padding: 0;
+                        width: 100%;
+
+                        li {
+                            .nav-link {
+                                width: 100%;
+
+                                .Flecha {
+                                    width: 2px5;
+                                    height: 2px5;
+                                    margin: 10px;
+                                    transition: .2s;
+                                    transform: rotate(-90deg);
+                                }
+                            }
+
+                            .nav-link:hover {
+                                padding-left: 10px;
+                            }
+
+                            .nav-link[aria-expanded="true"] {
+                                .Flecha {
+                                    transform: rotate(0deg);
+                                }
+                            }
+
+                            .dropdown-menu {
+                                background: {
+                                    color: $ColorT1;
+                                }
+
+                                width: 30px;
+                                border: $None;
+                                margin-left: 30px;
+                                border-radius: 10px;
+
+                                li {
+                                    .dropdown-item {
+                                        font: {
+                                            size: 20px;
+                                            weight: bold;
+                                        }
+
+                                        transition: .2s;
+                                        color: white;
+                                        padding-left: 5px;
+                                        width: max-content;
+
+                                        img {
+                                            width: 30px;
+                                            height: 30px;
+                                        }
+                                    }
+
+                                    .dropdown-item:hover {
+                                        padding-left: 10px;
+                                        background-color: $None;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .nav-item.filtro {
+                display: none;
+            }
+
+            .Salida {
+                width: 100%;
+                padding: 10px;
+                position: relative;
+                display: inline-flex;
+                border-radius: 10px;
+                background-color: $ColorT2;
+
+                button {
+                    top: 10px;
+                    right: 10px;
+                    border: $None;
+                    position: absolute;
+                    background-color: $None;
+
+                    img {
+                        width: 35px;
+                        height: 35px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ------------------- Footer ------------------- */
+#Footer {
+    background: {
+        color: $ColorN2;
+    }
+
+    width: 100%;
+    position: absolute;
+
+    .Title,
+    .Text {
+        color: white;
+    }
+
+    .TableData {
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        @include Column(50% auto);
+
+        .Text,
+        .Title {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .Text {
+            white-space: nowrap;
+        }
+
+        .list-group {
+            .list-group-item {
+                padding: 0;
+                border: $None;
+                overflow: hidden;
+                width: max-content;
+                background-color: $None;
+
+                a {
+                    transition: .2s;
+                    color: #FFF;
+                    text-decoration: none;
+                    padding: 5px 5px 0 5px;
+                    @include Column(max-content auto);
+                    grid-column-gap: 5px;
+
+                    img {
+                        @include Icon(25px, 3.2vw, 50px);
+                    }
+                }
+
+                a:hover {
+                    padding-left: 15px;
+                }
+            }
+        }
+    }
+
+    .TableInfo {
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        @include Column(repeat(3, 32%));
+    }
+
+    .SubFooter {
+        background: {
+            color: $ColorN2;
+        }
+
+        padding: 10px;
+        box-shadow: inset 0 0 15px black;
+
+        .Text {
+            overflow: hidden;
+            text-align: center;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .Colegio {
+            color: rgb(0, 220, 0);
+        }
+
+        .Colegio:hover {
+            color: rgb(0, 180, 0);
+        }
+    }
+}
+
+/* ============================ Inicio ============================ */
+/* ------------------- Agilidad ------------------- */
+#Agilidad {
+    @include Espacio();
+    align-items: center;
+    @include Column(40% auto);
+
+    .Imagen {
+        img {
+            width: 100%;
+        }
+    }
+}
+
+/* ------------------- Trabajo ------------------- */
+#Trabajo {
+    @include Espacio();
+    @include Column(repeat(3, 32%));
+    grid-column-gap: 2%;
+
+    .Card {
+        margin-bottom: 20px;
+
+        .Image {
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid $ColorN2;
+            @include Icon(80px, 18vw, 250px);
+
+            img {
+                left: 50%;
+                height: 100%;
+                position: absolute;
+                width: max-content;
+                transform: translate(-50%, 0);
+            }
+
+            &.Circle {
+                border-radius: 100%;
+            }
+
+            &.Cube {
+                border-radius: 10px;
+            }
+        }
+
+        .Text {
+            text-align: center;
+            padding: 5px 10px;
+        }
+    }
+}
+
+/* ------------------- Web ------------------- */
+#Web {
+    display: flex;
+    @include Espacio();
+    align-items: center;
+    
+    .Card {
+        flex: 1;
+        width: 33%;
+        transition: 1.8s;
+        overflow: hidden;
+        position: relative;
+        padding: 5px 10px;
+        height: max-content;
+
+        .Image {
+            margin: auto;
+            border-radius: 10px;
+            border: 2px solid $ColorN2;
+            @include Icon(80px, 18vw, 250px);
+            background-color: rgb(97, 174, 236);
+
+            img {
+                border-radius: 7px;
+            }
+        }
+
+        .Title {
+            padding: 0 10px;
+            text-align: center;
+        }
+
+        .Text {
+            width: 100%;
+            max-height: 0;
+            padding: 0 10px;
+            overflow-y: auto;
+            transition: 1s ease;
+            overflow-x: hidden;
+        }
+
+        &:hover {
+            flex: 2;
+            background-color: rgba(0, 140, 255, .3);
+
+            .Text {
+                transition: 2s ease;
+                max-height: 400px;
+            }
+        }
+    }
+}
+
+/* ------------------- Desarrolladores ------------------- */
+#Desarrolladores {
+    @include Espacio();
+    @include Column(48% auto);
+    grid-column-gap: 4%;
+
+    .Desarrollador {
+        background: {
+            color: $ColorT1;
+        }
+
+        transition: .2s;
+        position: relative;
+        border-radius: 10px;
+        text-decoration: none;
+
+        .Title,
+        .Text {
+            color: white;
+        }
+
+        .Wave {
+            width: 100%;
+            height: 100%;
+
+            path {
+                fill: $ColorN1;
+            }
+        }
+
+        .Encabezado {
+            margin-bottom: 10px;
+        }
+
+        .Card {
+            left: 0;
+            top: 50%;
+            padding: 10px;
+            position: absolute;
+            transform: translate(0, -50%);
+
+            .Tabla {
+                @include Column(40% auto);
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+
+
+
+
+    // .Title,
+    // .Text {
+    //     color: white;
+    // }
+
+    // .Flip {
+    //     position: relative;
+    //     text-decoration: none;
+
+    //     .Wave {
+    //         top: -10%;
+    //         left: -10%;
+    //         width: 120%;
+    //         height: 120%;
+    //         position: absolute;
+
+    //         path {
+    //             fill: $ColorN1;
+    //         }
+    //     }
+
+    //     .Card {
+    //         width: 34vw;
+    //         height: 34vw;
+    //         margin: 0 auto;
+    //         position: relative;
+    //         transition: all 0.8s ease;
+    //         transform-style: preserve-3d;
+
+    //         .Front,
+    //         .Back {
+    //             top: 0;
+    //             left: 0;
+    //             width: 100%;
+    //             height: 100%;
+    //             position: absolute;
+    //             backface-visibility: hidden;
+    //         }
+
+    //         .Front {
+    //             .Contenido {
+    //                 background: {
+    //                     color: $ColorT1;
+    //                 }
+
+    //                 top: 50%;
+    //                 position: absolute;
+    //                 padding: 5px 10px;
+    //                 border-radius: 10px;
+    //                 transform: translate(0, -50%);
+
+    //                 .Title {
+    //                     text-align: center;
+    //                 }
+
+    //                 .Tabla {
+    //                     @include Column(40% auto);
+
+    //                     img {
+    //                         width: 100%;
+    //                     }
+
+    //                     .Text {
+    //                         height: 100%;
+    //                         padding-left: 10px;
+    //                     }
+    //                 }
+    //             }
+    //         }
+
+    //         .Back {
+    //             transform: rotateY(180deg);
+
+    //             .Title {
+    //                 top: 50%;
+    //                 left: 50%;
+    //                 position: absolute;
+    //                 transform: translate(-50%, -50%);
+    //             }
+    //         }
+
+    //         &:hover {
+    //             transform: rotateY(180deg);
+    //         }
+    //     }
+    // }
+}
+
+/* ------------------- Observacion ------------------- */
+#Observacion {
+    @include Espacio();
+    align-items: center;
+    @include Column(repeat(2, max-content) auto);
+
+    .Bloque {
+        margin-right: 10px;
+
+        .Cube {
+            @include Icon(60px, 8vw, 120px);
+        }
+
+        .Cube {
+            margin-bottom: 20px;
+            background-color: rgb(50, 6, 107);
+            box-shadow: 10px 10px 0 rgba(50, 6, 107, .4);
+        }
+        
+        .Nan {
+            margin-bottom: 10px;
+            @include Icon(40px, 6vw, 80px);
+        }
+    }
+
+    .Info {
+        padding-left: 10px;
+    }
+}
+
+/* ------------------- Programas ------------------- */
+#Programas {
+    @include Espacio();
+
+    .TablaS {
+        margin-bottom: 40px;
+        @include Column(repeat(3, 32%));
+    }
+
+    .TablaI {
+        justify-content: space-between;
+        @include Column(repeat(8, max-content));
+    }
+
+    .Lenguaje {
+        margin: 0 auto;
+        border-radius: 100%;
+        transition: .2s linear all;
+        box-shadow: 0 0 10px black;
+        @include Icon(80px, 12vw, 140px);
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+/* ------------------- Beneficios ------------------- */
+#Beneficios {
+    position: relative;
+
+    .Linea {
+        z-index: -1;
+        width: 100%;
+        height: 15vw;
+        position: absolute;
+        min-height: 100px;
+        max-height: 200px;
+        background-color: $ColorN1;
+    }
+
+    .Ingreso {
+        color: white;
+        text-align: center;
+        @include Espacio();
+        padding: 10px 20px;
+    }
+
+    .Targetas {
+        @include Espacio();
+        @include Column(repeat(3, 32%));
+        grid-column-gap: 2%;
+
+        .Card {
+            width: 100%;
+            transition: .2s;
+            overflow-y: auto;
+            padding: 5px 10px;
+            max-height: 500px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 0 1vw black;
+
+            .Image {
+                width: 80%;
+                margin: auto;
+                margin-bottom: 20px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .Title {
+                text-align: center;
+            }
+
+            .Text {
+                color: black;
+            }
+
+            &:hover {
+                transform: scale(1.04);
+                box-shadow: 0 0 2vw black;
+            }
+        }
+    }
+}
+
+/* ------------------- Elegirnos ------------------- */
+#Elegirnos {
+    background: {
+        color: $ColorN2;
+    }
+
+    padding: 40px 10px;
+
+    .Title {
+        overflow: hidden;
+        text-align: center;
+        margin-bottom: 20px;
+        text-overflow: ellipsis;
+    }
+
+    .Title,
+    .Text {
+        color: white;
+    }
+
+    .Tabla {
+        justify-content: center;
+        @include Column(repeat(3, 32%));
+        grid-column-gap: 2%;
+
+        .Card {
+            background: {
+                color: rgba(255, 255, 255, .2);
+            }
+
+            padding: 20px;
+            border-radius: 10px;
+
+            img {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .Title {
+                text-align: center
+            }
+        }
+    }
+}
+
+/* ------------------- Colegio ------------------- 
+#Colegio {
+    background: {
+        color: $ColorN1;
+    }
+
+    position: relative;
+    min-height: 300px;
+    @include Espacio();
+    border-radius: 10px;
+
+    .img-fluid {
+        border-radius: 10px;
+    }
+
+    .card-body {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+        .Title {
+            background: {
+                color: $ColorT2;
+            }
+
+            top: 0;
+            left: 0;
+            padding: 5px;
+            color: white;
+            position: absolute;
+            border-radius: 10px 0;
+        }
+
+        .Text {
+            background: {
+                color: $ColorT2;
+            }
+
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 5px;
+            color: white;
+            position: absolute;
+            border-radius: 0 0 10px 10px;
+        }
+    }
+}
+
+/* ============================ Misión ============================ */
+
+/* ------------------- Objetivos ------------------- */
+#Objetivos {
+    @include Espacio();
+    @include Column(60% auto);
+
+    .Metas {
+        .Card {
+            display: grid;
+            margin-bottom: 2vw;
+            grid-column-gap: 1%;
+
+            &.R {
+                @include Column(30% auto);
+            }
+
+            &.L {
+                @include Column(auto 30%);
+            }
+
+            .Icono {
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+
+                img {
+                    top: 50%;
+                    left: 50%;
+                    height: 100%;
+                    position: absolute;
+                    width: max-content;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .Informacion {
+                padding: 5px;
+            }
+
+            &:nth-child(even) {
+                background: {
+                    color: $ColorT1;
+                }
+
+                border-radius: 10px;
+
+                .Title,
+                .Text {
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .Infor {
+        @include Row(50% auto);
+
+        .Card {
+            overflow: auto;
+            position: relative;
+            margin-bottom: 2vw;
+
+            img {
+                top: 50%;
+                width: 100%;
+                filter: opacity(.4);
+                position: absolute;
+                transform: translate(0, -50%);
+            }
+        }
+    }
+}
+
+/* ------------------- Frase ------------------- */
+#Frase {
+    background: {
+        color: $ColorN1;
+    }
+
+    padding: 20px;
+    align-items: center;
+    @include Column(max-content auto max-content);
+
+    .Title {
+        text-align: center;
+    }
+
+    .Title,
+    .Text {
+        color: white;
+    }
+
+    .Image {
+        overflow: hidden;
+        position: relative;
+        border-radius: 100%;
+        @include Icon(100px, 18vw, 160px);
+
+        img {
+            top: 50%;
+            height: 100%;
+            position: absolute;
+            transform: translate(0, -50%);
+        }
+    }
+
+    .Contenedor {
+        padding: 30px 10px;
+    }
+}
+
+/* ------------------- Reconocimiento ------------------- */
+#Reconocimiento {
+    @include Espacio();
+    @include Column(auto 40%);
+
+    .Imagen {
+        overflow: hidden;
+        position: relative;
+        border-radius: 10px;
+
+        img {
+            top: 0;
+            left: 50%;
+            height: 100%;
+            position: absolute;
+            transform: translate(-50%, 0);
+        }
+    }
+}
+
+/* ------------------- Evolucion ------------------- */
+#Evolucion {
+    @include Espacio();
+
+    .Image {
+        @include Espacio();
+        margin-bottom: 20px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .Tabla {
+        justify-content: center;
+        @include Column(repeat(3, 32%));
+
+        .Title {
+            text-align: center;
+        }
+
+        .Card {
+            overflow: auto;
+            max-height: 350px;
+        }
+    }
+}
+
+/* ============================ Colegio Julio Florez ============================ */
+/* ------------------- PDF ------------------- */
+#PDF {
+    @include Espacio();
+    @include Column(50% auto);
+
+    .Informacion {
+        position: relative;
+
+        .Caja {
+            height: 100%;
+            overflow: auto;
+            position: absolute;
+
+            .DescargaPDF {
+                background: {
+                    color: $ColorN1;
+                }
+
+                padding: 5px;
+                margin-top: 20px;
+                border-radius: 5px;
+                width: max-content;
+                text-decoration: none;
+                @include Column(max-content auto);
+
+                .Text {
+                    color: white;
+                }
+
+                img {
+                    @include Icon(24px, 3vw, 50px);
+                }
+            }
+        }
+    }
+
+    embed {
+        width: 100%;
+        height: 58vw;
+    }
+}
+
+/* ------------------- Galeria ------------------- 
+#Galeria {
+    height: 50vw;
+    overflow: auto;
+    @include Espacio();
+
+    .Tabla {
+        display: flex;
+
+        .Columna {
+            flex: 25%;
+            padding: 2px;
+
+            .card {
+                width: 100%;
+                border: $None;
+                margin-top: 5px;
+                border-radius: 0;
+                overflow: hidden;
+                position: relative;
+                text-decoration: none;
+
+                .Image {
+                    transition: .5s;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .Hover {
+                    background: {
+                        color: $ColorT2;
+                    }
+
+                    top: 0;
+                    left: -150%;
+                    width: 100%;
+                    height: 100%;
+                    transition: .5s;
+                    position: absolute;
+
+                    .Title {
+                        font: {
+                            size: 20px;
+                        }
+
+                        top: 50%;
+                        left: 50%;
+                        position: absolute;
+                        color: $FontColorW;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                &:hover {
+                    .Image {
+                        transform: scale(1.1);
+                    }
+
+                    .Hover {
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ------------------- Galeria ------------------- */
+#Galeria {
+    display: flex;
+    height: 50vw;
+    overflow: auto;
+    @include Espacio();
+
+    .Columna {
+        flex: 25%;
+        padding: 2px;
+
+        .card {
+            width: 100%;
+            border: $None;
+            margin-top: 5px;
+            border-radius: 0;
+            overflow: hidden;
+            position: relative;
+            text-decoration: none;
+
+            .Image {
+                transition: .5s;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .Hover {
+                background: {
+                    color: $ColorT2;
+                }
+
+                top: 0;
+                left: -150%;
+                width: 100%;
+                height: 100%;
+                transition: .5s;
+                position: absolute;
+
+                .Title {
+                    font: {
+                        size: 20px;
+                    }
+
+                    top: 50%;
+                    left: 50%;
+                    position: absolute;
+                    color: $FontColorW;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .Hitbox {
+                cursor: pointer;
+                @include Hitbox();
+            }
+
+            &:hover {
+                .Image {
+                    transform: scale(1.1);
+                }
+
+                .Hover {
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+/* ------------------- VisualImage ------------------- */
+#VisualImage {
+    background: {
+        color: rgba(0, 0, 0, .8);
+    }
+
+    top: 0;
+    left: 0;
+    z-index: 110;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    visibility: hidden;
+
+    .Info {
+        background: {
+            color: rgba(255, 255, 255);
+        }
+
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        padding: 10px;
+        position: absolute;
+        max-width: 500px;
+        border-radius: 10px;
+        border: 3px solid black;
+        transform: translate(-50%, -50%);
+
+        .Imagen {
+            width: 100%;
+            margin: auto;
+            margin-bottom: 20px;
+            border: 2px solid black;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .Btn {
+            background: {
+                color: rgb(160, 0, 0);
+            }
+
+            top: -10px;
+            right: -10px;
+            transition: .2s;
+            position: absolute;
+            border-radius: 10px;
+            @include Icon(30px, 4vw, 50px);
+
+            img {
+                top: 10%;
+                left: 10%;
+                width: 80%;
+                height: 80%;
+                position: absolute;
+            }
+
+            .Hitbox {
+                cursor: pointer;
+                @include Hitbox();
+            }
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+/* ============================ @media ============================ */
+@media (max-width: 1000px) {
+    #Evolucion {
+        .Tabla {
+            @include Column(50% auto);
+
+            .Card {
+                margin-bottom: 20px;
+
+                &.Num3 {
+                    grid-column: 1/3;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    #Desarrolladores {
+        @include Column(auto);
+
+        .Desarrollador {
+            width: 70%;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+    }
+
+    #Web {
+        flex-wrap: wrap;
+
+        .Card {
+            flex: none;
+            width: 50%;
+            margin-bottom: 20px;
+
+            &:hover {
+                flex: none;
+            }
+        }
+    }
+
+    #Beneficios {
+        .Targetas {
+            @include Column(49% auto);
+
+            .Card {
+                margin-bottom: 20px;
+            }
+            
+            .Num3 {
+                grid-column: 1/3;
+                align-items: center;
+                @include Column(30% auto);
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    #Elegirnos {
+        .Tabla {
+            @include Column(50% auto);
+            grid-column-gap: 10px;
+
+            .Card {
+                margin-bottom: 10px;
+
+                .Images {
+                    width: 60%;
+                    margin: auto;
+                }
+
+                &.Num3 {
+                    grid-column: 1/3;
+                    align-items: center;
+                    @include Column(30% auto);
+
+                    .Images {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    #Objetivos {
+        @include Column(auto);
+
+        .Infor {
+            @include Row(auto);
+            height: max-content;
+            @include Column(50% auto);
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    #PDF {
+        @include Column(auto);
+
+        .Informacion {
+            min-height: 300px;
+            max-height: 500px;
+            margin-bottom: 50px;
+
+            .Caja {
+                position: relative;
+            }
+        }
+
+        embed {
+            width: 80%;
+            margin: auto;
+            height: 90vw;
+        }
+    }
+
+    #Footer {
+        .TableInfo {
+            @include Column(50% auto);
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    #Agilidad {
+        @include Column(auto);
+
+        .Imagen {
+            width: 60%;
+            margin: auto
+        }
+    }
+
+    #Elegirnos {
+        .Tabla {
+            @include Column(auto);
+            grid-column-gap: 10px;
+
+            .Card {
+                align-items: center;
+                @include Column(30% auto);
+
+                .Images {
+                    width: 100%;
+                    margin: auto;
+                }
+
+                &.Num3 {
+                    grid-column: 1/2;
+                }
+            }
+        }
+    }
+
+    #Evolucion {
+        .Tabla {
+            @include Column(auto);
+
+            .Card {
+                &.Num3 {
+                    grid-column: 1/2;
+                }
+            }
+        }
+    }
+
+    #PDF {
+        embed {
+            width: 100%;
+            height: 90vw;
+        }
+    }
+
+    #Trabajo {
+        @include Column(49% auto);
+    }
+
+    #Web {
+        .Card {
+            width: 100%;
+
+            .Image {
+                @include Icon(200px, 30vw, 400px);
+            }
+        }
+    }
+
+    #Beneficios {
+        .Targetas {
+            @include Column(auto);
+
+            .Card {
+                align-items: center;
+                @include Column(30% auto);
+            }
+            
+            .Num3 {
+                grid-column: 1/2;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    #Programas {
+        .TablaI {
+            @include Column(repeat(4, auto));
+        }
+    }
+
+    #Objetivos {
+        .Infor {
+            @include Column(auto);
+
+            .Card {
+                overflow: hidden;
+            }
+        }
+    }
+
+    #Frase {
+        justify-items: center;
+        @include Column(auto);
+
+        .Image {
+            @include Icon(140px, 34vw, 200px);
+        }
+    }
+
+    #Reconocimiento {
+        @include Column(auto);
+
+        .Informacion {
+            margin-bottom: 20px;
+        }
+
+        .Imagen {
+            overflow: hidden;
+            position: relative;
+
+            img {
+                left: 50%;
+                height: 100%;
+                position: relative;
+                transform: translate(-50%, 0);
+            }
+        }
+    }
+
+    #Beneficios {
+        .Targetas {
+            .Card {
+                @include Column(auto);
+
+                .Image {
+                    width: 60%;
+                    margin: auto;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    #Trabajo {
+        @include Column(auto);
+
+        .Card {
+            .Image {
+                @include Icon(140px, 22vw, 300px);
+
+                img {
+                    left: 50%;
+                    height: 100%;
+                    position: absolute;
+                    width: max-content;
+                    transform: translate(-50%, 0);
+                }
+            }
+        }
+    }
+
+    #Observacion {
+        @include Column(auto);
+
+        .Bloque {
+            display: none;
+        }
+    }
+
+    #Footer {
+        .Columna {
+            margin-bottom: 20px;
+
+            .Title {
+                text-align: center;
+            }
+        }
+
+        .TableData {
+            @include Column(auto);
+            justify-content: center;
+
+            .list-group-item {
+                margin: auto;
+            }
+        }
+
+        .TableInfo {
+            @include Column(auto);
+            justify-content: center;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.SuperBig {
+    @include Font(28px, 4vw, 64px, $FamilyFont, bold);
+}
+
+.Super {
+    @include Font(18px, 3vw, 60px, $FamilyFont, bold);
+}

@@ -1,0 +1,6247 @@
+/* ============================ Sección ============================ */
+/* ----------------------- Type Font ----------------------- */
+@font-face {
+    font-family: QuickSand;
+    src: url('../Package/Fonts/Quicksand.ttf');
+}
+
+/* ----------------------- Font ----------------------- */
+@mixin Font($MinSize, $Size, $MaxSize, $Family, $Bold) {
+    font: {
+        weight: $Bold;
+        family: $Family;
+        size: clamp($MinSize, $Size, $MaxSize);
+    }
+}
+
+/* ----------------------- Espacio ----------------------- */
+@mixin Espacio() {
+    width: 86%;
+    margin: 0 auto;
+}
+
+/* ----------------------- Column ----------------------- */
+@mixin Hitbox() {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+/* ----------------------- Column ----------------------- */
+@mixin Column($Columnas) {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: $Columnas;
+}
+
+/* ----------------------- Row ----------------------- */
+@mixin Row($Filas) {
+    display: grid;
+    grid-row-gap: 10px;
+    grid-template-rows: $Filas;
+}
+
+/* ----------------------- Icon ----------------------- */
+@mixin Icon($MinIcon, $Icon, $MaxIcon) {
+    min-width: $MinIcon;
+    min-height: $MinIcon;
+    width: $Icon;
+    height: $Icon;
+    max-width: $MaxIcon;
+    max-height: $MaxIcon;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* ============================ Variables ============================ */
+/* ----------------------- Neutral ----------------------- */
+$None: rgba(0, 0, 0, 0);
+
+/* ----------------------- Colores Solidos ----------------------- */
+$ColorRN: rgb(170, 35, 35);
+$ColorVN: rgb(25, 100, 40);
+$ColorAN: rgb(175, 175, 20);
+
+/* ----------------------- Colores Transparentes -----------------------*/
+$ColorRT: rgba(170, 35, 35, .5);
+$ColorVT: rgba(25, 100, 40, .5);
+$ColorAT: rgba(175, 175, 20, .5);
+
+/* ----------------------- Font size ----------------------- */
+$MinTextSize: 15px;
+$TextSize: 2vw;
+$MaxTextSize: 26px;
+
+$MinTitleSize: 26px;
+$TitleSize: 2.6vw;
+$MaxTitleSize: 46px;
+
+/* ----------------------- Font family ----------------------- */
+$FamilyFont: 'QuickSand';
+
+/* ----------------------- Font color ----------------------- */
+$FontColorW: rgb(255, 255, 255);
+$FontColorD: rgb(0, 0, 0);
+
+/* ----------------------- Icon ----------------------- */
+$MinIconM: 20px;
+$IconM: 1.8vw;
+$MaxIconM: 30px;
+
+$MinIconN: 25px;
+$IconN: 2vw;
+$MaxIconN: 35px;
+
+$MinIconG: 30px;
+$IconG: 2.2vw;
+$MaxIconG: 45px;
+
+$MinIconB: 40px;
+$IconB: 2.6vw;
+$MaxIconB: 60px;
+
+/* ============================ Globales ============================ */
+/* ---------------------- * ----------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ----------------------- body ----------------------- */
+body {
+    background: {
+        size: 100%;
+        color: white;
+        image: url('../Images/FondoJF.png');
+    }
+
+    scroll-behavior: smooth;
+
+    .Container {
+        margin: auto;
+        max-width: 1600px;
+    }
+}
+
+/* ----------------------- html ----------------------- */
+html {
+    ::-webkit-scrollbar {
+        background: {
+            color: rgb(209, 209, 214);
+        }
+
+        width: 12px;
+        height: 12px;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: {
+            color: rgb(146, 146, 150);
+        }
+
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-button {
+        background: {
+            color: rgb(187, 187, 192);
+        }
+    }
+
+    ::-webkit-scrollbar-track {
+        background: {
+            color: rgb(209, 209, 214);
+        }
+    }
+}
+
+/* ----------------------- Title ----------------------- */
+.Title {
+    margin: 0;
+    color: $ColorRN;
+    @include Font($MinTitleSize, $TitleSize, $MaxTitleSize, $FamilyFont, bold);
+}
+
+/* ----------------------- Text ----------------------- */
+.Text {
+    margin: 0;
+    @include Font($MinTextSize, $TextSize, $MaxTextSize, $FamilyFont, 0);
+}
+
+/* ----------------------- Space ----------------------- */
+.Space {
+    height: 100px;
+    @include Espacio();
+
+    &[data-title="true"] {
+        margin: 20px auto;
+        margin-top: 60px;
+        height: max-content;
+
+        .Title {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+}
+
+/* ----------------------- MainCarousel ----------------------- */
+.MainCarousel {
+    width: 100%;
+    height: 48vw;
+    position: relative;
+    border: 3px solid $ColorRN;
+
+    .DataCarousel {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+
+        .Carousel {
+            height: 100%;
+            position: absolute;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .Botones {
+        button {
+            top: 0;
+            width: 30%;
+            height: 100%;
+            border: $None;
+            min-width: 40px;
+            position: absolute;
+            max-width: 150px;
+            background-color: $None;
+
+            .Img {
+                top: 50%;
+                filter: opacity(.5);
+                position: absolute;
+                transform: translate(0, -50%);
+                @include Icon(30px, 5vw, 80px);
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            &:hover {
+                img {
+                    filter: opacity(.8);
+                }
+            }
+        }
+
+        .CarouselLeft {
+            left: 0;
+
+            .Img {
+                left: 10px;
+
+                img {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+
+        .CarouselRight {
+            right: 0;
+
+            .Img {
+                right: 10px;
+            }
+        }
+    }
+
+    .Slider {
+        left: 50%;
+        bottom: 5px;
+        position: absolute;
+        transform: translate(-50%, 0);
+
+        .Btn {
+            opacity: .5;
+            transition: .2s;
+            border-radius: 100%;
+            background-color: white;
+            @include Icon(12px, 1.2vw, 24px);
+        }
+    }
+
+    &[data-display="true"] {
+        width: 100%;
+        height: max-content;
+
+        .Carousel {
+            position: relative;
+            height: max-content;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+/* ----------------------- Accordion ----------------------- */
+.Accordion {
+    .Slider {
+        width: 1005;
+        margin-bottom: 40px;
+
+        .Encabezado {
+            width: 100%;
+            border: $None;
+            position: relative;
+            padding: 10px 15px;
+            align-items: center;
+            background-color: $None;
+            border-bottom: 3px solid $ColorVN;
+            @include Column(auto max-content);
+
+            .Icono {
+                background: {
+                    color: $ColorVT;
+                }
+
+                position: relative;
+                border-radius: 100%;
+                @include Icon(30px, 4vw, 40px);
+
+                img {
+                    top: 10%;
+                    left: 10%;
+                    width: 80%;
+                    height: 80%;
+                    transition: .2s;
+                    position: absolute;
+                }
+            }
+
+            .Hitbox {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
+        }
+
+        .Contenido {
+            transition: .5s;
+            max-height: 0;
+            overflow: hidden;
+            padding: 5px 20px;
+
+            .Title {
+                color: $ColorVN;
+            }
+        }
+
+        &.Open {
+            .Encabezado {
+                background-color: $ColorVT;
+
+                .Title {
+                    color: white;
+                }
+
+                .Icono {
+                    img {
+                        transform: rotate(-180deg);
+                    }
+                }
+            }
+
+            .Contenido {
+                max-height: 100vh;
+            }
+        }
+    }
+}
+
+/* ----------------------- DivisorColumnas ----------------------- */
+.DivisorColumnas {
+    .BtnProyectos {
+        margin: 20px auto;
+        width: max-content;
+
+        .Btn {
+            background: {
+                color: $ColorVN;
+            }
+
+            transition: .2s;
+            border-radius: 100%;
+            border: 3px solid black;
+            @include Icon(40px, 4vw, 60px);
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .Proyectos {
+        grid-row-gap: 50px;
+        @include Column(repeat(2, auto));
+        grid-Column-gap: 15px;
+    }
+}
+
+/* ----------------------- VisualCards ----------------------- */
+.VisualCards {
+    @include Espacio();
+
+    .Visualizer {
+        margin-bottom: 40px;
+
+        .Card {
+            position: relative;
+            @include Column(25% auto 25%);
+            grid-column-gap: 10px;
+
+            .Image {
+                .Text {
+                    display: none;
+                }
+            }
+
+            .Info {
+                position: relative;
+
+                .Caja {
+                    height: 100%;
+                    overflow: auto;
+                    position: absolute;
+                }
+            }
+        }
+
+        .Hitbox {
+            display: none;
+        }
+    }
+
+    .Elementos {
+        @include Column(repeat(4, auto));
+        grid-column-gap: 10px;
+
+        .Card {
+            position: relative;
+
+            .Info {
+                .Title {
+                    text-align: center;
+                    @include Font(18px, 1.6vw, 32px, $FamilyFont, bold);
+                }
+
+                .Text {
+                    display: none;
+                }
+            }
+
+            .Datos {
+                display: none;
+            }
+        }
+    }
+
+    .Image {
+        position: relative;
+
+        img {
+            width: 100%;
+        }
+
+        .Text {
+            background: {
+                color: $ColorRT;
+            }
+
+            top: 0;
+            left: 0;
+            color: white;
+            padding: 0 5px;
+            position: absolute;
+            border-radius: 0 0 10px 0;
+        }
+    }
+
+    .Title {
+        color: $ColorRN;
+    }
+
+    .Datos {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        .Item {
+            padding: 10px 5px;
+            border-bottom: 1px solid black;
+
+            .Link {
+                font: {
+                    weight: bold;
+                }
+
+                background: {
+                    color: $ColorVN;
+                }
+
+                transition: .2s;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 10px;
+                text-decoration: none;
+
+                &:hover {
+                    padding: 5px 20px;
+                }
+            }
+
+            &:last-child {
+                border-bottom: $None;
+            }
+        }
+    }
+
+    .Hitbox {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+}
+
+/* ----------------------- Row ----------------------- */
+.Row {
+    display: flex;
+    flex-wrap: wrap;
+
+    .Col-1 {
+        width: 8.33%;
+        padding: 0 5px;
+    }
+
+    .Col-2 {
+        width: 16.66%;
+        padding: 0 5px;
+    }
+
+    .Col-3 {
+        width: 24.99%;
+        padding: 0 5px;
+    }
+
+    .Col-4 {
+        width: 33.32%;
+        padding: 0 5px;
+    }
+
+    .Col-5 {
+        width: 41.65%;
+        padding: 0 5px;
+    }
+
+    .Col-6 {
+        width: 49.98%;
+        padding: 0 5px;
+    }
+
+    .Col-7 {
+        width: 58.31%;
+        padding: 0 5px;
+    }
+
+    .Col-8 {
+        width: 66.64%;
+        padding: 0 5px;
+    }
+
+    .Col-9 {
+        width: 74.97%;
+        padding: 0 5px;
+    }
+
+    .Col-10 {
+        width: 83.3%;
+        padding: 0 5px;
+    }
+
+    .Col-11 {
+        width: 91.63%;
+        padding: 0 5px;
+    }
+
+    .Col-12 {
+        width: 100%;
+        padding: 0 5px;
+    }
+}
+
+/* ----------------------- Need-Validation ----------------------- */
+.Need-Validation {
+    overflow: hidden;
+
+    .form-label, .form-select {
+        color: $ColorRN;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .Input {
+        align-items: center;
+        @include Column(max-content auto);
+        grid-column-gap: 0;
+
+        .Icono {
+            background: {
+                color: $ColorVN;
+            }
+
+            border-radius: 5px;
+            @include Icon(30px, 4.4vw, 45px);
+        }
+
+        .form-control, .form-select {
+            background: {
+                color: rgba(255, 255, 255, .5);
+            }
+
+            height: 80%;
+            padding: 0 10px;
+            border-radius: 0 5px 5px 0;
+            border: 2px solid $ColorVN;
+            border-left: 0 solid transparent;
+
+            &.Text {
+                color: black;
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+
+            &.AllClr {
+                border-radius: 5px;
+                border-left: 2px solid $ColorVN;
+            }
+        }
+
+        .IptClr {
+            color: $ColorVN;
+        }
+
+        &[data-disabled="true"] {
+            .Icono {
+                background-color: rgb(53, 54, 59);
+            }
+
+            .form-control, .form-select {
+                border-color: rgb(53, 54, 59);
+                background-color: rgba(201, 202, 209, 0.5);
+            }
+        }
+    }
+}
+
+/* ----------------------- Was-Validated ----------------------- */
+.Was-Validated {
+    .Input {
+        &[data-validation="true"] {
+            .Icono {
+                background: {
+                    color: rgb(3, 136, 27);
+                }
+            }
+
+            .form-control, .form-select {
+                border-color: rgb(3, 136, 27);
+            }
+
+            .IptClr {
+                color: rgb(3, 136, 27);
+            }
+        }
+
+        &[data-validation="false"] {
+            .Icono {
+                background-color: rgb(160, 0, 0);
+            }
+
+            .form-control, .form-select {
+                border-color: rgb(160, 0, 0);
+            }
+
+            .IptClr {
+                color: rgb(160, 0, 0);
+            }
+        }
+    }
+}
+
+/* ----------------------- BtnsSDC ----------------------- */
+.BtnsSDC {
+    display: inline-flex;
+
+    .Btn {
+        transition: .2s;
+        position: relative;
+        padding: 2px 5px;
+        margin-right: 10px;
+        align-items: center;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        @include Column(max-content auto);
+
+        .Image {
+            position: relative;
+            @include Icon(30px, 3.6vw, 60px);
+
+            img {
+                top: 15%;
+                left: 15%;
+                width: 70%;
+                height: 70%;
+                position: absolute;
+            }
+        }
+
+        .Text {
+            font: {
+                weight: bold;
+            }
+
+            color: white;
+        }
+
+        .Hitbox {
+            @include Hitbox();
+        }
+
+        &.Agregar {
+            background: {
+                color: rgb(0, 100, 200);
+            }
+        }
+
+        &.Verificar {
+            background: {
+                color: rgb(250, 190, 0);
+            }
+        }
+
+        &.Guardar,
+        &.Editar {
+            background: {
+                color: rgb(0, 180, 0);
+            }
+        }
+
+        &.Eliminar {
+            background: {
+                color: rgb(180, 0, 0);
+            }
+        }
+
+        &.Cancelar {
+            background: {
+                color: rgb(180, 180, 0);
+            }
+        }
+
+        &:hover {
+            padding: 2px 10px
+        }
+    }
+}
+
+/* ----------------------- PDF ----------------------- */
+#PDF {
+    @include Espacio();
+    @include Column(auto 46%);
+    grid-column-gap: 10px;
+
+    embed {
+        width: 100%;
+        height: 62vw;
+    }
+
+    .Info {
+        height: 100%;
+        overflow: auto;
+        position: relative;
+
+        .Caja {
+            position: absolute;
+
+            .Link {
+                background: {
+                    color: $ColorVN;
+                }
+
+                transition: .2s;
+                margin: 0 10px;
+                margin-top: 20px;
+                padding: 5px 10px;
+                display: inline-flex;
+                align-items: center;
+                border-radius: 10px;
+
+                .Text {
+                    margin-right: 10px;
+                }
+
+                &:hover {
+                    padding: 5px 15px;
+
+                    .Text {
+                        font: {
+                            weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ============================ Models ============================ */
+/* ----------------------- NavMenu ----------------------- */
+#NavMenu {
+    background: {
+        color: $ColorRN;
+    }
+
+    top: 0;
+    z-index: 2;
+    position: sticky;
+    padding: 0 10px;
+    min-height: 50px;
+    max-height: 70px;
+
+    .Link {
+        background: {
+            color: $ColorAN;
+        }
+
+        top: 0;
+        width: 22vw;
+        padding: 1vw;
+        min-width: 200px;
+        position: absolute;
+        max-width: 300px;
+        border-radius: 0 0 10px 10px;
+        @include Column(max-content auto);
+
+        .IconE {
+            @include Icon(55px, 3.2vw, 85px);
+        }
+
+        .Title {
+            color: $FontColorW;
+        }
+
+        /*
+        .Triangle {
+            border: {
+                top: 2vw solid $ColorAN;
+                right: 22vw solid rgba(0, 0, 0, 0);
+            }
+
+            left: -1vw;
+            top: 100%;
+            grid-column: 1/3;
+            min-width: 200px;
+            position: absolute;
+            max-width: 300px;
+        }
+        */
+    }
+
+    .AbrirNav {
+        top: 5px;
+        right: 5px;
+        border: $None;
+        position: absolute;
+        background-color: $None;
+    }
+}
+
+/* ----------------------- NavVertical ----------------------- */
+#NavVertical {
+    background: {
+        color: $ColorRN;
+    }
+
+    top: 0;
+    left: -120%;
+    z-index: 100;
+    height: 100%;
+    transition: 1s;
+    position: fixed;
+    overflow-y: auto;
+    width: max-content;
+    border-right: 3px solid black;
+    @include Row(repeat(3, max-content) auto max-content);
+    grid-row-gap: 0;
+
+    .Header {
+        background: {
+            color: rgb(15, 80, 30);
+        }
+
+        padding: 10px;
+        grid-column-gap: 5px;
+        @include Column(auto max-content);
+    }
+
+    .Perfil {
+        background: {
+            color: $ColorVN;
+        }
+
+        padding: 10px;
+        position: relative;
+        color: $FontColorW;
+        text-decoration: none;
+
+        .Image {
+            margin: 0 auto;
+            margin-bottom: 5px;
+            @include Icon(120px, 12vw, 180px);
+
+            img {
+                border-radius: 100%;
+                border: 3px solid black;
+            }
+        }
+
+        .Text {
+            margin: auto;
+            overflow: hidden;
+            text-align: center;
+            max-width: 280px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .Buscador {
+        background: {
+            color: rgb(35, 135, 60);
+        }
+
+        padding: 1vw;
+        @include Column(max-content auto);
+        grid-column-gap: 5px;
+
+        .Search {
+            border: {
+                width: 2px;
+                style: solid;
+                image-slice: 1;
+                image-source: linear-gradient(to top, #FFF, rgba(0, 0, 0, 0));
+            }
+
+            width: 100%;
+            outline: none;
+            height: 100%;
+            padding: 0 5px;
+            border-radius: 0;
+            color: $FontColorW;
+            background-color: $None;
+            @include Font($MinTextSize, $TextSize, $MaxTextSize, $FamilyFont, 0);
+
+            &::placeholder {
+                color: $FontColorW;
+            }
+        }
+    }
+
+    .BigLista {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        .BigItem {
+            padding: 10px;
+
+            .Title {
+                text-align: center;
+                border-bottom: 2px solid $FontColorW;
+            }
+
+            .Item {
+                .Link {
+                    transition: .2s;
+                    width: max-content;
+
+                    &:hover {
+                        font: {
+                            weight: bold;
+                        }
+                    }
+                }
+
+                .Secciones {
+                    overflow: hidden;
+                    height: max-content;
+
+                    .Seccion {
+                        position: relative;
+                        @include Column(max-content auto max-content);
+                        grid-column-gap: 5px;
+
+                        .Hitbox {
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                        }
+
+                        &:hover {
+                            padding-left: 0;
+                        }
+                    }
+
+                    .Link {
+                        .Text {
+                            user-select: none;
+                        }
+
+                        .IconM {
+                            transition: .2s;
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    .Drop {
+                        background: {
+                            color: $ColorVN;
+                        }
+
+                        width: 100%;
+                        max-height: 0;
+                        transition: .5s;
+                        padding: 0 5px;
+                        border-radius: 0 0 10px 10px;
+
+                        .Item {
+                            .TxBig {
+                                border-bottom: 2px solid $FontColorW;
+                            }
+                        }
+                    }
+
+                    &[data-expanded="true"] {
+                        .Link {
+                            .IconM {
+                                transform: rotate(0deg);
+                            }
+                        }
+
+                        .Drop {
+                            padding: 5px;
+                            max-height: 100vh;
+                        }
+                    }
+                }
+            }
+
+            &.Red1 {
+                background: {
+                    color: rgb(130, 0, 0);
+                }
+            }
+
+            &.Red2 {
+                background: {
+                    color: rgb(155, 0, 0);
+                }
+            }
+
+            &.Red3 {
+                background: {
+                    color: rgb(175, 0, 0);
+                }
+            }
+
+            &.Red4 {
+                background: {
+                    color: rgb(210, 0, 0);
+                }
+            }
+
+            &.Filtro {
+                padding: 0;
+                display: none;
+            }
+        }
+    }
+
+    .CerrarSesion {
+        background: {
+            color: $ColorAN;
+        }
+
+        padding: 5px;
+        @include Column(auto max-content);
+        grid-column-gap: 5px;
+    }
+
+    .CerrarNav {
+        border: $None;
+        background-color: $None;
+    }
+
+    .Lista {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        .Item {
+            margin-bottom: 5px;
+
+            .Link {
+                align-items: center;
+                @include Column(max-content auto);
+                grid-column-gap: 5px;
+
+                .Text {
+                    width: max-content;
+                }
+            }
+        }
+    }
+}
+
+/* ----------------------- Background ----------------------- */
+#Background {
+    background: {
+        color: rgba(0, 0, 0, .8);
+    }
+
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    visibility: hidden;
+}
+
+/* ----------------------- Banner ----------------------- */
+#Banner {
+    .Image {
+        width: 80%;
+        margin: auto;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .Title {
+        background: {
+            color: $ColorVN;
+        }
+
+        padding: .5vw 0;
+        text-align: center;
+        color: $FontColorW;
+    }
+}
+
+/* ----------------------- NavLinks ----------------------- */
+#NavLinks {
+    background: {
+        color: rgb(15, 80, 30);
+    }
+
+    .Tabla {
+        margin: 0 auto;
+        width: max-content;
+
+        .Lista {
+            margin: 0;
+            list-style: none;
+            padding: 5px 10px;
+            display: inline-flex;
+            width: max-content;
+
+            .Item {
+                width: max-content;
+
+                .Link {
+                    transition: .2s;
+                    padding: 0 1vw;
+                    align-items: center;
+                    @include Column(max-content auto);
+                    grid-column-gap: 5px;
+
+                    .Text {
+                        width: max-content;
+                    }
+
+                    &:hover {
+                        padding: 0 2vw;
+
+                        font: {
+                            weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ----------------------- Footer ----------------------- */
+#Footer {
+    background: {
+        color: $ColorVN;
+    }
+
+    .Text {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .Enlaces {
+        width: 100%;
+        padding: 10px;
+        @include Column(auto auto);
+
+        .Lista {
+            margin: 0;
+            list-style: none;
+            margin-bottom: 5px;
+
+            .Item {
+                margin-bottom: 5px;
+
+                .Link {
+                    width: 100%;
+                    transition: .2s;
+                    padding: 0 5px;
+                    align-items: center;
+                    @include Column(max-content auto);
+
+                    &:hover {
+                        padding-left: 10px;
+
+                        font: {
+                            weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .SubFooter {
+        background: {
+            color: rgb(15, 80, 30);
+        }
+
+        width: 100%;
+        padding: 5px;
+        color: $FontColorW;
+
+        .Text {
+            text-align: center;
+
+            .Creator {
+                text-decoration: none;
+                color: rgb(50, 255, 0);
+
+                &:hover {
+                    font: {
+                        weight: bold;
+                    }
+
+                    color: rgb(20, 220, 0);
+                }
+            }
+        }
+    }
+}
+
+/* ============================ Blocs All ============================ */
+/* ----------------------- Aviso ----------------------- */
+#Aviso {
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    padding: 5px;
+    transition: .4s;
+    position: fixed;
+    max-width: 400px;
+    border-radius: 10px;
+    border: 2px solid black;
+    background-color: white;
+    transform: translate(-50%, -50%);
+
+    .Title {
+        color: black;
+        padding-left: 10px;
+    }
+
+    .Msj,
+    .Title {
+        border-bottom: 1px solid #72737a;
+    }
+
+    .Botones {
+        padding-top: 5px;
+        @include Column(50% auto);
+
+        button {
+            color: white;
+            border: $None;
+            font-weight: bold;
+            border-radius: 5px;
+            background-color: #b7bac2;
+        }
+    }
+}
+
+/* ----------------------- Alert ----------------------- */
+#Container-Alerts {
+    right: 0;
+    bottom: 0;
+    z-index: 80;
+    width: 40vw;
+    padding: 0 5px;
+    position: fixed;
+    min-width: 300px;
+    max-width: 500px;
+
+    #Alert {
+        margin-bottom: 5px;
+        border-radius: 5px 5px 0 0;
+
+        .Head {
+            padding: 5px 10px;
+            align-items: center;
+            @include Column(max-content auto);
+
+            .Icono {
+                position: relative;
+                border-radius: 100%;
+                background-color: white;
+                @include Icon(24px, 4vw, 40px);
+
+                img {
+                    top: 10%;
+                    left: 10%;
+                    width: 80%;
+                    height: 80%;
+                    position: absolute;
+                }
+            }
+        }
+
+        .Title {
+            font-style: italic;
+        }
+
+        .Text {
+            padding: 2px 5px;
+        }
+
+        .Bar {
+            height: 10px;
+        }
+
+        &[data-type="Success"] {
+            border: 2px solid #6daf91;
+            background-color: #d1e7dd;
+
+            .Title,
+            .Text {
+                color: #0f5132;
+            }
+
+            .Bar {
+                background-color: #6daf91;
+            }
+        }
+
+        &[data-type="Error"] {
+            border: 2px solid #d3878e;
+            background-color: #f8d7da;
+
+            .Title,
+            .Text {
+                color: #842029;
+            }
+
+            .Bar {
+                background-color: #d3878e;
+            }
+        }
+
+        &[data-type="Info"] {
+            border: 2px solid #87a7d4;
+            background-color: #cfe2ff;
+
+            .Title,
+            .Text {
+                color: #084298;
+            }
+
+            .Bar {
+                background-color: #87a7d4;
+            }
+        }
+
+        &[data-type="Warning"] {
+            border: 2px solid #dbc276;
+            background-color: #fff3cd;
+
+            .Title,
+            .Text {
+                color: #664d03;
+            }
+
+            .Bar {
+                background-color: #dbc276;
+            }
+        }
+
+        &[data-type="Line"] {
+            border: 2px solid #8d9092;
+            background-color: #e2e3e5;
+
+            .Title,
+            .Text {
+                color: #41464b;
+            }
+
+            .Bar {
+                background-color: #8d9092;
+            }
+        }
+    }
+}
+
+/* ============================ Error ============================ */
+/* ----------------------- ErrorPg ----------------------- */
+#ErrorPg {
+    width: 80%;
+    margin: 50px auto;
+    max-width: 1200px;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* ============================ Inicio ============================ */
+/* ----------------------- Header ----------------------- */
+#Header {
+    background: {
+        size: 100%;
+        attachment: fixed;
+        image: url('../Images/Profesores.jpg');
+    }
+
+    height: 40vw;
+    padding: 10px;
+    position: relative;
+    min-height: 200px;
+    @include Espacio();
+    border-radius: 0 0 20px 20px;
+
+    .Title {
+        background: {
+            color: $ColorRT;
+        }
+
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        padding: 5px 10px;
+        color: $FontColorW;
+        border-radius: 10px;
+    }
+
+    .Image {
+        left: 50%;
+        width: 50%;
+        bottom: 10px;
+        filter: opacity(.5);
+        position: absolute;
+        transform: translate(-50%, 0);
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+/* ----------------------- Institucion ----------------------- */
+#Institucion {
+    @include Espacio();
+}
+
+/* ----------------------- InfoInst ----------------------- */
+#InfoInst {
+    @include Espacio();
+    @include Column(40% auto);
+    grid-column-gap: 15px;
+
+    .MainCarousel {
+        border: $None;
+    }
+}
+
+/* ----------------------- Video ----------------------- */
+#Video {
+    @include Espacio();
+    align-items: center;
+    @include Column(auto 40%);
+    grid-column-gap: 10px;
+
+    .Card {
+        .Title {
+            text-align: center;
+        }
+
+        .Image {
+            background: {
+                color: $ColorRT;
+            }
+
+            margin: 0 auto;
+            border-radius: 10px;
+            @include Icon(60px, 3vw, 180px);
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    iframe {
+        height: 20vw;
+        min-height: 180px;
+    }
+
+    &.Left {
+        @include Column(40% auto);
+        grid-column-gap: 10px;
+    }
+}
+
+/* ----------------------- Noticias ----------------------- */
+#Noticias {
+    height: 54vw;
+    border: $None;
+    min-height: 500px;
+    @include Espacio();
+
+    .DataCarousel {
+        .Carousel {
+            padding: 0 5px;
+
+            .Card {
+                height: 50vw;
+                position: relative;
+                min-height: 460px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+                border: 3px solid $ColorVN;
+                @include Row(max-content max-content auto max-content);
+
+                .Fecha {
+                    background: {
+                        color: $ColorVT;
+                    }
+
+                    top: 0;
+                    left: 0;
+                    padding: 2px;
+                    color: white;
+                    position: absolute;
+                    border-radius: 8px 0;
+                }
+
+                .Imagen {
+                    width: 100%;
+                    border-radius: 8px 8px 0 0;
+                }
+
+                .Title {
+                    padding: 0 5px;
+                    color: $ColorRN;
+                    text-align: center;
+                }
+
+                .Text {
+                    padding: 5px;
+                    overflow: auto;
+                }
+
+                .Btn {
+                    text-decoration: none;
+
+                    .Text {
+                        background: {
+                            color: $ColorVN;
+                        }
+
+                        transition: .2s;
+                        text-align: center;
+                        padding: 5px 10px;
+                        color: $FontColorW;
+                        border-radius: 15px 15px 5px 5px;
+
+                        &:hover {
+                            font: {
+                                weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .Botones {
+        bottom: 0;
+        height: 4vw;
+        width: 100%;
+        position: absolute;
+
+        button {
+            .Img {
+                background: {
+                    color: $ColorVN;
+                }
+
+                left: 50%;
+                filter: opacity(1);
+                border-radius: 10px;
+                @include Icon(25px, 3.6vw, 50px);
+                transform: translate(-50%, -50%);
+
+                img {
+                    padding: 2px;
+                }
+            }
+
+            &:hover {
+                filter: opacity(1);
+            }
+        }
+    }
+}
+
+/* ----------------------- Calendario ----------------------- */
+#Calendario {
+    @include Espacio();
+    @include Column(30% auto);
+
+    .Info {
+        .Title {
+            text-align: center;
+        }
+    }
+
+    iframe {
+        width: 100%;
+        height: 40vw;
+    }
+}
+
+/* ----------------------- Enlaces ----------------------- */
+#Enlaces {
+    @include Espacio();
+    grid-row-gap: 15px;
+    justify-content: space-evenly;
+    @include Column(repeat(6, auto));
+
+    .Enlace {
+        transition: .5s;
+        position: relative;
+        border-radius: 100%;
+        color: rgb(92, 92, 96);
+        @include Icon(120px, 12vw, 300px);
+        border: 3px solid rgb(92, 92, 96);
+
+        .Info {
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+
+            .Img {
+                margin: auto;
+                @include Icon(46px, 3.6vw, 76px);
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .Text {
+                text-align: center;
+            }
+        }
+
+        &:hover {
+            background: {
+                color: $ColorVN;
+            }
+
+            color: white;
+            transform: scale(1.1);
+            border: 3px solid $ColorAN;
+
+            .Info {
+                .Img {
+                    img {
+                        &[data-icon="Edupage"] {
+                            content: url("../Icons/Edupage.png");
+                        }
+
+                        &[data-icon="Familia"] {
+                            content: url("../Icons/Familia.png");
+                        }
+
+                        &[data-icon="Red"] {
+                            content: url("../Icons/Red.png");
+                        }
+
+                        &[data-icon="Descarga"] {
+                            content: url("../Icons/Descarga.png");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ============================ ¿Quiénes somos? ============================ */
+/* ----------------------- MisionVision ----------------------- */
+#MisionVision {
+    @include Espacio();
+    @include Column(auto auto);
+
+    .Card {
+        padding: 2vw;
+
+        .Img {
+            background: {
+                color: $ColorVN;
+            }
+
+            position: absolute;
+            border-radius: 100%;
+            @include Icon(40px, 5vw, 60px);
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            &.Icono {
+                top: -2vw;
+                left: -2vw;
+
+                img {
+                    padding: 5px;
+                }
+            }
+
+            &.Escudo {
+                right: -2vw;
+                bottom: -2vw;
+            }
+        }
+
+        .Info {
+            position: relative;
+
+            .Title {
+                background: {
+                    color: $ColorVT;
+                }
+
+                padding: 1.5vw;
+                color: white;
+                padding-left: 3vw;
+                padding-bottom: .5vw;
+                border-bottom: 3px solid $ColorVN;
+            }
+
+            .Text {
+                padding: 1.5vw;
+            }
+
+            border-radius: 10px;
+            border: 3px solid $ColorVN;
+        }
+    }
+}
+
+/* ----------------------- Historia ----------------------- */
+#Historia {
+    @include Espacio();
+    border-radius: 10px;
+    border: 3px solid $ColorRN;
+
+    .Encabezado {
+        background: {
+            color: $ColorRT;
+        }
+
+        padding: 1vw;
+        border-bottom: 3px solid $ColorRN;
+
+        .Title {
+            color: white;
+        }
+    }
+
+    .History {
+        @include Column(60% auto);
+
+        .Imagen {
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+/* ----------------------- LineaTiempo ----------------------- */
+#LineaTiempo {
+    @include Espacio();
+    border-radius: 10px;
+    border: 3px solid $ColorRN;
+
+    .Encabezado {
+        background: {
+            color: $ColorRT;
+        }
+
+        padding: 1vw;
+        border-bottom: 3px solid $ColorRN;
+
+        .Title {
+            color: white;
+        }
+    }
+
+    .Imagen {
+        img {
+            width: 100%;
+        }
+    }
+}
+
+/* ----------------------- Ubicacion ----------------------- */
+#Ubicacion {
+    @include Espacio();
+
+    .MapaImg,
+    .Frame {
+        width: 50vw;
+        margin: auto;
+        height: 50vw;
+        min-width: 280px;
+        min-height: 280px;
+        max-width: 650px;
+        max-height: 650px;
+    }
+
+    .MapaImg {
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+/* ============================ Simbolos ============================ */
+/* ----------------------- Simbolos ----------------------- */
+#Simbolos {
+    @include Espacio();
+    @include Column(30% auto);
+    grid-column-gap: 15px;
+
+    .MainCarousel {
+        border: $None;
+    }
+
+    .Informacion {
+        overflow: auto;
+    }
+}
+
+/* ============================ Especialidades ============================ */
+/* ----------------------- Especialidad ----------------------- */
+#Especialidad {
+    @include Espacio();
+    @include Column(30% auto 20%);
+
+    img {
+        width: 100%;
+    }
+
+    .InfEspecialidad {
+        overflow: hidden;
+        position: relative;
+
+        .Fondo {
+            left: 0;
+            top: -120%;
+            width: 100%;
+            height: 100%;
+            transition: .4s;
+            position: absolute;
+
+            .Title {
+                top: 50%;
+                left: 50%;
+                width: 90%;
+                color: white;
+                position: absolute;
+                text-align: center;
+                transform: translate(-50%, -50%)
+            }
+        }
+
+        &:hover {
+            .Fondo {
+                top: 0;
+            }
+        }
+    }
+
+    &.Left {
+        @include Column(20% auto 30%);
+    }
+
+    .Info {
+        position: relative;
+
+        .Contenedor {
+            height: 100%;
+            overflow: auto;
+            position: absolute;
+        }
+    }
+
+    &[data-especialidad="Administracion"] {
+        .Fondo {
+            background: {
+                color: rgba(10, 165, 210, .5);
+            }
+        }
+
+        .Title {
+            color: rgb(10, 165, 210);
+        }
+    }
+
+    &[data-especialidad="Turismo"] {
+        .Fondo {
+            background: {
+                color: rgba(240, 30, 30, .5);
+            }
+        }
+
+        .Title {
+            color: rgb(240, 30, 30);
+        }
+    }
+
+    &[data-especialidad="Disenio"] {
+        .Fondo {
+            background: {
+                color: rgba(100, 5, 110, .5);
+            }
+        }
+
+        .Title {
+            color: rgb(100, 5, 110);
+        }
+    }
+
+    &[data-especialidad="Prosoft"] {
+        .Fondo {
+            background: {
+                color: rgba(0, 10, 150, .5);
+            }
+        }
+
+        .Title {
+            color: rgb(0, 10, 150);
+        }
+    }
+
+    &[data-especialidad="Ambiental"] {
+        .Fondo {
+            background: {
+                color: rgba(5, 175, 15, .5);
+            }
+        }
+
+        .Title {
+            color: rgb(5, 175, 15);
+        }
+    }
+}
+
+/* ============================ Formacion ============================ */
+/* ----------------------- Formacion ----------------------- */
+#Formacion {
+    @include Espacio();
+    @include Column(40% auto);
+
+    .Ciclo {
+        img {
+            width: 100%;
+        }
+    }
+
+    .Info {
+        position: relative;
+
+        .Contenedor {
+            height: 100%;
+            overflow: auto;
+            position: absolute;
+        }
+    }
+}
+
+/* ----------------------- Campos ----------------------- */
+#Campos {
+    @include Espacio();
+}
+
+/* ============================ P. Proyectos ============================ */
+/* ----------------------- Proyectos ----------------------- */
+#Transversales {
+    @include Espacio();
+
+    .Proyectos {
+        .Card {
+            position: relative;
+            border-radius: 10px;
+            text-decoration: none;
+            border: 3px solid $ColorRN;
+
+            img {
+                width: 100%;
+                border-radius: 5px 5px 0 0;
+                border-bottom: 3px solid $ColorRN;
+            }
+
+            .Title {
+                color: $ColorRN;
+                padding: 5px 10px;
+            }
+
+            .Text {
+                padding: 0 10px;
+                color: $FontColorD;
+                padding-bottom: 5px;
+
+                &.Fecha {
+                    background: {
+                        color: $ColorRT;
+                    }
+
+                    border: {
+                        right: 3px solid $ColorRN;
+                        bottom: 3px solid $ColorRN;
+                    }
+
+                    top: 0;
+                    left: 0;
+                    color: white;
+                    padding: 0 5px;
+                    position: absolute;
+                    border-radius: 10px 0;
+                }
+            }
+        }
+    }
+}
+
+/* ============================ Agregar usuario ============================ */
+/* ----------------------- AddInfo ----------------------- */
+#Formulario {
+    @include Espacio();
+    align-items: center;
+    @include Column(40% auto);
+    grid-column-gap: 0;
+
+    .Info {
+        background: {
+            size: cover;
+            image: url('../Images/FondoLogin.png');
+        }
+
+        display: grid;
+        overflow: hidden;
+        position: relative;
+        padding: 20px 10%;
+        align-items: center;
+        border-radius: 10px;
+        border: 3px solid black;
+
+        .Title {
+            color: white;
+            text-align: center;
+        }
+
+        .Imagen {
+            width: 80%;
+            margin: auto;
+            margin-top: 20px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .Informacion {
+        padding: 20px;
+        height: max-content;
+        border: 3px solid black;
+        border-radius: 0 10px 10px 0;
+        background-color: rgba(255, 255, 255, .4);
+        border-left: $None;
+    }
+}
+
+/* ----------------------- Roles ----------------------- */
+#Roles {
+    @include Espacio();
+
+    .Title {
+        margin-bottom: 40px;
+    }
+
+    .Tabla {
+        grid-row-gap: 20px;
+        justify-content: space-between;
+        @include Column(repeat(5, auto));
+
+        .Btn {
+            width: 100%;
+            height: 20vw;
+            position: relative;
+            border-radius: 10px;
+            border: 2px solid black;
+
+            .Imagen {
+                width: 100%;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                }
+            }
+
+            .Text {
+                top: 50%;
+                left: 50%;
+                color: white;
+                padding: 2px 5px;
+                position: absolute;
+                border-radius: 10px;
+                transform: translate(-50%, -50%);
+                background-color: rgb(0, 0, 0, .6);
+            }
+
+            .Hitbox {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
+        }
+    }
+}
+
+/* ----------------------- AddUser ----------------------- */
+#AddUser {
+    @include Espacio();
+
+    .BtnsSDC {
+        margin-top: 20px;
+    }
+}
+
+/* ----------------------- Usuarios ----------------------- */
+#Usuarios {
+    overflow-x: auto;
+    @include Espacio();
+
+    .Tabla {
+        tr {
+
+            th,
+            td {
+                padding: 2px 10px;
+                max-width: 240px;
+                border: 2px solid black;
+
+                .Title,
+                .Text {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+
+                    &.Id {
+                        font: {
+                            weight: bold;
+                        }
+
+                        text-align: center;
+                    }
+                }
+            }
+
+            th {
+                text-align: center;
+            }
+
+            .Botones {
+                padding: 2px;
+
+                .Btns {
+                    flex-wrap: nowrap;
+                    display: inline-flex;
+
+                    .Btn {
+                        color: white;
+                        margin-left: 5px;
+                        position: relative;
+                        padding: 2px 5px;
+                        align-items: center;
+                        border-radius: 5px;
+                        border: 2px solid black;
+                        @include Column(max-content max-content);
+
+                        img {
+                            @include Icon(25px, 2.6vw, 50px);
+                        }
+
+                        &.Editar {
+                            background: {
+                                color: rgb(0, 130, 0);
+                            }
+                        }
+
+                        &.Eliminar {
+                            background: {
+                                color: rgb(180, 0, 0);
+                            }
+                        }
+
+                        &:first-child {
+                            margin: 0;
+                        }
+
+                        .Hitbox {
+                            @include Hitbox();
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(odd) {
+                background: {
+                    color: rgb(145, 145, 150);
+                }
+
+                .Text {
+                    color: white;
+                }
+            }
+
+            &:nth-child(even) {
+                background: {
+                    color: rgb(255, 255, 255);
+                }
+            }
+        }
+    }
+}
+
+/* ============================ Biblioteca ============================ */
+/* ----------------------- HeaderBi ----------------------- */
+#HeaderBi {
+    @include Espacio();
+
+    .Imagenes {
+        position: relative;
+        margin-bottom: 120px;
+        @include Column(repeat(2, auto));
+        grid-column-gap: 0;
+
+        .Img1,
+        .Img2 {
+            width: 100%;
+            height: 100%;
+        }
+
+        .Img1 {
+            border-radius: 0 0 0 20px;
+        }
+
+        .Img2 {
+            border-radius: 0 0 20px 0;
+        }
+
+        .JulioFlorez {
+            left: 50%;
+            top: 100%;
+            position: absolute;
+            border-radius: 100%;
+            border: 3px solid $ColorRN;
+            transform: translate(-50%, -50%);
+            @include Icon(200px, 18vw, 400px);
+        }
+    }
+
+    .Info {
+        @include Espacio();
+
+        .Title {
+            text-align: center;
+        }
+
+        .SubText {
+            font: {
+                style: italic;
+                weight: bold;
+            }
+
+            color: $ColorVN;
+            text-align: center;
+        }
+    }
+}
+
+/* ----------------------- Encargado ----------------------- */
+#Encargado {
+    @include Espacio();
+    align-items: center;
+    @include Column(max-content auto);
+    grid-column-gap: 20px;
+
+    .Imagen {
+        @include Icon(200px, 22vw, 600px);
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            box-shadow: 0 0 20px black;
+        }
+    }
+}
+
+/* ----------------------- Frase ----------------------- */
+#Frase {
+    @include Espacio();
+    align-items: center;
+    @include Column(40% auto);
+    grid-column-gap: 20px;
+
+    .Imagen {
+        img {
+            width: 100%;
+        }
+    }
+
+    .Info {
+        height: 100%;
+        overflow: auto;
+        position: relative;
+        min-height: max-content;
+
+        .Caja {
+            position: absolute;
+
+            .Title {
+                text-align: center;
+            }
+        }
+    }
+}
+
+/* ----------------------- Importancia ----------------------- */
+#Importancia {
+    @include Espacio();
+    align-items: center;
+    @include Column(25% auto);
+
+    .Imagen1 {
+        grid-row: 1/4;
+    }
+
+    .Caja {
+        align-items: center;
+        @include Column(25% auto);
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* ----------------------- Libros ----------------------- */
+#Libros {
+    @include Espacio();
+
+    .MainCarousel {
+        border: $None;
+        margin-top: 20px;
+
+        .Hitbox {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+
+            .Title {
+                background: {
+                    color: rgba(0, 0, 0, .5);
+                }
+
+                top: 50%;
+                left: 50%;
+                width: 80%;
+                padding: 5px;
+                color: white;
+                position: absolute;
+                text-align: center;
+                border-radius: 10px;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &[data-cards="6"] {
+            height: 20vw;
+
+            .Hitbox {
+                box-shadow: inset 0 -10vw 10vw white;
+            }
+        }
+
+        &[data-cards="5"] {
+            height: 25vw;
+
+            .Hitbox {
+                box-shadow: inset 0 -13.5vw 13.5vw white;
+            }
+        }
+
+        &[data-cards="4"] {
+            height: 32vw;
+
+            .Hitbox {
+                box-shadow: inset 0 -16vw 16vw white;
+            }
+        }
+
+        &[data-cards="3"] {
+            height: 40vw;
+
+            .Hitbox {
+                box-shadow: inset 0 -20vw 20vw white;
+            }
+        }
+    }
+}
+
+/* ----------------------- Garcia ----------------------- */
+#Garcia {
+    @include Espacio();
+    @include Column(35% auto);
+
+    .Title {
+        color: $ColorRN;
+    }
+
+    .Autor {
+        height: 100%;
+        grid-row: 1/5;
+        overflow: auto;
+        position: relative;
+
+        img {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .Caja {
+            position: absolute;
+        }
+    }
+
+    .Libro {
+        align-items: center;
+        margin-bottom: 10px;
+        @include Column(30% auto);
+
+        img {
+            width: 100%;
+        }
+
+        &.Num2 {
+            @include Column(auto 30%);
+        }
+    }
+}
+
+/* ============================ Libreria ============================ */
+/* ----------------------- AddLib ----------------------- */
+#AddLib {
+    @include Espacio();
+    @include Column(40% auto);
+
+    .Archivos {
+        @include Row(50% auto);
+
+        .Input {
+            background: {
+                color: rgb(110, 110, 110, .4);
+            }
+
+            position: relative;
+            border-radius: 10px;
+            border: 2px dashed rgb(110, 110, 110);
+
+            .File {
+                top: 0;
+                left: 0;
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+                filter: opacity(0);
+                position: absolute;
+            }
+
+            .Texto {
+                left: 0;
+                top: 50%;
+                width: 100%;
+                position: absolute;
+                padding: 2px 10px;
+                transform: translate(0, -50%);
+
+                .Title,
+                .Text {
+                    font: {
+                        weight: bold;
+                    }
+
+                    color: white;
+                    overflow: hidden;
+                    text-align: center;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+    }
+
+    .Formulario {
+        .Columna {
+            margin-bottom: 10px;
+
+            .form-label {
+                color: $ColorRN;
+            }
+
+            .form-control {
+                padding: 0 10px;
+                max-height: 160px;
+                border: 2px solid black;
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    .Botones {
+        grid-column: 1/3;
+        margin-top: 20px;
+        display: inline-flex;
+
+        .Btn {
+            transition: .2s;
+            position: relative;
+            margin-left: 10px;
+            padding: 2px 10px;
+            align-items: center;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            @include Column(max-content auto);
+
+            .Image {
+                position: relative;
+                @include Icon(30px, 3.6vw, 60px);
+
+                img {
+                    top: 50%;
+                    left: 50%;
+                    width: 70%;
+                    height: 70%;
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .Text {
+                font: {
+                    weight: bold;
+                }
+
+                color: white;
+            }
+
+            .Hitbox {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
+
+            &.Guardar {
+                background: {
+                    color: rgb(0, 180, 0);
+                }
+            }
+
+            &.Eliminar {
+                background: {
+                    color: rgb(180, 0, 0);
+                }
+            }
+
+            &.Cancelar {
+                background: {
+                    color: rgb(180, 180, 0);
+                }
+            }
+
+            &:hover {
+                padding: 2px 15px
+            }
+        }
+    }
+
+    &.was-validated {
+
+        .form-control:valid,
+        .form-select:valid {
+            border: 2px solid rgb(0, 130, 0);
+        }
+
+        .form-control:invalid,
+        .form-select:invalid {
+            border: 2px solid rgb(200, 0, 0);
+        }
+    }
+}
+
+/* ----------------------- Libreria ----------------------- */
+#Libreria {
+    @include Espacio();
+
+    .Encabezado {
+        height: 8vw;
+        position: relative;
+        margin-bottom: 40px;
+        border-top: 4vw solid orange;
+        border-left: 2vw solid transparent;
+        border-bottom: 4vw solid orange;
+        border-right: 2vw solid transparent;
+
+        .Title {
+            top: 50%;
+            left: 20px;
+            color: white;
+            position: absolute;
+            padding: 10px 20px;
+            transform: translate(0, -50%);
+        }
+    }
+
+    .Seccion {
+        justify-content: center;
+        @include Column(repeat(6, 16%));
+
+        .Libro {
+            background: {
+                color: rgb(40, 45, 60);
+            }
+
+            width: 100%;
+            height: 20vw;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid black;
+
+            .Portada {
+                left: 0;
+                top: 50%;
+                width: 100%;
+                position: absolute;
+                transform: translate(0, -50%);
+            }
+
+            .PDF {
+                background: {
+                    color: rgb(0, 0, 0, .6);
+                }
+
+                top: 0;
+                left: 0;
+                z-index: 2;
+                padding: 2px;
+                position: absolute;
+                border-radius: 0 0 5px 0;
+                border-right: 2px solid black;
+                @include Icon(24px, 3.6vw, 60px);
+                border-bottom: 2px solid black;
+            }
+
+            .Shadow {
+                top: 120%;
+                left: -10%;
+                width: 120%;
+                height: 110%;
+                transition: .2s;
+                position: absolute;
+                box-shadow: inset 0 -6vw 8vw 1vw black;
+
+                .Text {
+                    background: {
+                        color: rgb(0, 0, 0, .6);
+                    }
+
+                    top: 50%;
+                    left: 50%;
+                    color: white;
+                    padding: 2px 5px;
+                    position: absolute;
+                    border-radius: 10%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .Corazones {
+                background: {
+                    color: rgba(0, 0, 0, .6);
+                }
+
+                right: 0;
+                bottom: 0;
+                padding: 0 2px;
+                position: absolute;
+                align-items: center;
+                border-radius: 5px 0 0 0;
+                border-top: 2px solid black;
+                border-left: 2px solid black;
+                @include Column(max-content auto);
+
+                img {
+                    @include Icon(20px, 2.6vw, 50px);
+                }
+
+                .Text {
+                    font: {
+                        weight: bold;
+                    }
+
+                    color: white;
+                }
+            }
+
+            .Hitbox {
+                top: 0;
+                left: 0;
+                z-index: 10;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
+
+            &:hover {
+                .Shadow {
+                    top: -10%;
+                }
+            }
+        }
+    }
+}
+
+/* ============================ Libros ============================ */
+/* ----------------------- Vista ----------------------- */
+#Vista {
+    @include Espacio();
+    @include Column(40% auto);
+
+    .Portada {
+        .Imagen {
+            position: relative;
+
+            .Porta {
+                width: 100%;
+                border: 3px solid black;
+            }
+
+            .Valoracion {
+                background: {
+                    color: rgb(0, 0, 0, .6);
+                }
+
+                left: 0;
+                bottom: 0;
+                padding: 2px 5px;
+                position: absolute;
+                align-items: center;
+                border-radius: 0 10px 0 0;
+                border-top: 3px solid black;
+                border-right: 3px solid black;
+                @include Column(max-content auto);
+
+                .Image {
+                    @include Icon(30px, 3.5vw, 50px);
+                }
+
+                .Text {
+                    font: {
+                        weight: bold;
+                    }
+
+                    color: white;
+                }
+
+                .Hitbox {
+                    @include Hitbox();
+                }
+            }
+        }
+
+        .Title {
+            text-align: center;
+        }
+    }
+
+    .Box {
+        height: 100%;
+        @include Row(auto max-content);
+
+        .Resenas {
+            position: relative;
+
+            .Caja {
+                height: 100%;
+                overflow: auto;
+                position: absolute;
+
+                .Resena {
+                    width: 90%;
+                    position: relative;
+                    margin-top: 35px;
+                    margin-right: 30px;
+                    @include Column(max-content auto);
+                    grid-column-gap: 15px;
+
+                    .Imagen {
+                        position: relative;
+                        @include Icon(40px, 5.2vw, 60px);
+
+                        img {
+                            left: 0;
+                            top: 50%;
+                            width: 100%;
+                            position: absolute;
+                            border-radius: 100%;
+                            border: 2px solid black;
+                            transform: translate(0, -50%);
+                        }
+                    }
+
+                    .BoxCaja {
+                        position: relative;
+
+                        .Tabla {
+                            background: {
+                                color: rgb(255, 255, 255);
+                            }
+
+                            padding: 5px;
+                            overflow: hidden;
+                            border-radius: 10px;
+                            border: 2px solid black;
+
+                            .Elementos {
+                                border-bottom: 1.5px solid rgb(153, 151, 151);
+
+                                .SubElement {
+                                    @include Column(auto max-content);
+                                }
+                            }
+
+                            .Direc {
+                                font: {
+                                    weight: bold;
+                                }
+
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+
+                                &.Rol {
+                                    color: rgb(102, 102, 102);
+                                }
+
+                                &.Hora {
+                                    padding: 0 10px;
+                                }
+
+                                &.Fecha,
+                                &.Hora {
+                                    color: $ColorVN;
+                                    text-align: right;
+                                }
+
+                                &.MinText {
+                                    font: {
+                                        weight: bold;
+                                    }
+
+                                    @include Font(17px, 1.8vw, 26px, $FamilyFont, 0);
+                                }
+                            }
+                        }
+
+                        &::before {
+                            width: 0;
+                            height: 0;
+                            top: 10px;
+                            content: '';
+                            right: 100%;
+                            display: block;
+                            position: absolute;
+                            border-style: solid;
+                            border-width: 10px 10px 10px 0;
+                            border-color: transparent black;
+                        }
+                    }
+
+                    .Asunto {
+                        padding: 5px;
+                        overflow: auto;
+                        padding-top: 0;
+                        max-height: 200px;
+                        margin-bottom: 5px;
+                    }
+
+                    .Reportar {
+                        background: {
+                            color: $ColorRN;
+                        }
+
+                        top: 0;
+                        left: 100%;
+                        padding: .8vw;
+                        border-radius: 100%;
+                        position: absolute;
+                        border: 2px solid black;
+                        transform: translate(-50%, -50%);
+                        @include Icon(30px, 4.5vw, 60px);
+
+                        img {
+                            top: 50%;
+                            left: 50%;
+                            width: 70%;
+                            height: 70%;
+                            position: absolute;
+                            transform: translate(-50%, -50%);
+                        }
+
+                        .HitboxR {
+                            @include Hitbox();
+                        }
+                    }
+                }
+            }
+
+            .SinNotificaciones {
+                background: {
+                    color: rgba(170, 170, 170, 0.8);
+                }
+
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                border-radius: 10px;
+
+                .Title {
+                    left: 0;
+                    top: 50%;
+                    width: 100%;
+                    color: white;
+                    padding: 0 10px;
+                    position: absolute;
+                    text-align: center;
+                    transform: translate(0, -50%);
+                }
+            }
+        }
+
+        .Publicacion {
+            .form-control {
+                padding: 0 10px;
+                min-height: 80px;
+                max-height: 140px;
+                border-radius: 5px;
+                border: 2px solid black;
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+
+            .Caja {
+                position: relative;
+
+                .TextArea {
+                    border-radius: 0 10px 10px 10px;
+
+                }
+
+                &:before {
+                    background: {
+                        color: rgb(0, 0, 0);
+                    }
+
+                    top: 0;
+                    left: 0;
+                    content: '';
+                    width: 10px;
+                    height: 10px;
+                    position: absolute;
+                    border-radius: 100%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .Botones {
+                margin-top: 10px;
+                display: inline-flex;
+
+                .Btn {
+                    transition: .2s;
+                    position: relative;
+                    padding: 2px 5px;
+                    margin-right: 10px;
+                    align-items: center;
+                    border-radius: 10px;
+                    margin-bottom: 10px;
+                    @include Column(max-content auto);
+
+                    .Image {
+                        position: relative;
+                        @include Icon(30px, 3.6vw, 60px);
+
+                        img {
+                            top: 50%;
+                            left: 50%;
+                            width: 70%;
+                            height: 70%;
+                            position: absolute;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+
+                    .Text {
+                        font: {
+                            weight: bold;
+                        }
+
+                        color: white;
+                    }
+
+                    .Hitbox {
+                        @include Hitbox();
+                    }
+
+                    &.Publicar {
+                        background: {
+                            color: rgb(0, 180, 0);
+                        }
+                    }
+
+                    &.Cancelar {
+                        background: {
+                            color: rgb(180, 180, 0);
+                        }
+                    }
+
+                    &:hover {
+                        padding: 2px 10px
+                    }
+                }
+            }
+
+            &.was-validated {
+                .form-control:valid {
+                    border: 2px solid rgb(0, 130, 0);
+                }
+
+                .form-control:invalid {
+                    border: 2px solid rgb(200, 0, 0);
+                }
+            }
+
+        }
+    }
+}
+
+/* ----------------------- PDFLibro ----------------------- */
+#PDFLibro {
+    @include Espacio();
+    @include Column(50% auto);
+
+    .PDF {
+        height: 100%;
+        position: relative;
+        min-height: 500px;
+
+        .PDFVisual {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+    }
+
+    .SinPDF {
+        background: {
+            color: rgb(110, 110, 110, .4);
+        }
+
+        position: relative;
+        border: 2px solid rgb(110, 110, 110);
+
+        .Title {
+            left: 0;
+            top: 50%;
+            width: 100%;
+            color: white;
+            position: absolute;
+            text-align: center;
+            padding: 2px 10px;
+            transform: translate(0, -50%);
+        }
+    }
+}
+
+/* ============================ Comedor ============================ */
+/* ----------------------- Secciones ----------------------- */
+#Secciones {
+    display: grid;
+    @include Espacio();
+    grid-row-gap: 40px;
+
+    .Contenedor {
+        .Title {
+            color: $ColorVN;
+        }
+
+        align-items: center;
+        @include Column(40% auto);
+
+        .Card {
+            width: 90%;
+            margin: auto;
+            transition: .6s;
+            overflow: hidden;
+            position: relative;
+            border-radius: 20px;
+            box-shadow: 0 0 10px $FontColorD;
+
+            .Imagen {
+                width: 100%;
+                height: 28vw;
+                overflow: hidden;
+                position: relative;
+
+                img {
+                    left: 0;
+                    top: 50%;
+                    width: 100%;
+                    position: absolute;
+                    transform: translate(0, -50%);
+                }
+            }
+
+            .Info {
+                top: 0;
+                left: 0;
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                transition: .6s;
+                position: absolute;
+                background: linear-gradient(90deg, rgba(27, 124, 235, 0.3), rgba(0, 128, 106, 0.3));
+
+                .Title,
+                .Text {
+                    background: {
+                        color: rgba(0, 0, 0, .4);
+                    }
+
+                    left: 50%;
+                    transition: .6s;
+                    color: white;
+                    position: absolute;
+                    padding: 5px 10px;
+                    border-radius: 10px;
+                    transform: translate(-50%, 0);
+                }
+
+                .Title {
+                    top: -10%;
+                    width: max-content;
+                }
+
+                .Text {
+                    width: 100%;
+                    bottom: -10%;
+                }
+            }
+
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 20px $FontColorD;
+
+                .Info {
+                    opacity: 1;
+
+                    .Title {
+                        top: 10px;
+                    }
+
+                    .Text {
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+
+        &[data-orientacion="right"] {
+            @include Column(auto 40%);
+        }
+    }
+}
+
+/* ----------------------- Menu ----------------------- */
+#Menu {
+    @include Espacio();
+    @include Column(60% auto);
+
+    .PDF {
+        height: 100%;
+        position: relative;
+        min-height: 500px;
+
+        .PDFVisual {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+    }
+
+    .SinPDF {
+        background: {
+            color: rgb(110, 110, 110, .4);
+        }
+
+        position: relative;
+        border: 2px solid rgb(110, 110, 110);
+
+        .Title {
+            left: 0;
+            top: 50%;
+            width: 100%;
+            position: absolute;
+            text-align: center;
+            padding: 2px 10px;
+            color: rgb(50, 50, 50);
+            transform: translate(0, -50%);
+        }
+    }
+
+    .MenuMes {
+        .Input {
+            background: {
+                color: rgb(110, 110, 110, .4);
+            }
+
+            height: 20vw;
+            position: relative;
+            min-height: 160px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px dashed rgb(110, 110, 110);
+
+            .InputPDF {
+                top: 0;
+                left: 0;
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+                filter: opacity(0);
+                position: absolute;
+            }
+
+            .Texto {
+                top: 50%;
+                width: 100%;
+                position: absolute;
+                transform: translate(0, -50%);
+
+                .Title,
+                .Text {
+                    font: {
+                        weight: bold;
+                    }
+
+                    width: 100%;
+                    overflow: hidden;
+                    padding: 2px 5px;
+                    text-align: center;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    color: rgb(50, 50, 50);
+                }
+            }
+        }
+
+        .Botones {
+            .Btn {
+                transition: .2s;
+                position: relative;
+                padding: 2px 10px;
+                align-items: center;
+                border-radius: 10px;
+                margin-bottom: 10px;
+                @include Column(max-content auto);
+
+                .Image {
+                    position: relative;
+                    @include Icon(30px, 3.6vw, 60px);
+
+                    img {
+                        top: 50%;
+                        left: 50%;
+                        width: 70%;
+                        height: 70%;
+                        position: absolute;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+
+                .Text {
+                    font: {
+                        weight: bold;
+                    }
+
+                    color: white;
+                }
+
+                .Hitbox {
+                    @include Hitbox();
+                }
+
+                &.Guardar {
+                    background: {
+                        color: rgb(0, 180, 0);
+                    }
+                }
+
+                &.Eliminar {
+                    background: {
+                        color: rgb(180, 0, 0);
+                    }
+                }
+
+                &.Cancelar {
+                    background: {
+                        color: rgb(180, 180, 0);
+                    }
+                }
+
+                &:hover {
+                    padding: 2px 15px
+                }
+            }
+        }
+    }
+}
+
+/* ============================ Orientación ============================ */
+/* ----------------------- Educativa ----------------------- */
+#QueEsLaOrientacion {
+    @include Espacio();
+    border-radius: 10px;
+    @include Column(40% auto);
+
+    img {
+        width: 100%;
+    }
+
+    .Info {
+        margin: 5px;
+        overflow: auto;
+        position: relative;
+
+        .Caja {
+            height: 100%;
+            padding: 10px;
+            position: absolute;
+            border-radius: 10px;
+            border: 3px solid $ColorRN;
+        }
+    }
+}
+
+/* ----------------------- Educativa ----------------------- */
+#Educativa {
+    @include Espacio();
+
+    img {
+        float: left;
+        width: 36vw;
+        margin-right: 10px;
+    }
+}
+
+/* ----------------------- Bienestar ----------------------- */
+#Bienestar {
+    @include Espacio();
+
+    .Url {
+        width: 80%;
+        margin: auto;
+        display: block;
+        margin-bottom: 20px;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+/* ============================ Servicio Social ============================ */
+/* ----------------------- ServicioSocial ----------------------- */
+#ServicioSocial {
+    @include Espacio();
+
+    .Space {
+        width: 100%;
+    }
+
+    .Contenedor-Tabla {
+        overflow-x: auto;
+
+        .Tabla {
+            width: 100%;
+            margin-bottom: 20px;
+
+            tr {
+
+                th,
+                td {
+                    padding: 2px 10px;
+                    max-width: 240px;
+                    border: 2px solid black;
+
+                    .Text {
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+
+                        &.Left {
+                            text-align: left;
+                        }
+
+                        &.H {
+                            text-align: center;
+                        }
+                    }
+
+                    &.MaxWidht {
+                        max-width: max-content;
+                    }
+                }
+
+                th {
+                    text-align: center;
+                }
+
+                .Botones {
+                    padding: 2px;
+                    max-width: max-content;
+                }
+
+                .Btns {
+                    flex-wrap: nowrap;
+                    display: inline-flex;
+
+                    .Btn {
+                        color: white;
+                        margin-left: 5px;
+                        position: relative;
+                        padding: 2px 5px;
+                        align-items: center;
+                        border-radius: 5px;
+                        border: 2px solid black;
+                        @include Column(max-content max-content);
+
+                        img {
+                            @include Icon(25px, 2.6vw, 50px);
+                        }
+
+                        &.Verificar {
+                            background: {
+                                color: rgb(250, 190, 0);
+                            }
+                        }
+
+                        &.Agregar {
+                            background: {
+                                color: rgb(0, 100, 200);
+                            }
+                        }
+
+                        &.Editar {
+                            background: {
+                                color: rgb(0, 130, 0);
+                            }
+                        }
+
+                        &.Eliminar {
+                            background: {
+                                color: rgb(180, 0, 0);
+                            }
+                        }
+
+                        &:first-child {
+                            margin: 0;
+                        }
+
+                        .Hitbox {
+                            @include Hitbox();
+                        }
+                    }
+                }
+
+                &:nth-child(odd) {
+                    background: {
+                        color: rgb(145, 145, 150);
+                    }
+
+                    .Text {
+                        color: white;
+                    }
+                }
+
+                &:nth-child(even) {
+                    background: {
+                        color: rgb(255, 255, 255);
+                    }
+                }
+            }
+        }
+    }
+
+    .SinServicio {
+        height: max-content;
+        border: 2px solid black;
+        background-color: rgba(170, 170, 170, 0.8);
+
+        .Title {
+            text-align: center;
+            padding: 20px 10px;
+        }
+    }
+}
+
+/* ----------------------- MoreHours ----------------------- */
+#MoreHours {
+    @include Espacio();
+
+    .Elemento {
+        margin-bottom: 10px;
+
+        .Input {
+            &.HrsMin {
+                @include Column(max-content auto max-content auto);
+                grid-column-gap: 0;
+
+                .Title {
+                    padding: 0 2px;
+                }
+            }
+        }
+    }
+}
+
+/* ----------------------- ServicioVerificado ----------------------- */
+#ServicioVerificado {
+    padding: 10px;
+    position: relative;
+    padding-top: 4vw;
+    @include Espacio();
+    border: 2px solid black;
+    background-color: white;
+    margin-top: 40px;
+
+    .Titulo {
+        top: 0;
+        left: 5vw;
+        padding: 0 10px;
+        position: absolute;
+        margin-right: 20%;
+        transform: translate(0, -50%);
+
+        .Title {
+            color: rgb(250, 200, 0);
+            -webkit-text-stroke: 2px black;
+            font-family: 'Comic Sans MS', 'Arial';
+        }
+
+        .Line {
+            left: 0;
+            top: 50%;
+            z-index: -1;
+            height: 5px;
+            width: 100%;
+            position: absolute;
+            background-color: white;
+            transform: translate(0, -50%);
+        }
+    }
+
+    .Text {
+        &.T2 {
+            margin-top: 40px;
+            padding-right: 12vw;
+        }
+    }
+
+    .Escudo {
+        float: left;
+        margin-right: 10px;
+        @include Icon(40px, 8vw, 160px);
+    }
+
+    .Medalla {
+        right: 0;
+        top: 100%;
+        position: absolute;
+        transform: translate(0, -50%);
+        @include Icon(60px, 14vw, 200px);
+    }
+}
+
+/* ----------------------- AddServicioSocial ----------------------- */
+#AddServicioSocial {
+    .BtnsSDC {
+        margin-top: 20px;
+    }
+}
+
+/* ============================ Perfil ============================ */
+/* ----------------------- Perfil ----------------------- */
+#Perfil {
+    @include Espacio();
+    @include Column(30% auto);
+
+    .Informacion {
+        padding: 0 10px;
+        overflow: hidden;
+        border-right: 3px solid $ColorRN;
+
+        .Imagen {
+            margin: 0 auto;
+            position: relative;
+            border-radius: 100%;
+            margin-bottom: 20px;
+            @include Icon(100px, 18vw, 500px);
+
+            .Perfil {
+                background: {
+                    color: black;
+                }
+
+                top: 50%;
+                width: 100%;
+                position: absolute;
+                border-radius: 100%;
+                border: 3px solid black;
+                transform: translate(0, -50%);
+            }
+
+            .EditarIcon {
+                background: {
+                    color: $ColorRN;
+                }
+
+                top: 5px;
+                right: 5px;
+                position: absolute;
+                border-radius: 100%;
+                border: 2px solid black;
+                @include Icon(30px, 4.5vw, 60px);
+
+                img {
+                    top: 50%;
+                    left: 50%;
+                    width: 70%;
+                    height: 70%;
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .EditarFoto {
+                background: {
+                    color: rgba(0, 0, 0, 0);
+                }
+
+                width: 100%;
+                height: 100%;
+                transition: .4s;
+                filter: opacity(0);
+                position: absolute;
+                border-radius: 100%;
+
+                img {
+                    top: 50%;
+                    left: 50%;
+                    position: absolute;
+                    @include Icon(30px, 3.6vw, 60px);
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            &:hover {
+                .EditarFoto {
+                    background: {
+                        color: rgba(0, 0, 0, .6);
+                    }
+
+                    filter: opacity(1);
+                }
+            }
+        }
+
+        .Tabla {
+            .Item {
+                padding-bottom: 15px;
+                border-bottom: 1px solid $ColorRN;
+
+                .Text {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+
+                    &.Sub {
+                        font: {
+                            weight: bold;
+                        }
+
+                        color: $ColorVN;
+                    }
+                }
+
+                &:last-child {
+                    border: $None;
+                }
+            }
+        }
+    }
+
+    .Box {
+        height: 100%;
+        @include Row(auto max-content);
+
+        .Notificaciones {
+            overflow: auto;
+            position: relative;
+            min-height: 600px;
+
+            .Caja {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                padding-right: 30px;
+
+                .Notificacion {
+                    width: 100%;
+                    position: relative;
+                    margin-top: 35px;
+                    @include Column(max-content auto);
+                    grid-column-gap: 15px;
+
+                    .Perfi {
+                        position: relative;
+                        height: max-content;
+
+                        .Imagen {
+                            position: relative;
+                            @include Icon(40px, 5.2vw, 60px);
+
+                            img {
+                                left: 0;
+                                top: 50%;
+                                width: 100%;
+                                position: absolute;
+                                border-radius: 100%;
+                                border: 2px solid black;
+                                transform: translate(0, -50%);
+                            }
+                        }
+
+                        .Important {
+                            background: {
+                                color: $ColorRN;
+                            }
+
+                            top: 90%;
+                            left: 90%;
+                            display: none;
+                            position: absolute;
+                            border-radius: 100%;
+                            border: 2px solid black;
+                            @include Icon(30px, 3vw, 30px);
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+
+                    .BoxCaja {
+                        position: relative;
+
+                        .Tabla {
+                            background: {
+                                color: rgb(255, 255, 255);
+                            }
+
+                            padding: 5px;
+                            overflow: hidden;
+                            border-radius: 10px;
+                            border: 2px solid black;
+
+                            .Elementos {
+                                border-bottom: 1.5px solid rgb(153, 151, 151);
+
+                                .SubElement {
+                                    @include Column(auto max-content);
+                                }
+                            }
+
+                            .Direc {
+                                font: {
+                                    weight: bold;
+                                }
+
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+
+                                &.Rol {
+                                    color: rgb(102, 102, 102);
+                                }
+
+                                &.Hora {
+                                    padding: 0 10px;
+                                }
+
+                                &.Fecha,
+                                &.Hora {
+                                    color: $ColorVN;
+                                    text-align: right;
+                                }
+
+                                &.MinText {
+                                    font: {
+                                        weight: bold;
+                                    }
+
+                                    @include Font(15px, 1.8vw, 26px, $FamilyFont, 0);
+                                }
+                            }
+
+                            .Info {
+                                @include Column(max-content auto);
+
+                                .Text {
+                                    overflow: hidden;
+                                    white-space: nowrap;
+                                    text-overflow: ellipsis;
+
+                                    &.Imp {
+                                        font: {
+                                            weight: bold;
+                                        }
+                                    }
+
+                                    &.Ti {
+                                        font: {
+                                            weight: bold;
+                                        }
+                                    }
+                                }
+
+                                &.Under {
+                                    border-bottom: 1.5px solid rgb(153, 151, 151);
+
+                                    .Tags {
+                                        display: flex;
+                                        overflow: hidden;
+                                        position: relative;
+                                        flex-wrap: nowrap;
+
+                                        .Para {
+                                            right: 0;
+                                            color: white;
+                                            padding-right: 0;
+                                            padding-left: 5px;
+                                            position: absolute;
+                                            font-weight: bold;
+                                            background-color: $ColorVN;
+
+                                            span {
+                                                padding: 2px;
+                                                box-shadow: -1vw 0vw 1vw 0.5vw $ColorVN;
+                                            }
+                                        }
+
+                                        .Text {
+                                            overflow: visible;
+                                            padding-right: 5px;
+                                            text-overflow: clip;
+                                            white-space: nowrap;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &::before {
+                            width: 0;
+                            height: 0;
+                            top: 10px;
+                            content: '';
+                            right: 100%;
+                            display: block;
+                            position: absolute;
+                            border-style: solid;
+                            border-width: 10px 10px 10px 0;
+                            border-color: transparent black;
+                        }
+                    }
+
+                    .Asunto {
+                        padding: 5px;
+                        overflow: auto;
+                        padding-top: 0;
+                        max-height: 200px;
+                    }
+
+                    .Elm-Rep {
+                        top: 0;
+                        right: 10px;
+                        border: $None;
+                        position: absolute;
+                        display: inline-flex;
+                        align-items: flex-end;
+                        transform: translate(0, -60%);
+
+                        .Hitbox {
+                            @include Hitbox();
+                        }
+
+                        .Reportar,
+                        .Eliminar {
+                            position: relative;
+                            border-radius: 100%;
+                            border: 2px solid black;
+                            background-color: rgb(200, 0, 0);
+                        }
+
+                        .Reportar {
+                            margin-left: 10px;
+                            @include Icon(30px, 4.2vw, 60px);
+                        }
+
+                        .Eliminar {
+                            @include Icon(24px, 3.5vw, 54px);
+                        }
+                    }
+
+                    .Like {
+                        background: {
+                            color: white;
+                        }
+
+                        top: 100%;
+                        left: 15px;
+                        padding: 2px;
+                        position: absolute;
+                        align-items: center;
+                        padding-right: 10px;
+                        border-radius: 10px;
+                        transform: translate(0, -50%);
+                        @include Column(max-content auto);
+
+                        img {
+                            @include Icon(25px, 3.4vw, 40px);
+                        }
+
+                        .Text {
+                            font: {
+                                weight: bold;
+                            }
+                        }
+
+                        .Hitbox {
+                            @include Hitbox();
+                        }
+                    }
+
+                    &[data-important="true"] {
+                        .Imp {
+                            color: rgb(202, 0, 0);
+
+                            &.Ti {
+                                color: rgb(170, 0, 0);
+                            }
+                        }
+
+                        .Important {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            .SinNotificaciones {
+                background: {
+                    color: rgba(170, 170, 170, 0.8);
+                }
+
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                border-radius: 10px;
+
+                .Title {
+                    left: 0;
+                    top: 50%;
+                    width: 100%;
+                    color: white;
+                    padding: 0 10px;
+                    position: absolute;
+                    text-align: center;
+                    transform: translate(0, -50%);
+                }
+            }
+        }
+
+        .Btn-Form-Publicar {
+            border: $None;
+            padding: 5px 10px;
+            align-items: center;
+            background-color: $ColorVN;
+            border-radius: 10px 10px 0 0;
+            @include Column(max-content auto max-content);
+
+            .Imagen {
+                position: relative;
+                border-radius: 100%;
+                border: 2px solid black;
+                @include Icon(40px, 5vw, 60px);
+
+                img {
+                    left: 0;
+                    top: 50%;
+                    width: 100%;
+                    position: absolute;
+                    border-radius: 100%;
+                    transform: translate(0, -50%);
+                }
+            }
+
+            .Text {
+                text-align: left;
+                overflow: hidden;
+                padding: 4px 20px;
+                border-radius: 40px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                border: 2px solid black;
+                background-color: rgb(226, 226, 226);
+            }
+
+            .Icon {
+                @include Icon(30px, 4vw, 50px);
+            }
+        }
+    }
+}
+
+/* ----------------------- Editar ----------------------- */
+#EditarPerfil {
+    left: 50%;
+    top: -50%;
+    z-index: 100;
+    position: fixed;
+    transform: translate(-50%, -50%);
+
+    .Caja {
+        background: {
+            color: rgba(0, 0, 0, .5);
+        }
+
+        margin: auto;
+        padding: 20px;
+        position: relative;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        border: 2px solid black;
+
+        .EditImg {
+            background: {
+                color: rgb(110, 110, 110, .4);
+            }
+
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            @include Icon(150px, 24vw, 300px);
+            border: 2px dashed rgb(110, 110, 110);
+
+            .Img {
+                position: absolute;
+
+                &[data-size="Width"] {
+                    left: 0;
+                    top: 50%;
+                    width: 100%;
+                    height: max-content;
+                    transform: translate(0, -50%);
+                }
+
+                &[data-size="Height"] {
+                    top: 0;
+                    left: 50%;
+                    height: 100%;
+                    width: max-content;
+                    transform: translate(-50%, 0);
+                }
+            }
+        }
+
+        .Title {
+            max-width: 220px;
+        }
+
+        .Text {
+            max-width: 260px;
+        }
+
+        .Title,
+        .Text {
+            margin: auto;
+            color: white;
+            padding: 0 5px;
+            overflow: hidden;
+            width: max-content;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .Hitbox {
+            top: 0;
+            left: 0;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            filter: opacity(0);
+            position: absolute;
+        }
+    }
+
+    .Botones {
+        background: {
+            color: rgba(0, 0, 0, .5);
+        }
+
+        padding: 10px;
+        border-radius: 10px;
+        border: 2px solid black;
+        @include Column(repeat(3, auto));
+
+        .Btn {
+            border: $None;
+            position: relative;
+            padding: 2px 5px;
+            align-items: center;
+            border-radius: 10px;
+            @include Column(max-content auto);
+            grid-column-gap: 0;
+
+            .Image {
+                position: relative;
+                @include Icon(30px, 3.6vw, 60px);
+
+                img {
+                    top: 50%;
+                    left: 50%;
+                    width: 70%;
+                    height: 70%;
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .Text {
+                color: white;
+            }
+
+            .Hitbox {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
+
+            &.Guardar {
+                background: {
+                    color: rgb(0, 180, 0);
+                }
+            }
+
+            &.Eliminar {
+                background: {
+                    color: rgb(180, 0, 0);
+                }
+            }
+
+            &.Cancelar {
+                background: {
+                    color: rgb(180, 180, 0);
+                }
+            }
+        }
+    }
+}
+
+/* ----------------------- Reportar ----------------------- */
+#Reportar {
+    background: {
+        color: rgba(0, 0, 0, .5);
+    }
+
+    left: 50%;
+    top: -50%;
+    width: 80%;
+    z-index: 100;
+    padding: 20px;
+    position: fixed;
+    min-width: 400px;
+    max-width: 600px;
+    border-radius: 10px;
+    border: 3px solid black;
+    transform: translate(-50%, -50%);
+
+    .Title {
+        text-align: center;
+    }
+
+    .Columna {
+        margin-bottom: 20px;
+
+        .form-label {
+            color: white;
+        }
+
+        .form-control,
+        .form-select {
+            background: {
+                color: white;
+            }
+
+            border: $None;
+            padding: 2px 10px;
+
+            &:disabled {
+                background: {
+                    color: rgb(180, 180, 180);
+                }
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        .form-control {
+            max-height: 160px;
+        }
+
+        .form-check-label {
+            color: white;
+        }
+
+        .form-check-input {
+            @include Icon(25px, 2.5vw, 50px);
+            border: 1px solid rgba(0, 0, 0, 0);
+
+            &:checked {
+                background: {
+                    color: rgb(0, 130, 0);
+                }
+
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+
+    &.was-validated {
+
+        .form-check-input,
+        .form-control,
+        .form-select {
+            &:valid {
+                border: 1px solid rgba(0, 130, 0);
+            }
+
+            &:invalid {
+                border: 1px solid rgba(200, 0, 0);
+            }
+        }
+    }
+
+    .Error {
+        font: {
+            style: italic;
+            weight: bold;
+        }
+
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+        color: rgb(220, 0, 0);
+    }
+
+    .Cerrar {
+        background: {
+            color: $ColorRN;
+        }
+
+        top: 0;
+        left: 100%;
+        position: absolute;
+        border-radius: 10px;
+        border: 2px solid black;
+        @include Icon(30px, 4vw, 60px);
+        transform: translate(-50%, -50%);
+
+        img {
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            height: 80%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+
+        .Hitbox {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+    }
+
+    .Btn {
+        background: {
+            color: $ColorVN;
+        }
+
+        color: white;
+        border: $None;
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+}
+
+/* ----------------------- Publicar ----------------------- */
+#Publicar {
+    left: 50%;
+    top: -100%;
+    width: 50vw;
+    z-index: 100;
+    transition: 1s;
+    position: fixed;
+    min-width: 400px;
+    max-width: 600px;
+    min-height: 400px;
+    height: max-content;
+    transform: translate(-50%, -50%);
+    @include Column(auto max-content);
+    grid-column-gap: 0;
+
+    .Informacion {
+        border-radius: 10px;
+        background-color: white;
+        border: 2px solid black;
+        @include Row(max-content auto max-content max-content);
+
+        .Info {
+            padding: 10px;
+            padding-bottom: 0;
+
+            .Perfil {
+                align-items: center;
+                padding-bottom: 5px;
+                border-bottom: 1px solid black;
+                @include Column(max-content auto max-content);
+
+                .Imagen {
+                    overflow: hidden;
+                    position: relative;
+                    border-radius: 100%;
+                    border: 2px solid black;
+                    @include Icon(40px, 5vw, 60px);
+
+                    img {
+                        left: 0;
+                        top: 50%;
+                        padding: 0;
+                        width: 100%;
+                        border: $None;
+                        position: absolute;
+                        border-radius: 100%;
+                        transform: translate(0, -50%);
+                    }
+                }
+
+                .Btn-Cerrar {
+                    position: relative;
+                    border-radius: 10px;
+                    border: 2px solid black;
+                    background-color: #c50000;
+                    @include Icon(30px, 4vw, 50px);
+
+                    img {
+                        top: 10%;
+                        left: 10%;
+                        width: 80%;
+                        height: 80%;
+                        position: absolute;
+                    }
+                }
+            }
+
+            .Contenedor-Tags {
+                margin: 0;
+                padding: 3px;
+                list-style: none;
+                flex-wrap: wrap;
+                overflow-y: auto;
+                display: inline-flex;
+                max-height: 100px;
+                overflow-x: hidden;
+
+                .Tag {
+                    margin-right: 5px;
+                    border-radius: 5px;
+                    width: max-content;
+                    margin-bottom: 5px;
+                    background-color: #0146af8c;
+
+                    span {
+                        color: white;
+                        padding: 2px 5px;
+                    }
+
+                    .Delete {
+                        color: white;
+                        padding: 0 3px;
+                        border: $None;
+                        font-weight: bold;
+                        border-radius: 0 5px 5px 0;
+                        background-color: #0058db;
+                    }
+                }
+            }
+        }
+
+        .Contenido {
+            padding: 10px;
+
+            .Comentario {
+                .Input {
+                    width: 100%;
+                    height: 15vw;
+                    border: $None;
+                    padding: 2px 5px;
+                    min-height: 150px;
+                    max-height: 250px;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+
+            .Imagenes {
+                height: 100%;
+                position: relative;
+                min-height: 150px;
+                border-radius: 10px;
+                background-color: #b7bac2;
+                border: 2px dashed #72737a;
+
+                .Input-Img {
+                    opacity: 0;
+                    z-index: 2;
+                    cursor: pointer;
+                    @include Hitbox();
+                }
+
+                .Texto {
+                    left: 0;
+                    top: 50%;
+                    width: 100%;
+                    color: white;
+                    overflow: hidden;
+                    position: absolute;
+                    transform: translate(0, -50%);
+
+                    .Title {
+                        padding: 0 10px;
+                    }
+
+                    .Text {
+                        padding: 0 5px;
+                    }
+
+                    .Text,
+                    .Title {
+                        width: 100%;
+                        overflow: hidden;
+                        text-align: center;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+
+            .Etiquetas {
+                .Input-Tag {
+                    align-items: center;
+                    margin-bottom: 10px;
+                    @include Column(auto max-content);
+
+                    .Add-Tag {
+                        width: 100%;
+                        padding: 2px 5px;
+                        border-radius: 10px;
+                        border: 2px solid black;
+                        background-color: #dadada;
+
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+
+                    img {
+                        @include Icon(30px, 3vw, 50px);
+                    }
+                }
+
+                .Resultados {
+                    margin: 0;
+                    padding: 5px;
+                    list-style: none;
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                    max-height: 250px;
+                    border: 2px solid black;
+                    background-color: #f1f1f1;
+                    border-radius: 10px 0 0 10px;
+
+                    .Item {
+                        border: $None;
+                        cursor: pointer;
+                        text-align: left;
+                        padding: 0 5px;
+                        border-radius: 5px;
+                        margin-bottom: 2px;
+                        background-color: $None;
+                    }
+                }
+            }
+        }
+
+        .Galeria-Fotos {
+            padding: 0 10px;
+
+            .Galeria {
+                justify-content: center;
+                @include Column(repeat(4, 24%));
+
+                .Imagen {
+                    height: 11vw;
+                    overflow: hidden;
+                    position: relative;
+                    margin-bottom: 5px;
+
+                    img {
+                        position: absolute;
+                    }
+
+                    .Btn-Count {
+                        z-index: 4;
+                        width: 100%;
+                        height: 100%;
+                        border: $None;
+                        font-weight: bold;
+                        position: absolute;
+                        background-color: $None;
+                        box-shadow: inset 0 0 20vw black;
+
+                        .Text {
+                            color: white;
+                            font-weight: bold;
+                        }
+
+                        .Hitbox {
+                            @include Hitbox();
+                        }
+                    }
+
+                    &[data-size="Width"] {
+                        img {
+                            left: 0;
+                            top: 50%;
+                            width: 100%;
+                            transform: translate(0, -50%);
+                        }
+                    }
+
+                    &[data-size="Height"] {
+                        img {
+                            top: 0;
+                            left: 50%;
+                            height: 100%;
+                            transform: translate(-50%, 0);
+                        }
+                    }
+
+                    .Box-Shadow {
+                        z-index: 2;
+                        cursor: pointer;
+                        @include Hitbox();
+
+                        &:hover {
+                            box-shadow: inset 0 0 8vw black;
+
+                            &::after {
+                                top: 0;
+                                z-index: 3;
+                                right: 5px;
+                                content: 'X';
+                                color: white;
+                                font-weight: bold;
+                                position: absolute;
+                                width: max-content;
+                                height: max-content;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .Mostrar-Menos {
+                width: 100%;
+                display: none;
+                color: white;
+                font-weight: bold;
+                border-radius: 10px;
+                border: 2px solid black;
+                background-color: #72737a;
+            }
+
+            &.Max-Count {
+                .Galeria {
+                    height: 25vw;
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                    margin-bottom: 10px;
+                }
+
+                .Mostrar-Menos {
+                    display: block;
+                }
+            }
+        }
+
+        .Btn-Publicar {
+            width: 100%;
+            padding: 5px;
+            border: $None;
+            background-color: $None;
+
+            .Text {
+                font: {
+                    weight: bold;
+                }
+
+                width: 100%;
+                color: white;
+                position: relative;
+                padding: 2px 10px;
+                align-items: center;
+                border-radius: 10px;
+                border: 2px solid black;
+                background-color: rgb(21, 161, 21);
+
+                &:hover {
+                    background-color: rgb(12, 119, 17);
+                }
+
+                .Hitbox {
+                    @include Hitbox();
+                }
+            }
+        }
+
+        .Secciones {
+            display: none;
+        }
+    }
+
+    .Menu-Lateral {
+        display: flex;
+        padding: 5px;
+        margin-top: 20px;
+        width: max-content;
+        height: max-content;
+        flex-direction: column;
+        border: 2px solid black;
+        background-color: white;
+        border-radius: 0 10px 10px 0;
+        border-left: $None;
+
+        img {
+            margin-bottom: 10px;
+            @include Icon(30px, 3.5vw, 50px);
+
+            &:last-child {
+                margin: 0;
+            }
+
+            &[data-important="true"] {
+                opacity: 1;
+            }
+
+            &[data-important="false"] {
+                opacity: .4;
+            }
+        }
+    }
+}
+
+/* ============================ Cursos ============================ */
+/* ----------------------- Cursos ----------------------- */
+#Cursos {
+    @include Espacio();
+    justify-content: center;
+    @include Column(repeat(4, auto));
+    grid-Column-gap: 20px;
+    grid-row-gap: 30px;
+
+    .Curso2 {
+        position: relative;
+        border-radius: 8px;
+        transition: linear all .2s;
+        border: 2px solid black;
+        @include Icon(120px, 18vw, 300px);
+
+        img {
+            border-radius: 5px;
+        }
+
+        .Text {
+            font: {
+                weight: bold;
+            }
+
+            background: {
+                color: $ColorVN;
+            }
+
+            top: 0;
+            left: 10px;
+            color: white;
+            padding: 0 5px;
+            position: absolute;
+            border-radius: 10px;
+            border: 2px solid black;
+            transform: translate(0, -50%);
+        }
+
+        .Hitbox {
+            cursor: pointer;
+            @include Hitbox();
+        }
+
+        &:hover {
+            transform: scale(1.04);
+        }
+    }
+}
+
+/* ============================ Estudiantes ============================ */
+/* ----------------------- Categoria ----------------------- */
+#Categoria {
+    @include Espacio();
+    margin-bottom: 20px;
+    @include Column(repeat(3, auto));
+
+    .Text {
+        width: 100%;
+        color: white;
+        padding: 2px 5px;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 5px;
+
+        &.T {
+            background: {
+                color: rgb(0, 160, 0);
+            }
+        }
+
+        &.E {
+            background: {
+                color: rgb(0, 60, 160);
+            }
+        }
+
+        &.S {
+            background: {
+                color: rgb(160, 0, 0);
+            }
+        }
+    }
+}
+
+/* ----------------------- Estudiantes ----------------------- */
+#Estudiantes {
+    @include Espacio();
+    justify-content: center;
+    @include Column(repeat(4, 24%));
+
+    .Estudiante {
+        height: 24vw;
+        color: black;
+        overflow: hidden;
+        position: relative;
+        min-height: 200px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        text-decoration: none;
+        @include Row(50% auto);
+        border: 2px solid black;
+        grid-row-gap: 0;
+
+        .Fondo {
+            height: 100%;
+
+            &.Num1 {
+                background: {
+                    color: white;
+                }
+
+                position: relative;
+
+                .Box1 {
+                    height: 100%;
+                    border-radius: 0 0 0 20px;
+
+                    .Text {
+                        font: {
+                            weight: bold;
+                        }
+
+                        top: 0;
+                        left: 5px;
+                        color: white;
+                        position: absolute;
+                    }
+
+                    .Image {
+                        top: 75%;
+                        left: 50%;
+                        overflow: hidden;
+                        position: absolute;
+                        border-radius: 100%;
+                        transform: translate(-50%, -50%);
+                        @include Icon(70px, 12vw, 200px);
+
+                        img {
+                            left: 0;
+                            top: 50%;
+                            width: 100%;
+                            position: absolute;
+                            transform: translate(0, -50%);
+                        }
+                    }
+
+                    .Icono {
+                        top: 2px;
+                        right: 5px;
+                        position: absolute;
+                        @include Icon(30px, 3vw, 40px);
+                    }
+                }
+            }
+
+            &.Num2 {
+                .Box2 {
+                    background: {
+                        color: white;
+                    }
+
+                    height: 100%;
+                    padding-top: 20%;
+                    border-radius: 0 20px 0 0;
+
+                    .Text {
+                        width: 95%;
+
+                        &.Weight {
+                            font: {
+                                weight: bold;
+                            }
+
+                            width: 90%;
+                            margin: auto;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+
+        .Hitbox {
+            cursor: pointer;
+            @include Hitbox();
+        }
+
+        input {
+            position: absolute;
+        }
+
+        &[data-service="T"] {
+
+            .Box1,
+            .Num2 {
+                background: {
+                    color: rgb(0, 160, 0);
+                }
+            }
+
+            .Image {
+                border: 3px solid rgb(0, 160, 0);
+            }
+        }
+
+        &[data-service="E"] {
+
+            .Box1,
+            .Num2 {
+                background: {
+                    color: rgb(0, 60, 160);
+                }
+            }
+
+            .Image {
+                border: 3px solid rgb(0, 60, 160);
+            }
+        }
+
+        &[data-service="S"] {
+
+            .Box1,
+            .Num2 {
+                background: {
+                    color: rgb(160, 0, 0);
+                }
+            }
+
+            .Image {
+                border: 3px solid rgb(160, 0, 0);
+            }
+        }
+    }
+}
+
+/* ----------------------- Curso ----------------------- */
+#Curso {
+    position: relative;
+    @include Espacio();
+    margin-bottom: 40px;
+
+    .Title {
+        font: {
+            family: 'Comic Sans MS';
+        }
+
+        color: white;
+        padding: 10px 0;
+        margin-left: 40px;
+        width: max-content;
+        -webkit-text-stroke: 2.5px black;
+    }
+
+    .Box {
+        left: 0;
+        z-index: -1;
+        position: absolute;
+        border-radius: 100% 0;
+
+        &.Num1 {
+            background: {
+                color: rgb(7, 80, 236);
+            }
+
+            bottom: 0;
+            height: 90%;
+            width: 100%;
+        }
+
+        &.Num2 {
+            background: {
+                color: rgb(2, 58, 179);
+            }
+
+            top: 0;
+            width: 80%;
+            height: 100%;
+        }
+    }
+}
+
+/* ============================ Iniciar sesión ============================ */
+/* ----------------------- Formulario ----------------------- */
+#Formulario {
+    @include Espacio();
+    align-items: center;
+    @include Column(40% auto);
+    grid-column-gap: 0;
+
+    .Info {
+        background: {
+            size: cover;
+            image: url('../Images/FondoLogin.png');
+        }
+
+        display: grid;
+        overflow: hidden;
+        position: relative;
+        padding: 20px 10%;
+        align-items: center;
+        border-radius: 10px;
+        border: 3px solid black;
+
+        .Title {
+            color: white;
+            text-align: center;
+        }
+
+        .Imagen {
+            width: 80%;
+            margin: auto;
+            margin-top: 20px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .needs-validation {
+        background: {
+            color: rgba(255, 255, 255, .4);
+        }
+
+        padding: 20px;
+        height: max-content;
+        border: 3px solid black;
+        border-radius: 0 10px 10px 0;
+        border-left: $None;
+
+        .Columna {
+            margin-bottom: 10px;
+
+            .form-label {
+                color: $ColorRN;
+            }
+
+            .form-control {
+                border: $None;
+                padding: 0 10px;
+                background-color: $None;
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+
+        .Error {
+            font: {
+                style: italic;
+                weight: bold;
+            }
+
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+            color: rgb(220, 0, 0);
+        }
+
+        .Btn {
+            background: {
+                color: $ColorVN;
+            }
+
+            transition: .2s;
+            color: white;
+            border: $None;
+            padding: 5px 10px;
+            border-radius: 10px;
+
+            &:hover {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+/* ============================ @Media ============================ */
+@media (max-width: 1000px) {
+    #Enlaces {
+        @include Column(repeat(5, auto));
+    }
+
+    #Categoria {
+        @include Column(repeat(2, auto));
+    }
+}
+
+@media (max-width: 900px) {
+    #InfoInst {
+        @include Column(auto);
+
+        .MainCarousel {
+            width: 70%;
+            margin: 10px auto;
+            border: 3px solid $ColorRN;
+        }
+    }
+
+    #Enlaces {
+        @include Column(repeat(4, auto));
+    }
+
+    #MisionVision {
+        @include Column(auto);
+    }
+
+    #Simbolos {
+        .Informacion {
+            max-height: 300px;
+        }
+    }
+
+    #Importancia {
+        .Imagen1 {
+            grid-row: 1/3;
+        }
+
+        .Caja {
+            grid-column: 1/3;
+            @include Column(25% auto);
+        }
+    }
+
+    #Historia {
+        .History {
+            @include Column(auto);
+
+            .Info {
+                padding: 5px;
+            }
+        }
+    }
+
+    #Garcia {
+        @include Column(40% auto);
+
+        .Autor {
+            grid-row: 1/4;
+        }
+
+        .Num3 {
+            grid-column: 1/3;
+        }
+    }
+
+    #PDF {
+        @include Column(auto);
+
+        embed {
+            width: 90%;
+            margin: auto;
+            height: 74vw;
+            min-height: 400px;
+            margin-bottom: 20px;
+        }
+
+        .Info {
+            .Caja {
+                position: relative;
+            }
+        }
+    }
+
+    #Roles {
+        .Tabla {
+            @include Column(repeat(4, auto));
+
+            .Btn {
+                height: 24vw;
+            }
+        }
+    }
+
+    #Libreria {
+        .Seccion {
+            @include Column(repeat(5, 19%));
+
+            .Libro {
+                height: 24vw;
+            }
+        }
+    }
+
+    #Footer {
+        .Enlaces {
+            justify-items: center;
+            @include Column(auto);
+            justify-content: center;
+
+            .Lista {
+                margin-bottom: 15px;
+
+                .Item {
+                    .Title {
+                        text-align: center;
+                    }
+
+                    .Link {
+                        margin: 0 auto;
+
+                        .Text {
+                            white-space: nowrap;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    #Calendario {
+        @include Column(auto);
+
+        .Info {
+            margin-bottom: 10px;
+        }
+
+        iframe {
+            height: 54vw;
+            min-height: 250px;
+        }
+    }
+
+    #Formacion {
+        @include Column(auto);
+
+        .Ciclo {
+            width: 80%;
+            margin: auto;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .Info {
+            min-height: 300px;
+
+            .Contenedor {
+                height: 100%;
+            }
+        }
+    }
+
+    #Destacados {
+        .Visualizer {
+            .Card {
+                @include Column(30% auto);
+
+                .Datos {
+                    grid-column: 1/3;
+                    padding-top: 20px;
+                    align-items: center;
+                    @include Column(auto max-content);
+
+                    .Item {
+                        border: $None;
+                        padding: 0 15px;
+                        margin-bottom: 5px;
+                        border-right: 1px solid black;
+
+                        &:first-child {
+                            border: $None;
+                            grid-column: 1/3;
+                        }
+
+                        &:last-child {
+                            border: $None;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #Garcia {
+        @include Column(auto);
+
+        .Autor {
+            grid-row: 1/2;
+            @include Column(40% auto);
+
+            .Caja {
+                height: 100%;
+                overflow: auto;
+                position: relative;
+                min-height: 250px;
+
+                .Info {
+                    position: absolute;
+                }
+            }
+        }
+
+        .Libro {
+            @include Column(25% auto);
+        }
+
+        .Num3 {
+            grid-column: 1/2;
+        }
+    }
+
+    #PDFLibro {
+        @include Column(auto);
+
+        .PDFVisual {
+            height: 60vw;
+            min-height: 400px;
+        }
+
+        .SinPDF {
+            min-height: 120px;
+        }
+    }
+
+    #Perfil {
+        @include Column(auto);
+
+        .Informacion {
+            border: $None;
+            align-items: center;
+            @include Column(max-content auto);
+            grid-column-gap: 20px;
+
+            .Imagen {
+                @include Icon(200px, 26vw, 300px)
+            }
+
+            .Tabla {
+                overflow: hidden;
+                @include Column(50% auto);
+
+                .Item {
+                    width: 100%;
+                    overflow: hidden;
+                }
+            }
+        }
+
+        .Notificaciones {
+            max-height: 600px;
+
+            .Caja {
+                position: relative;
+            }
+        }
+    }
+
+    #Cursos {
+        @include Column(repeat(3, auto));
+        grid-Column-gap: 20px;
+        grid-row-gap: 30px;
+
+        .Curso2 {
+            @include Icon(120px, 22vw, 300px);
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    #Video {
+        @include Column(auto);
+
+        iframe {
+            margin-top: 10px;
+            min-height: 300px;
+        }
+
+        &.Left {
+            @include Column(auto);
+
+            iframe {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    #Enlaces {
+        @include Column(repeat(3, auto));
+    }
+
+    #Simbolos {
+        @include Column(auto);
+
+        .MainCarousel {
+            width: 60%;
+            margin: 10px auto;
+            border: 3px solid $ColorRN;
+        }
+    }
+
+    #Especialidad {
+        @include Column(auto);
+
+        .Info {
+            margin: 20px 0;
+
+            .Contenedor {
+                position: relative;
+            }
+        }
+
+        &.Left {
+            @include Column(auto);
+        }
+
+        .Logo {
+            @include Column(50% auto);
+
+            .Contenedor {
+                overflow: hidden;
+                position: relative;
+
+                img {
+                    top: 50%;
+                    position: absolute;
+                    transform: translate(0, -50%);
+                }
+            }
+        }
+    }
+
+    #Destacados {
+        .Elementos {
+            @include Column(repeat(3, auto));
+        }
+    }
+
+    #Frase {
+        @include Column(auto);
+
+        .Imagen {
+            width: 60%;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+
+        .Info {
+            max-height: 300px;
+
+            .Caja {
+                position: relative;
+            }
+        }
+    }
+
+    #Formulario {
+        @include Column(auto);
+
+        .Info {
+            width: 80%;
+            margin: auto;
+            border-bottom: $None;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .needs-validation,
+        .Informacion {
+            border-radius: 10px;
+            border: 3px solid black;
+        }
+    }
+
+    #Estudiantes {
+        @include Column(repeat(3, 32%));
+
+        .Estudiante {
+            height: 28vw;
+        }
+    }
+
+    #AddUser {
+        @include Column(auto);
+
+        .Select {
+            grid-column: 1/2;
+        }
+    }
+
+    #Roles {
+        .Tabla {
+            @include Column(repeat(3, auto));
+
+            .Btn {
+                height: 32vw;
+            }
+        }
+    }
+
+    #AddLib {
+        @include Column(auto);
+
+        .Archivos {
+            @include Row(auto);
+            margin-bottom: 20px;
+            @include Column(50% auto);
+
+            .Input {
+                height: 30vw;
+            }
+        }
+
+        .Botones {
+            grid-column: 1/2;
+        }
+    }
+
+    #Libreria {
+        .Seccion {
+            @include Column(repeat(4, 24%));
+
+            .Libro {
+                height: 30vw;
+            }
+        }
+    }
+
+    #Vista {
+        @include Column(auto);
+
+        .Portada {
+            @include Column(40% auto);
+
+            .Caja {
+                height: 100%;
+                overflow: auto;
+                position: relative;
+
+                .Caja2 {
+                    position: absolute;
+                }
+            }
+        }
+
+        .Resenas {
+            min-height: 400px;
+            max-height: 600px;
+
+            .Caja {
+                position: relative;
+            }
+        }
+    }
+
+    #Perfil {
+        .Informacion {
+            @include Column(auto);
+
+            .Tabla {
+                @include Column(32% 32% auto);
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    #HeaderBi {
+        .Imagenes {
+            @include Column(auto);
+
+            .Img1 {
+                border-radius: 0 0 20px 20px;
+            }
+
+            .Img2 {
+                display: none;
+            }
+        }
+    }
+
+    #Encargado {
+        grid-row-gap: 20px;
+        @include Column(auto);
+
+        .Imagen {
+            margin: auto;
+        }
+
+        .Info {
+            .Title {
+                text-align: center;
+            }
+        }
+    }
+
+    #Importancia {
+        .Imagen1 {
+            grid-row: 1/2;
+        }
+
+        .Inf2 {
+            grid-column: 1/3;
+        }
+
+        .Caja {
+            grid-column: 1/3;
+            @include Column(25% auto);
+        }
+    }
+
+    #Garcia {
+        grid-row-gap: 20px;
+
+        .Autor {
+            @include Column(auto);
+
+            img {
+                width: 50%;
+                margin: auto
+            }
+        }
+
+        .Libro {
+            @include Column(25% auto);
+        }
+    }
+
+    #Secciones {
+        .Contenedor {
+            @include Column(auto);
+
+            &[data-orientacion="right"] {
+                @include Column(auto);
+            }
+
+            .Title {
+                text-align: center;
+            }
+
+            .Card {
+                width: 80%;
+                margin: 20px auto;
+
+                .Imagen {
+                    height: 36vw;
+                }
+            }
+        }
+    }
+
+    #QueEsLaOrientacion {
+        @include Column(auto);
+
+        .Info {
+            .Caja {
+                position: relative;
+            }
+        }
+    }
+
+    #Educativa {
+        img {
+            margin: 0;
+            width: 100%;
+            padding: 0 10%;
+            margin-bottom: 20px;
+        }
+    }
+
+    #Categoria {
+        @include Column(auto);
+    }
+
+    #Perfil {
+        .Informacion {
+            .Tabla {
+                @include Column(50% auto);
+            }
+        }
+    }
+
+    #MoreHours {
+        .Col-6 {
+            width: 100%;
+        }
+
+        .Col-3 {
+            width: 50%;
+        }
+
+        .Col-7 {
+            width: 100%;
+        }
+
+        .Col-5 {
+            width: 100%;
+        }
+    }
+
+    #Cursos {
+        @include Column(repeat(2, auto));
+        grid-Column-gap: 20px;
+        grid-row-gap: 30px;
+
+        .Curso2 {
+            @include Icon(120px, 30vw, 300px);
+        }
+    }
+
+    #Estudiantes {
+        .Estudiante {
+            height: 34vw;
+        }
+    }
+
+    #AddServicioSocial {
+
+        .Col-8,
+        .Col-7,
+        .Col-5,
+        .Col-4 {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    #Noticias {
+        width: 70%;
+    }
+
+    #Enlaces {
+        @include Column(repeat(2, auto));
+    }
+
+    #Transversales {
+        .Proyectos {
+            @include Column(repeat(1, auto));
+        }
+    }
+
+    #Destacados {
+        .Visualizer {
+            .Card {
+                .Datos {
+                    @include Column(auto auto);
+
+                    .Item {
+                        &.Autor {
+                            grid-column: 1/3;
+                        }
+                    }
+                }
+            }
+        }
+
+        .Elementos {
+            @include Column(repeat(2, auto));
+        }
+    }
+
+    #Importancia {
+        .Imagen1 {
+            grid-row: 1/2;
+        }
+
+        .Inf2 {
+            grid-column: 1/3;
+        }
+
+        .Caja {
+            grid-column: 1/3;
+            @include Column(auto);
+
+            .Imagen {
+                display: none;
+            }
+        }
+    }
+
+    #Perfil {
+        .Informacion {
+            .Imagen {
+                @include Icon(150px, 34vw, 300px)
+            }
+
+            .Lista {
+                @include Column(auto);
+            }
+        }
+
+        .Box {
+            .Notificaciones {
+                .Caja {
+                    .Notificacion {
+                        .BoxCaja {
+                            .Tabla {
+                                .Elementos {
+                                    .SubElement {
+                                        @include Column(auto);
+
+                                        .Fecha {
+                                            text-align: left;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #Reportar {
+        .Cerrar {
+            top: 5px;
+            left: 5px;
+            transform: translate(0, 0);
+        }
+    }
+
+    #Roles {
+        .Tabla {
+            @include Column(50% auto);
+
+            .Btn {
+                height: 46vw;
+            }
+        }
+    }
+
+    #Libreria {
+        .Seccion {
+            @include Column(repeat(3, 33%));
+
+            .Libro {
+                height: 40vw;
+            }
+        }
+    }
+
+    #Footer {
+        .Enlaces {
+            .Lista {
+                width: 96%;
+                overflow: hidden;
+
+                .Item {
+                    .Link {
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+
+    #Vista {
+        .Box {
+            .Resenas {
+                .Caja {
+                    .Resena {
+                        .BoxCaja {
+                            .Tabla {
+                                .Elementos {
+                                    .SubElement {
+                                        @include Column(auto);
+
+                                        .Fecha {
+                                            text-align: left;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #Estudiantes {
+        @include Column(repeat(2, 49%));
+
+        .Estudiante {
+            height: 36vw;
+        }
+    }
+
+    #Publicar {
+        width: 100%;
+        min-width: 0;
+        min-height: 500px;
+        @include Column(auto);
+
+        .Menu-Lateral {
+            margin: 0 20px;
+            flex-direction: row;
+            border: 2px solid black;
+            border-radius: 0 0 10px 10px;
+            border-top: $None;
+
+            img {
+                margin: 0;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    #Nav {
+        .NavVertical {
+            width: 100%;
+            min-width: none;
+        }
+    }
+
+    #Video {
+        iframe {
+            min-height: 180px;
+        }
+    }
+
+    #Destacados {
+        .Visualizer {
+            .Card {
+                @include Column(auto);
+
+                .Image {
+                    width: 60%;
+                    margin: auto;
+                    margin-bottom: 20px;
+                }
+
+                .Info {
+                    max-height: 300px;
+                    min-height: max-content;
+
+                    .Caja {
+                        position: relative;
+                    }
+                }
+
+                .Datos {
+                    grid-column: 1/2;
+                    @include Column(auto);
+
+                    .Item {
+                        &.Autor {
+                            grid-column: 1/3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #Importancia {
+        @include Column(auto);
+
+        .Imagen1 {
+            display: none;
+        }
+
+        .Inf2 {
+            grid-column: 1/2;
+        }
+
+        .Caja {
+            grid-column: 1/2;
+        }
+    }
+
+    #Formulario {
+        .Info {
+            width: 100%;
+            padding: 20px 10px;
+        }
+
+        .needs-validation,
+        .Informacion {
+            padding: 10px;
+            border: 3px solid black;
+            border-radius: 0 0 10px 10px;
+        }
+    }
+
+    #Reportar {
+        width: 90%;
+        min-width: 0;
+    }
+
+    #AddLib {
+        .Archivos {
+            @include Column(auto);
+
+            .Input {
+                height: 30vw;
+            }
+        }
+    }
+
+    #Vista {
+        .Portada {
+            @include Column(auto);
+
+            .Imagen {
+                width: 60%;
+                margin: auto;
+            }
+
+            .Caja {
+                .Caja2 {
+                    position: relative;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 200px) {
+    body {
+        min-width: 320px;
+    }
+}
+
+/* ============================ Sub Class ============================ */
+.HiperBig {
+    @include Font(45px, 4.4vw, 78px, $FamilyFont, bold);
+}
+
+.SuperBig {
+    @include Font(28px, 4vw, 64px, $FamilyFont, bold);
+}
+
+.Super {
+    @include Font(18px, 3vw, 60px, $FamilyFont, bold);
+}
+
+.Min {
+    color: $FontColorW;
+    @include Font(22px, 2.6vw, 34px, $FamilyFont, bold);
+}
+
+.TxBig {
+    color: $FontColorW;
+    @include Font(18px, 2.4vw, 30px, $FamilyFont, bold);
+}
+
+.Link {
+    cursor: pointer;
+    text-decoration: none;
+
+    .Text {
+        color: $FontColorW;
+        @include Font(20px, 2vw, 30px, $FamilyFont, 0);
+    }
+}
+
+.IconN {
+    @include Icon($MinIconN, $IconN, $MaxIconN);
+}
+
+.IconG {
+    @include Icon($MinIconG, $IconG, $MaxIconG);
+}
+
+.IconM {
+    @include Icon($MinIconM, $IconM, $MaxIconM);
+}
+
+.IconB {
+    @include Icon($MinIconB, $IconB, $MaxIconB);
+}
+
+.InfoOculta {
+    display: none;
+}
+
+/*
+.Col-1 {
+    width: 8.33%;
+    padding: 0 5px;
+}
+.Col-2 {
+    width: 16.66%;
+    padding: 0 5px;
+}
+.Col-3 {
+    width: 24.99%;
+    padding: 0 5px;
+}
+.Col-4 {
+    width: 33.32%;
+    padding: 0 5px;
+}
+.Col-5 {
+    width: 41.65%;
+    padding: 0 5px;
+}
+.Col-6 {
+    width: 49.98%;
+    padding: 0 5px;
+}
+.Col-7 {
+    width: 58.31%;
+    padding: 0 5px;
+}
+.Col-8 {
+    width: 66.64%;
+    padding: 0 5px;
+}
+.Col-9 {
+    width: 74.97%;
+    padding: 0 5px;
+}
+.Col-10 {
+    width: 83.3%;
+    padding: 0 5px;
+}
+.Col-11 {
+    width: 91.63%;
+    padding: 0 5px;
+}
+.Col-12 {
+    width: 100%;
+    padding: 0 5px;
+}
+*/

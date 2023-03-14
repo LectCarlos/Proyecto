@@ -1,0 +1,520 @@
+/* ----------------- Variables ----------------- */
+@font-face {
+  font-family: QuickSand;
+  src: url("../Package/Fonts/Quicksand.ttf");
+}
+/* ----------------- All ----------------- */
+#Espacio {
+  width: 100%;
+  height: 30px;
+}
+
+#Num {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  border-radius: 100%;
+  background-color: rgb(25, 60, 110);
+  border: 4px solid rgb(5, 35, 70);
+}
+#Num .Title {
+  font-size: 22px;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  color: #FFF;
+  position: absolute;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+#Section {
+  position: relative;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin-bottom: 34px;
+  background-color: rgb(25, 60, 110);
+}
+#Section .Text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFF;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#Section .Block {
+  top: 100%;
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  background-color: rgb(5, 35, 70);
+}
+
+/* ----------------- body ----------------- */
+body {
+  background-size: 100%;
+  background-image: url("../Images/Fondo_P3.png");
+  font-family: QuickSand;
+}
+body p {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: rgba(40, 45, 60, 0.5);
+}
+
+body.Hoja {
+  background-size: 100%;
+  background-image: url("../Images/Fondo_P2.png");
+}
+body.Hoja p {
+  padding: 0;
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* ----------------- #Clase ----------------- */
+#Nav {
+  *background-color: rgb(40, 45, 60);
+}
+
+/* ----------------- #Clase ----------------- */
+#Clase {
+  width: 96%;
+  margin: 10px auto;
+}
+
+/* ----------------- #Perfil ----------------- */
+#Perfil {
+  padding: 0;
+}
+#Perfil .Informacion {
+  padding: 20px;
+  position: relative;
+  margin-bottom: 20px;
+  background-color: rgb(25, 60, 110);
+}
+#Perfil .Informacion .card {
+  border: rgba(0, 0, 0, 0);
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0);
+}
+#Perfil .Informacion .card .Img {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  margin: 40px auto;
+  border-radius: 100%;
+  background-color: white;
+  border: 8px solid rgb(5, 35, 70);
+}
+#Perfil .Informacion .card .Img img {
+  top: 0;
+  left: 50%;
+  height: 100%;
+  position: absolute;
+  transform: translate(-50%, 0);
+}
+#Perfil .Informacion .card .Title {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0;
+  color: #FFF;
+  margin-top: 15px;
+  text-align: center;
+}
+#Perfil .Informacion .card .SubTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  margin-top: 15px;
+  color: rgb(60, 180, 240);
+}
+#Perfil .Informacion .Puntos {
+  left: 50%;
+  width: 30%;
+  bottom: 15px;
+  position: absolute;
+  display: inline-flex;
+  transform: translate(-50%, 0);
+}
+#Perfil .Informacion .Puntos .Point {
+  width: 10px;
+  height: 10px;
+  margin: 0 auto;
+  border-radius: 100%;
+  background-color: rgb(5, 35, 70);
+}
+#Perfil .Informacion .Blocks {
+  left: 100%;
+  bottom: 20px;
+  position: absolute;
+  transform: translate(-50%, 0);
+}
+#Perfil .Informacion .Blocks .Block {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 5px;
+  background-color: rgb(5, 35, 70);
+}
+#Perfil .Logo {
+  padding: 20px;
+  position: relative;
+  margin-bottom: 20px;
+  background-color: rgb(25, 60, 110);
+}
+#Perfil .Logo .card {
+  margin-bottom: 20px;
+  border: 4px solid rgb(25, 60, 110);
+  background-color: #FFF;
+}
+#Perfil .Logo .card .Img {
+  width: 200px;
+  margin: 20px auto;
+}
+#Perfil .Logo .card .Img img {
+  width: 100%;
+}
+#Perfil .Logo .Title {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0;
+  margin: 15px;
+  color: #FFF;
+  text-align: center;
+}
+#Perfil .Logo .SubTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  color: rgb(60, 180, 240);
+  margin-bottom: 15px;
+}
+#Perfil .Logo .Puntos {
+  left: 50%;
+  width: 30%;
+  bottom: 15px;
+  position: absolute;
+  display: inline-flex;
+  transform: translate(-50%, 0);
+}
+#Perfil .Logo .Puntos .Point {
+  width: 10px;
+  height: 10px;
+  margin: 0 auto;
+  border-radius: 100%;
+  background-color: rgb(5, 35, 70);
+}
+#Perfil .Logo .Blocks {
+  left: 100%;
+  bottom: 20px;
+  position: absolute;
+  transform: translate(-50%, 0);
+}
+#Perfil .Logo .Blocks .Block {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 5px;
+  background-color: rgb(5, 35, 70);
+}
+#Perfil .Contenido {
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+#Perfil .Contenido .Bandera {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border: 2px solid black;
+}
+#Perfil .Contenido .Bandera img {
+  width: 100%;
+}
+#Perfil .Contenido #Section {
+  width: 100%;
+  margin-bottom: 10px;
+}
+#Perfil .Contenido .card {
+  border: rgba(0, 0, 0, 0);
+  padding: 0 10px;
+  background-color: rgba(0, 0, 0, 0);
+}
+#Perfil .Contenido .card .Text {
+  font-size: 18px;
+  font-weight: bold;
+  text-indent: 35px;
+}
+#Perfil .Contenido .card.Contact {
+  padding-left: 45px;
+  padding-right: 10px;
+}
+#Perfil .Contenido .card.Contact .list-group .list-group-item {
+  padding: 0;
+  border: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  margin-bottom: 5px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: rgba(25, 60, 110, 0.5);
+}
+#Perfil .Contenido .card.Contact .list-group .list-group-item .Link {
+  transition: 0.1s;
+  display: inline-flex;
+  text-decoration: none;
+}
+#Perfil .Contenido .card.Contact .list-group .list-group-item .Link img {
+  margin: 5px;
+  width: 22px;
+  height: 22px;
+}
+#Perfil .Contenido .card.Contact .list-group .list-group-item .Link .Texto {
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFF;
+  padding-top: 2px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+#Perfil .Contenido .card.Contact .list-group .list-group-item .Link:hover {
+  padding-left: 5px;
+}
+
+/* ----------------- #ContHoja ----------------- */
+#ContHoja {
+  padding: 0;
+  padding-left: 30px;
+  padding-right: 10px;
+}
+#ContHoja .Contenedor {
+  padding: 10px;
+  position: relative;
+  margin-bottom: 25px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+#ContHoja .Contenedor .Blocks.Hor {
+  right: 20px;
+  bottom: 100%;
+  position: absolute;
+  display: inline-flex;
+  transform: translate(0, 50%);
+}
+#ContHoja .Contenedor .Blocks.Hor .Block {
+  width: 34px;
+  height: 34px;
+  margin-right: 5px;
+  background-color: rgb(5, 35, 70);
+}
+#ContHoja .Contenedor .Contenido {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+#ContHoja .Contenedor .Contenido .BoxCard {
+  width: 100%;
+  border: rgba(0, 0, 0, 0);
+  display: inline-flex;
+  background-color: rgba(0, 0, 0, 0);
+}
+#ContHoja .Contenedor .Contenido .BoxCard .Fecha {
+  width: 14%;
+}
+#ContHoja .Contenedor .Contenido .BoxCard .Parrafo {
+  width: 86%;
+}
+#ContHoja .Contenedor .Contenido .BoxCard .Parrafo .Title {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0;
+  color: rgb(25, 60, 110);
+}
+#ContHoja .Contenedor .Contenido .BoxCard .Parrafo .Text {
+  font-size: 18px;
+  font-weight: bold;
+}
+#ContHoja .Contenedor .Contenido .list-group {
+  width: 100%;
+  padding-top: 5px;
+}
+#ContHoja .Contenedor .Contenido .list-group .list-group-item {
+  padding: 0;
+  border: rgba(0, 0, 0, 0);
+  display: inline-flex;
+  margin-bottom: 5px;
+  background-color: rgba(0, 0, 0, 0);
+}
+#ContHoja .Contenedor .Contenido .list-group .list-group-item .Skill,
+#ContHoja .Contenedor .Contenido .list-group .list-group-item .Link {
+  width: 40%;
+  height: 24px;
+  display: inline-flex;
+}
+#ContHoja .Contenedor .Contenido .list-group .list-group-item .Skill img,
+#ContHoja .Contenedor .Contenido .list-group .list-group-item .Link img {
+  width: 24px;
+  padding: 2px;
+  height: 24px;
+  margin-right: 5px;
+  border-radius: 5px;
+  background-color: rgb(25, 60, 110);
+}
+#ContHoja .Contenedor .Contenido .list-group .list-group-item .Skill .Text,
+#ContHoja .Contenedor .Contenido .list-group .list-group-item .Link .Text {
+  font-size: 18px;
+  font-weight: bold;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+#ContHoja .Contenedor .Contenido .list-group .list-group-item .progress {
+  width: 60%;
+  height: 24px;
+  box-shadow: inset 0 0 5px black;
+}
+#ContHoja .Contenedor .Contenido .list-group .list-group-item .progress .progress-bar {
+  box-shadow: inset 0 0 5px black;
+}
+#ContHoja .Contenedor .Contenido .list-group .list-group-item .Link {
+  width: 100%;
+  transition: 0.1s;
+  text-decoration: none;
+}
+#ContHoja .Contenedor .Contenido .list-group .list-group-item .Link:hover {
+  padding-left: 5px;
+}
+#ContHoja .Contenedor.Card .Contenido {
+  font-weight: bold;
+  width: 100%;
+  margin-top: 5px;
+  text-indent: 45px;
+}
+#ContHoja .Contenedor.Card #Section {
+  margin: 0;
+}
+#ContHoja .Contenido.Bars {
+  width: 100%;
+}
+#ContHoja .row {
+  margin: 0;
+  width: 100%;
+}
+#ContHoja .row .col-sm-6 {
+  padding: 0;
+  width: 50%;
+}
+#ContHoja .row .col-sm-6:first-child {
+  padding-right: 5px;
+}
+
+/* ----------------- #Base ----------------- */
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: solid rgba(0, 0, 0, 0.15);
+  border-width: 1px 0;
+  box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1), inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+}
+
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.Title, .nav-link, .navbar-brand, .lead, h5, h2 {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.card {
+  border: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#TitleC {
+  font-weight: bold;
+}
+
+.lead {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: rgba(40, 45, 60, 0.5);
+}
+
+.nav-link:hover {
+  color: rgb(0, 102, 255);
+}
+
+#Qatar {
+  background-image: url("../Images/QatarCopa.png");
+}
+
+#Base {
+  position: relative;
+  overflow: hidden;
+}
+#Base img {
+  height: 100%;
+  position: absolute;
+}
+
+.card-body {
+  font-weight: bold;
+  color: white;
+}
+
+#Firehouse {
+  font-weight: bold;
+  color: white;
+}
+
+img {
+  border-radius: 10px;
+}
+
+.col-md-8 {
+  margin-bottom: 20px;
+}/*# sourceMappingURL=Styles.css.map */

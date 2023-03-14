@@ -1,0 +1,5700 @@
+@charset "UTF-8";
+/* ============================ Sección ============================ */
+/* ----------------------- Type Font ----------------------- */
+@font-face {
+  font-family: QuickSand;
+  src: url("../Package/Fonts/Quicksand.ttf");
+}
+/* ----------------------- Font ----------------------- */
+/* ----------------------- Espacio ----------------------- */
+/* ----------------------- Column ----------------------- */
+/* ----------------------- Column ----------------------- */
+/* ----------------------- Row ----------------------- */
+/* ----------------------- Icon ----------------------- */
+/* ============================ Variables ============================ */
+/* ----------------------- Neutral ----------------------- */
+/* ----------------------- Colores Solidos ----------------------- */
+/* ----------------------- Colores Transparentes -----------------------*/
+/* ----------------------- Font size ----------------------- */
+/* ----------------------- Font family ----------------------- */
+/* ----------------------- Font color ----------------------- */
+/* ----------------------- Icon ----------------------- */
+/* ============================ Globales ============================ */
+/* ---------------------- * ----------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ----------------------- body ----------------------- */
+body {
+  background-size: 100%;
+  background-color: white;
+  background-image: url("../Images/All/FondoJF.png");
+  scroll-behavior: smooth;
+}
+body .Container {
+  margin: auto;
+  max-width: 1600px;
+}
+
+/* ----------------------- html ----------------------- */
+html ::-webkit-scrollbar {
+  background-color: rgb(209, 209, 214);
+  width: 12px;
+  height: 12px;
+  border-radius: 10px;
+}
+html ::-webkit-scrollbar-thumb {
+  background-color: rgb(146, 146, 150);
+  border-radius: 10px;
+}
+html ::-webkit-scrollbar-button {
+  background-color: rgb(187, 187, 192);
+}
+html ::-webkit-scrollbar-track {
+  background-color: rgb(209, 209, 214);
+}
+
+/* ----------------------- Title ----------------------- */
+.Title {
+  margin: 0;
+  color: rgb(170, 35, 35);
+  font-weight: bold;
+  font-family: "QuickSand";
+  font-size: clamp(26px, 2.6vw, 46px);
+}
+
+/* ----------------------- Text ----------------------- */
+.Text {
+  margin: 0;
+  font-weight: 0;
+  font-family: "QuickSand";
+  font-size: clamp(15px, 2vw, 26px);
+}
+
+/* ----------------------- Space ----------------------- */
+.Space {
+  height: 100px;
+  width: 86%;
+  margin: 0 auto;
+}
+.Space[data-title=true] {
+  margin: 20px auto;
+  margin-top: 60px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+.Space[data-title=true] .Title {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* ----------------------- MainCarousel ----------------------- */
+.MainCarousel {
+  width: 100%;
+  height: 48vw;
+  position: relative;
+  border: 3px solid rgb(170, 35, 35);
+}
+.MainCarousel .DataCarousel {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.MainCarousel .DataCarousel .Carousel {
+  height: 100%;
+  position: absolute;
+}
+.MainCarousel .DataCarousel .Carousel img {
+  width: 100%;
+}
+.MainCarousel .Botones button {
+  top: 0;
+  width: 30%;
+  height: 100%;
+  border: rgba(0, 0, 0, 0);
+  min-width: 40px;
+  position: absolute;
+  max-width: 150px;
+  background-color: rgba(0, 0, 0, 0);
+}
+.MainCarousel .Botones button .Img {
+  top: 50%;
+  filter: opacity(0.5);
+  position: absolute;
+  transform: translate(0, -50%);
+  min-width: 30px;
+  min-height: 30px;
+  width: 5vw;
+  height: 5vw;
+  max-width: 80px;
+  max-height: 80px;
+}
+.MainCarousel .Botones button .Img img {
+  width: 100%;
+  height: 100%;
+}
+.MainCarousel .Botones button .Img img {
+  width: 100%;
+  height: 100%;
+}
+.MainCarousel .Botones button:hover img {
+  filter: opacity(0.8);
+}
+.MainCarousel .Botones .CarouselLeft {
+  left: 0;
+}
+.MainCarousel .Botones .CarouselLeft .Img {
+  left: 10px;
+}
+.MainCarousel .Botones .CarouselLeft .Img img {
+  transform: rotate(-180deg);
+}
+.MainCarousel .Botones .CarouselRight {
+  right: 0;
+}
+.MainCarousel .Botones .CarouselRight .Img {
+  right: 10px;
+}
+.MainCarousel .Slider {
+  left: 50%;
+  bottom: 5px;
+  position: absolute;
+  transform: translate(-50%, 0);
+}
+.MainCarousel .Slider .Btn {
+  opacity: 0.5;
+  transition: 0.2s;
+  border-radius: 100%;
+  background-color: white;
+  min-width: 12px;
+  min-height: 12px;
+  width: 1.2vw;
+  height: 1.2vw;
+  max-width: 24px;
+  max-height: 24px;
+}
+.MainCarousel .Slider .Btn img {
+  width: 100%;
+  height: 100%;
+}
+.MainCarousel[data-display=true] {
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+.MainCarousel[data-display=true] .Carousel {
+  position: relative;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+.MainCarousel[data-display=true] .Carousel img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ----------------------- Accordion ----------------------- */
+.Accordion .Slider {
+  width: 1005;
+  margin-bottom: 40px;
+}
+.Accordion .Slider .Encabezado {
+  width: 100%;
+  border: rgba(0, 0, 0, 0);
+  position: relative;
+  padding: 10px 15px;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 3px solid rgb(25, 100, 40);
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: auto -webkit-max-content;
+  grid-template-columns: auto max-content;
+}
+.Accordion .Slider .Encabezado .Icono {
+  background-color: rgba(25, 100, 40, 0.5);
+  position: relative;
+  border-radius: 100%;
+  min-width: 30px;
+  min-height: 30px;
+  width: 4vw;
+  height: 4vw;
+  max-width: 40px;
+  max-height: 40px;
+}
+.Accordion .Slider .Encabezado .Icono img {
+  width: 100%;
+  height: 100%;
+}
+.Accordion .Slider .Encabezado .Icono img {
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  transition: 0.2s;
+  position: absolute;
+}
+.Accordion .Slider .Encabezado .Hitbox {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.Accordion .Slider .Contenido {
+  transition: 0.5s;
+  max-height: 0;
+  overflow: hidden;
+  padding: 5px 20px;
+}
+.Accordion .Slider .Contenido .Title {
+  color: rgb(25, 100, 40);
+}
+.Accordion .Slider.Open .Encabezado {
+  background-color: rgba(25, 100, 40, 0.5);
+}
+.Accordion .Slider.Open .Encabezado .Title {
+  color: white;
+}
+.Accordion .Slider.Open .Encabezado .Icono img {
+  transform: rotate(-180deg);
+}
+.Accordion .Slider.Open .Contenido {
+  max-height: 100vh;
+}
+
+/* ----------------------- DivisorColumnas ----------------------- */
+.DivisorColumnas .BtnProyectos {
+  margin: 20px auto;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.DivisorColumnas .BtnProyectos .Btn {
+  background-color: rgb(25, 100, 40);
+  transition: 0.2s;
+  border-radius: 100%;
+  border: 3px solid black;
+  min-width: 40px;
+  min-height: 40px;
+  width: 4vw;
+  height: 4vw;
+  max-width: 60px;
+  max-height: 60px;
+}
+.DivisorColumnas .BtnProyectos .Btn img {
+  width: 100%;
+  height: 100%;
+}
+.DivisorColumnas .BtnProyectos .Btn:hover {
+  transform: scale(1.1);
+}
+.DivisorColumnas .Proyectos {
+  grid-row-gap: 50px;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: repeat(2, auto);
+  grid-Column-gap: 15px;
+}
+
+/* ----------------------- VisualCards ----------------------- */
+.VisualCards {
+  width: 86%;
+  margin: 0 auto;
+}
+.VisualCards .Visualizer {
+  margin-bottom: 40px;
+}
+.VisualCards .Visualizer .Card {
+  position: relative;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 25% auto 25%;
+  grid-column-gap: 10px;
+}
+.VisualCards .Visualizer .Card .Image .Text {
+  display: none;
+}
+.VisualCards .Visualizer .Card .Info {
+  position: relative;
+}
+.VisualCards .Visualizer .Card .Info .Caja {
+  height: 100%;
+  overflow: auto;
+  position: absolute;
+}
+.VisualCards .Visualizer .Hitbox {
+  display: none;
+}
+.VisualCards .Elementos {
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: repeat(4, auto);
+  grid-column-gap: 10px;
+}
+.VisualCards .Elementos .Card {
+  position: relative;
+}
+.VisualCards .Elementos .Card .Info .Title {
+  text-align: center;
+  font-weight: bold;
+  font-family: "QuickSand";
+  font-size: clamp(18px, 1.6vw, 32px);
+}
+.VisualCards .Elementos .Card .Info .Text {
+  display: none;
+}
+.VisualCards .Elementos .Card .Datos {
+  display: none;
+}
+.VisualCards .Image {
+  position: relative;
+}
+.VisualCards .Image img {
+  width: 100%;
+}
+.VisualCards .Image .Text {
+  background-color: rgba(170, 35, 35, 0.5);
+  top: 0;
+  left: 0;
+  color: white;
+  padding: 0 5px;
+  position: absolute;
+  border-radius: 0 0 10px 0;
+}
+.VisualCards .Title {
+  color: rgb(170, 35, 35);
+}
+.VisualCards .Datos {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.VisualCards .Datos .Item {
+  padding: 10px 5px;
+  border-bottom: 1px solid black;
+}
+.VisualCards .Datos .Item .Link {
+  font-weight: bold;
+  background-color: rgb(25, 100, 40);
+  transition: 0.2s;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.VisualCards .Datos .Item .Link:hover {
+  padding: 5px 20px;
+}
+.VisualCards .Datos .Item:last-child {
+  border-bottom: rgba(0, 0, 0, 0);
+}
+.VisualCards .Hitbox {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+/* ----------------------- Row ----------------------- */
+.Row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.Row .Col-1 {
+  width: 8.33%;
+  padding: 0 5px;
+}
+.Row .Col-2 {
+  width: 16.66%;
+  padding: 0 5px;
+}
+.Row .Col-3 {
+  width: 24.99%;
+  padding: 0 5px;
+}
+.Row .Col-4 {
+  width: 33.32%;
+  padding: 0 5px;
+}
+.Row .Col-5 {
+  width: 41.65%;
+  padding: 0 5px;
+}
+.Row .Col-6 {
+  width: 49.98%;
+  padding: 0 5px;
+}
+.Row .Col-7 {
+  width: 58.31%;
+  padding: 0 5px;
+}
+.Row .Col-8 {
+  width: 66.64%;
+  padding: 0 5px;
+}
+.Row .Col-9 {
+  width: 74.97%;
+  padding: 0 5px;
+}
+.Row .Col-10 {
+  width: 83.3%;
+  padding: 0 5px;
+}
+.Row .Col-11 {
+  width: 91.63%;
+  padding: 0 5px;
+}
+.Row .Col-12 {
+  width: 100%;
+  padding: 0 5px;
+}
+
+/* ----------------------- Need-Validation ----------------------- */
+.Need-Validation {
+  overflow: hidden;
+}
+.Need-Validation .form-label, .Need-Validation .form-select {
+  color: rgb(170, 35, 35);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.Need-Validation .Input {
+  align-items: center;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+  grid-column-gap: 0;
+}
+.Need-Validation .Input .Icono {
+  background-color: rgb(25, 100, 40);
+  border-radius: 5px;
+  min-width: 30px;
+  min-height: 30px;
+  width: 4.4vw;
+  height: 4.4vw;
+  max-width: 45px;
+  max-height: 45px;
+}
+.Need-Validation .Input .Icono img {
+  width: 100%;
+  height: 100%;
+}
+.Need-Validation .Input .form-control, .Need-Validation .Input .form-select {
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 80%;
+  padding: 0 10px;
+  border-radius: 0 5px 5px 0;
+  border: 2px solid rgb(25, 100, 40);
+  border-left: 0 solid transparent;
+}
+.Need-Validation .Input .form-control.Text, .Need-Validation .Input .form-select.Text {
+  color: black;
+}
+.Need-Validation .Input .form-control:focus, .Need-Validation .Input .form-select:focus {
+  box-shadow: none;
+}
+.Need-Validation .Input .form-control.AllClr, .Need-Validation .Input .form-select.AllClr {
+  border-radius: 5px;
+  border-left: 2px solid rgb(25, 100, 40);
+}
+.Need-Validation .Input .IptClr {
+  color: rgb(25, 100, 40);
+}
+.Need-Validation .Input[data-disabled=true] .Icono {
+  background-color: rgb(53, 54, 59);
+}
+.Need-Validation .Input[data-disabled=true] .form-control, .Need-Validation .Input[data-disabled=true] .form-select {
+  border-color: rgb(53, 54, 59);
+  background-color: rgba(201, 202, 209, 0.5);
+}
+
+/* ----------------------- Was-Validated ----------------------- */
+.Was-Validated .Input[data-validation=true] .Icono {
+  background-color: rgb(3, 136, 27);
+}
+.Was-Validated .Input[data-validation=true] .form-control, .Was-Validated .Input[data-validation=true] .form-select {
+  border-color: rgb(3, 136, 27);
+}
+.Was-Validated .Input[data-validation=true] .IptClr {
+  color: rgb(3, 136, 27);
+}
+.Was-Validated .Input[data-validation=false] .Icono {
+  background-color: rgb(160, 0, 0);
+}
+.Was-Validated .Input[data-validation=false] .form-control, .Was-Validated .Input[data-validation=false] .form-select {
+  border-color: rgb(160, 0, 0);
+}
+.Was-Validated .Input[data-validation=false] .IptClr {
+  color: rgb(160, 0, 0);
+}
+
+/* ----------------------- BtnsSDC ----------------------- */
+.BtnsSDC {
+  display: inline-flex;
+}
+.BtnsSDC .Btn {
+  transition: 0.2s;
+  position: relative;
+  padding: 2px 5px;
+  margin-right: 10px;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+}
+.BtnsSDC .Btn .Image {
+  position: relative;
+  min-width: 30px;
+  min-height: 30px;
+  width: 3.6vw;
+  height: 3.6vw;
+  max-width: 60px;
+  max-height: 60px;
+}
+.BtnsSDC .Btn .Image img {
+  width: 100%;
+  height: 100%;
+}
+.BtnsSDC .Btn .Image img {
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  position: absolute;
+}
+.BtnsSDC .Btn .Text {
+  font-weight: bold;
+  color: white;
+}
+.BtnsSDC .Btn .Hitbox {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.BtnsSDC .Btn.Agregar {
+  background-color: rgb(0, 100, 200);
+}
+.BtnsSDC .Btn.Verificar {
+  background-color: rgb(250, 190, 0);
+}
+.BtnsSDC .Btn.Guardar, .BtnsSDC .Btn.Editar {
+  background-color: rgb(0, 180, 0);
+}
+.BtnsSDC .Btn.Eliminar {
+  background-color: rgb(180, 0, 0);
+}
+.BtnsSDC .Btn.Cancelar {
+  background-color: rgb(180, 180, 0);
+}
+.BtnsSDC .Btn:hover {
+  padding: 2px 10px;
+}
+
+/* ----------------------- PDF ----------------------- */
+#PDF {
+  width: 86%;
+  margin: 0 auto;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: auto 46%;
+  grid-column-gap: 10px;
+}
+#PDF embed {
+  width: 100%;
+  height: 62vw;
+}
+#PDF .Info {
+  height: 100%;
+  overflow: auto;
+  position: relative;
+}
+#PDF .Info .Caja {
+  position: absolute;
+}
+#PDF .Info .Caja .Link {
+  background-color: rgb(25, 100, 40);
+  transition: 0.2s;
+  margin: 0 10px;
+  margin-top: 20px;
+  padding: 5px 10px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 10px;
+}
+#PDF .Info .Caja .Link .Text {
+  margin-right: 10px;
+}
+#PDF .Info .Caja .Link:hover {
+  padding: 5px 15px;
+}
+#PDF .Info .Caja .Link:hover .Text {
+  font-weight: bold;
+}
+
+/* ============================ Models ============================ */
+/* ----------------------- NavMenu ----------------------- */
+#NavMenu {
+  background-color: rgb(170, 35, 35);
+  top: 0;
+  z-index: 2;
+  position: -webkit-sticky;
+  position: sticky;
+  padding: 0 10px;
+  min-height: 50px;
+  max-height: 70px;
+}
+#NavMenu .Link {
+  background-color: rgb(175, 175, 20);
+  top: 0;
+  width: 22vw;
+  padding: 1vw;
+  min-width: 200px;
+  position: absolute;
+  max-width: 300px;
+  border-radius: 0 0 10px 10px;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+  /*
+  .Triangle {
+      border: {
+          top: 2vw solid $ColorAN;
+          right: 22vw solid rgba(0, 0, 0, 0);
+      }
+
+      left: -1vw;
+      top: 100%;
+      grid-column: 1/3;
+      min-width: 200px;
+      position: absolute;
+      max-width: 300px;
+  }
+  */
+}
+#NavMenu .Link .IconE {
+  min-width: 55px;
+  min-height: 55px;
+  width: 3.2vw;
+  height: 3.2vw;
+  max-width: 85px;
+  max-height: 85px;
+}
+#NavMenu .Link .IconE img {
+  width: 100%;
+  height: 100%;
+}
+#NavMenu .Link .Title {
+  color: rgb(255, 255, 255);
+}
+#NavMenu .AbrirNav {
+  top: 5px;
+  right: 5px;
+  border: rgba(0, 0, 0, 0);
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* ----------------------- NavVertical ----------------------- */
+#NavVertical {
+  background-color: rgb(170, 35, 35);
+  top: 0;
+  left: -120%;
+  z-index: 100;
+  height: 100%;
+  transition: 1s;
+  position: fixed;
+  overflow-y: auto;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border-right: 3px solid black;
+  display: grid;
+  grid-row-gap: 10px;
+  grid-template-rows: repeat(3, -webkit-max-content) auto -webkit-max-content;
+  grid-template-rows: repeat(3, max-content) auto max-content;
+  grid-row-gap: 0;
+}
+#NavVertical .Header {
+  background-color: rgb(15, 80, 30);
+  padding: 10px;
+  grid-column-gap: 5px;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: auto -webkit-max-content;
+  grid-template-columns: auto max-content;
+}
+#NavVertical .Perfil {
+  background-color: rgb(25, 100, 40);
+  padding: 10px;
+  position: relative;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+#NavVertical .Perfil .Image {
+  margin: 0 auto;
+  margin-bottom: 5px;
+  min-width: 120px;
+  min-height: 120px;
+  width: 12vw;
+  height: 12vw;
+  max-width: 180px;
+  max-height: 180px;
+}
+#NavVertical .Perfil .Image img {
+  width: 100%;
+  height: 100%;
+}
+#NavVertical .Perfil .Image img {
+  border-radius: 100%;
+  border: 3px solid black;
+}
+#NavVertical .Perfil .Text {
+  margin: auto;
+  overflow: hidden;
+  text-align: center;
+  max-width: 280px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#NavVertical .Buscador {
+  background-color: rgb(35, 135, 60);
+  padding: 1vw;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+  grid-column-gap: 5px;
+}
+#NavVertical .Buscador .Search {
+  border-width: 2px;
+  border-style: solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to top, #FFF, rgba(0, 0, 0, 0));
+  width: 100%;
+  outline: none;
+  height: 100%;
+  padding: 0 5px;
+  border-radius: 0;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0);
+  font-weight: 0;
+  font-family: "QuickSand";
+  font-size: clamp(15px, 2vw, 26px);
+}
+#NavVertical .Buscador .Search::-moz-placeholder {
+  color: rgb(255, 255, 255);
+}
+#NavVertical .Buscador .Search:-ms-input-placeholder {
+  color: rgb(255, 255, 255);
+}
+#NavVertical .Buscador .Search::placeholder {
+  color: rgb(255, 255, 255);
+}
+#NavVertical .BigLista {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#NavVertical .BigLista .BigItem {
+  padding: 10px;
+}
+#NavVertical .BigLista .BigItem .Title {
+  text-align: center;
+  border-bottom: 2px solid rgb(255, 255, 255);
+}
+#NavVertical .BigLista .BigItem .Item .Link {
+  transition: 0.2s;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+#NavVertical .BigLista .BigItem .Item .Link:hover {
+  font-weight: bold;
+}
+#NavVertical .BigLista .BigItem .Item .Secciones {
+  overflow: hidden;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+#NavVertical .BigLista .BigItem .Item .Secciones .Seccion {
+  position: relative;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto -webkit-max-content;
+  grid-template-columns: max-content auto max-content;
+  grid-column-gap: 5px;
+}
+#NavVertical .BigLista .BigItem .Item .Secciones .Seccion .Hitbox {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#NavVertical .BigLista .BigItem .Item .Secciones .Seccion:hover {
+  padding-left: 0;
+}
+#NavVertical .BigLista .BigItem .Item .Secciones .Link .Text {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+#NavVertical .BigLista .BigItem .Item .Secciones .Link .IconM {
+  transition: 0.2s;
+  transform: rotate(180deg);
+}
+#NavVertical .BigLista .BigItem .Item .Secciones .Drop {
+  background-color: rgb(25, 100, 40);
+  width: 100%;
+  max-height: 0;
+  transition: 0.5s;
+  padding: 0 5px;
+  border-radius: 0 0 10px 10px;
+}
+#NavVertical .BigLista .BigItem .Item .Secciones .Drop .Item .TxBig {
+  border-bottom: 2px solid rgb(255, 255, 255);
+}
+#NavVertical .BigLista .BigItem .Item .Secciones[data-expanded=true] .Link .IconM {
+  transform: rotate(0deg);
+}
+#NavVertical .BigLista .BigItem .Item .Secciones[data-expanded=true] .Drop {
+  padding: 5px;
+  max-height: 100vh;
+}
+#NavVertical .BigLista .BigItem.Red1 {
+  background-color: rgb(130, 0, 0);
+}
+#NavVertical .BigLista .BigItem.Red2 {
+  background-color: rgb(155, 0, 0);
+}
+#NavVertical .BigLista .BigItem.Red3 {
+  background-color: rgb(175, 0, 0);
+}
+#NavVertical .BigLista .BigItem.Red4 {
+  background-color: rgb(210, 0, 0);
+}
+#NavVertical .BigLista .BigItem.Filtro {
+  padding: 0;
+  display: none;
+}
+#NavVertical .CerrarSesion {
+  background-color: rgb(175, 175, 20);
+  padding: 5px;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: auto -webkit-max-content;
+  grid-template-columns: auto max-content;
+  grid-column-gap: 5px;
+}
+#NavVertical .CerrarNav {
+  border: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+}
+#NavVertical .Lista {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#NavVertical .Lista .Item {
+  margin-bottom: 5px;
+}
+#NavVertical .Lista .Item .Link {
+  align-items: center;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+  grid-column-gap: 5px;
+}
+#NavVertical .Lista .Item .Link .Text {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+/* ----------------------- Background ----------------------- */
+#Background {
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  visibility: hidden;
+}
+
+/* ----------------------- Banner ----------------------- */
+#Banner .Image {
+  width: 80%;
+  margin: auto;
+}
+#Banner .Image img {
+  width: 100%;
+}
+#Banner .Title {
+  background-color: rgb(25, 100, 40);
+  padding: 0.5vw 0;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+/* ----------------------- NavLinks ----------------------- */
+#NavLinks {
+  background-color: rgb(15, 80, 30);
+}
+#NavLinks .Tabla {
+  margin: 0 auto;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+#NavLinks .Tabla .Lista {
+  margin: 0;
+  list-style: none;
+  padding: 5px 10px;
+  display: inline-flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+#NavLinks .Tabla .Lista .Item {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+#NavLinks .Tabla .Lista .Item .Link {
+  transition: 0.2s;
+  padding: 0 1vw;
+  align-items: center;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+  grid-column-gap: 5px;
+}
+#NavLinks .Tabla .Lista .Item .Link .Text {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+#NavLinks .Tabla .Lista .Item .Link:hover {
+  padding: 0 2vw;
+  font-weight: bold;
+}
+
+/* ----------------------- Footer ----------------------- */
+#Footer {
+  background-color: rgb(25, 100, 40);
+}
+#Footer .Text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#Footer .Enlaces {
+  width: 100%;
+  padding: 10px;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: auto auto;
+}
+#Footer .Enlaces .Lista {
+  margin: 0;
+  list-style: none;
+  margin-bottom: 5px;
+}
+#Footer .Enlaces .Lista .Item {
+  margin-bottom: 5px;
+}
+#Footer .Enlaces .Lista .Item .Link {
+  width: 100%;
+  transition: 0.2s;
+  padding: 0 5px;
+  align-items: center;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+}
+#Footer .Enlaces .Lista .Item .Link:hover {
+  padding-left: 10px;
+  font-weight: bold;
+}
+#Footer .SubFooter {
+  background-color: rgb(15, 80, 30);
+  width: 100%;
+  padding: 5px;
+  color: rgb(255, 255, 255);
+}
+#Footer .SubFooter .Text {
+  text-align: center;
+}
+#Footer .SubFooter .Text .Creator {
+  text-decoration: none;
+  color: rgb(50, 255, 0);
+}
+#Footer .SubFooter .Text .Creator:hover {
+  font-weight: bold;
+  color: rgb(20, 220, 0);
+}
+
+/* ============================ Blocs All ============================ */
+/* ----------------------- Aviso ----------------------- */
+#Aviso {
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  padding: 5px;
+  transition: 0.4s;
+  position: fixed;
+  max-width: 400px;
+  border-radius: 10px;
+  border: 2px solid black;
+  background-color: white;
+  transform: translate(-50%, -50%);
+}
+#Aviso .Title {
+  color: black;
+  padding-left: 10px;
+}
+#Aviso .Msj,
+#Aviso .Title {
+  border-bottom: 1px solid #72737a;
+}
+#Aviso .Botones {
+  padding-top: 5px;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 50% auto;
+}
+#Aviso .Botones button {
+  color: white;
+  border: rgba(0, 0, 0, 0);
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #b7bac2;
+}
+
+/* ----------------------- Alert ----------------------- */
+#Container-Alerts {
+  right: 0;
+  bottom: 0;
+  z-index: 80;
+  width: 40vw;
+  padding: 0 5px;
+  position: fixed;
+  min-width: 300px;
+  max-width: 500px;
+}
+#Container-Alerts #Alert {
+  margin-bottom: 5px;
+  border-radius: 5px 5px 0 0;
+}
+#Container-Alerts #Alert .Head {
+  padding: 5px 10px;
+  align-items: center;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+}
+#Container-Alerts #Alert .Head .Icono {
+  position: relative;
+  border-radius: 100%;
+  background-color: white;
+  min-width: 24px;
+  min-height: 24px;
+  width: 4vw;
+  height: 4vw;
+  max-width: 40px;
+  max-height: 40px;
+}
+#Container-Alerts #Alert .Head .Icono img {
+  width: 100%;
+  height: 100%;
+}
+#Container-Alerts #Alert .Head .Icono img {
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  position: absolute;
+}
+#Container-Alerts #Alert .Title {
+  font-style: italic;
+}
+#Container-Alerts #Alert .Text {
+  padding: 2px 5px;
+}
+#Container-Alerts #Alert .Bar {
+  height: 10px;
+}
+#Container-Alerts #Alert[data-type=Success] {
+  border: 2px solid #6daf91;
+  background-color: #d1e7dd;
+}
+#Container-Alerts #Alert[data-type=Success] .Title,
+#Container-Alerts #Alert[data-type=Success] .Text {
+  color: #0f5132;
+}
+#Container-Alerts #Alert[data-type=Success] .Bar {
+  background-color: #6daf91;
+}
+#Container-Alerts #Alert[data-type=Error] {
+  border: 2px solid #d3878e;
+  background-color: #f8d7da;
+}
+#Container-Alerts #Alert[data-type=Error] .Title,
+#Container-Alerts #Alert[data-type=Error] .Text {
+  color: #842029;
+}
+#Container-Alerts #Alert[data-type=Error] .Bar {
+  background-color: #d3878e;
+}
+#Container-Alerts #Alert[data-type=Info] {
+  border: 2px solid #87a7d4;
+  background-color: #cfe2ff;
+}
+#Container-Alerts #Alert[data-type=Info] .Title,
+#Container-Alerts #Alert[data-type=Info] .Text {
+  color: #084298;
+}
+#Container-Alerts #Alert[data-type=Info] .Bar {
+  background-color: #87a7d4;
+}
+#Container-Alerts #Alert[data-type=Warning] {
+  border: 2px solid #dbc276;
+  background-color: #fff3cd;
+}
+#Container-Alerts #Alert[data-type=Warning] .Title,
+#Container-Alerts #Alert[data-type=Warning] .Text {
+  color: #664d03;
+}
+#Container-Alerts #Alert[data-type=Warning] .Bar {
+  background-color: #dbc276;
+}
+#Container-Alerts #Alert[data-type=Line] {
+  border: 2px solid #8d9092;
+  background-color: #e2e3e5;
+}
+#Container-Alerts #Alert[data-type=Line] .Title,
+#Container-Alerts #Alert[data-type=Line] .Text {
+  color: #41464b;
+}
+#Container-Alerts #Alert[data-type=Line] .Bar {
+  background-color: #8d9092;
+}
+
+/* ============================ Error ============================ */
+/* ----------------------- ErrorPg ----------------------- */
+#ErrorPg {
+  width: 80%;
+  margin: 50px auto;
+  max-width: 1200px;
+}
+#ErrorPg img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================ Inicio ============================ */
+/* ----------------------- Header ----------------------- */
+#Header {
+  background-size: 100%;
+  background-image: url("../Images/All/Profesores.jpg");
+  height: 40vw;
+  padding: 10px;
+  position: relative;
+  min-height: 200px;
+  width: 86%;
+  margin: 0 auto;
+  border-radius: 0 0 20px 20px;
+}
+#Header .Title {
+  background-color: rgba(170, 35, 35, 0.5);
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding: 5px 10px;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+#Header .Image {
+  left: 50%;
+  width: 50%;
+  bottom: 10px;
+  filter: opacity(0.5);
+  position: absolute;
+  transform: translate(-50%, 0);
+}
+#Header .Image img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ----------------------- Institucion ----------------------- */
+#Institucion {
+  width: 86%;
+  margin: 0 auto;
+}
+
+/* ----------------------- InfoInst ----------------------- */
+#InfoInst {
+  width: 86%;
+  margin: 0 auto;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 40% auto;
+  grid-column-gap: 15px;
+}
+#InfoInst .MainCarousel {
+  border: rgba(0, 0, 0, 0);
+}
+
+/* ----------------------- Video ----------------------- */
+#Video {
+  width: 86%;
+  margin: 0 auto;
+  align-items: center;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: auto 40%;
+  grid-column-gap: 10px;
+}
+#Video .Card .Title {
+  text-align: center;
+}
+#Video .Card .Image {
+  background-color: rgba(170, 35, 35, 0.5);
+  margin: 0 auto;
+  border-radius: 10px;
+  min-width: 60px;
+  min-height: 60px;
+  width: 3vw;
+  height: 3vw;
+  max-width: 180px;
+  max-height: 180px;
+}
+#Video .Card .Image img {
+  width: 100%;
+  height: 100%;
+}
+#Video .Card .Image img {
+  width: 100%;
+  height: 100%;
+}
+#Video iframe {
+  height: 20vw;
+  min-height: 180px;
+}
+#Video.Left {
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 40% auto;
+  grid-column-gap: 10px;
+}
+
+/* ----------------------- Noticias ----------------------- */
+#Noticias {
+  height: 54vw;
+  border: rgba(0, 0, 0, 0);
+  min-height: 500px;
+  width: 86%;
+  margin: 0 auto;
+}
+#Noticias .DataCarousel .Carousel {
+  padding: 0 5px;
+}
+#Noticias .DataCarousel .Carousel .Card {
+  height: 50vw;
+  position: relative;
+  min-height: 460px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 3px solid rgb(25, 100, 40);
+  display: grid;
+  grid-row-gap: 10px;
+  grid-template-rows: -webkit-max-content -webkit-max-content auto -webkit-max-content;
+  grid-template-rows: max-content max-content auto max-content;
+}
+#Noticias .DataCarousel .Carousel .Card .Fecha {
+  background-color: rgba(25, 100, 40, 0.5);
+  top: 0;
+  left: 0;
+  padding: 2px;
+  color: white;
+  position: absolute;
+  border-radius: 8px 0;
+}
+#Noticias .DataCarousel .Carousel .Card .Imagen {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+#Noticias .DataCarousel .Carousel .Card .Title {
+  padding: 0 5px;
+  color: rgb(170, 35, 35);
+  text-align: center;
+}
+#Noticias .DataCarousel .Carousel .Card .Text {
+  padding: 5px;
+  overflow: auto;
+}
+#Noticias .DataCarousel .Carousel .Card .Btn {
+  text-decoration: none;
+}
+#Noticias .DataCarousel .Carousel .Card .Btn .Text {
+  background-color: rgb(25, 100, 40);
+  transition: 0.2s;
+  text-align: center;
+  padding: 5px 10px;
+  color: rgb(255, 255, 255);
+  border-radius: 15px 15px 5px 5px;
+}
+#Noticias .DataCarousel .Carousel .Card .Btn .Text:hover {
+  font-weight: bold;
+}
+#Noticias .Botones {
+  bottom: 0;
+  height: 4vw;
+  width: 100%;
+  position: absolute;
+}
+#Noticias .Botones button .Img {
+  background-color: rgb(25, 100, 40);
+  left: 50%;
+  filter: opacity(1);
+  border-radius: 10px;
+  min-width: 25px;
+  min-height: 25px;
+  width: 3.6vw;
+  height: 3.6vw;
+  max-width: 50px;
+  max-height: 50px;
+  transform: translate(-50%, -50%);
+}
+#Noticias .Botones button .Img img {
+  width: 100%;
+  height: 100%;
+}
+#Noticias .Botones button .Img img {
+  padding: 2px;
+}
+#Noticias .Botones button:hover {
+  filter: opacity(1);
+}
+
+/* ----------------------- Calendario ----------------------- */
+#Calendario {
+  width: 86%;
+  margin: 0 auto;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 30% auto;
+}
+#Calendario .Info .Title {
+  text-align: center;
+}
+#Calendario iframe {
+  width: 100%;
+  height: 40vw;
+}
+
+/* ----------------------- Enlaces ----------------------- */
+#Enlaces {
+  width: 86%;
+  margin: 0 auto;
+  grid-row-gap: 15px;
+  justify-content: space-evenly;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: repeat(6, auto);
+}
+#Enlaces .Enlace {
+  transition: 0.5s;
+  position: relative;
+  border-radius: 100%;
+  color: rgb(92, 92, 96);
+  min-width: 120px;
+  min-height: 120px;
+  width: 12vw;
+  height: 12vw;
+  max-width: 300px;
+  max-height: 300px;
+  border: 3px solid rgb(92, 92, 96);
+}
+#Enlaces .Enlace img {
+  width: 100%;
+  height: 100%;
+}
+#Enlaces .Enlace .Info {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+#Enlaces .Enlace .Info .Img {
+  margin: auto;
+  min-width: 46px;
+  min-height: 46px;
+  width: 3.6vw;
+  height: 3.6vw;
+  max-width: 76px;
+  max-height: 76px;
+}
+#Enlaces .Enlace .Info .Img img {
+  width: 100%;
+  height: 100%;
+}
+#Enlaces .Enlace .Info .Img img {
+  width: 100%;
+  height: 100%;
+}
+#Enlaces .Enlace .Info .Text {
+  text-align: center;
+}
+#Enlaces .Enlace:hover {
+  background-color: rgb(25, 100, 40);
+  color: white;
+  transform: scale(1.1);
+  border: 3px solid rgb(175, 175, 20);
+}
+#Enlaces .Enlace:hover .Info .Img img[data-icon=Edupage] {
+  content: url("../Icons/Blanco/Edupage.png");
+}
+#Enlaces .Enlace:hover .Info .Img img[data-icon=Familia] {
+  content: url("../Icons/Blanco/Familia.png");
+}
+#Enlaces .Enlace:hover .Info .Img img[data-icon=Red] {
+  content: url("../Icons/Blanco/Red.png");
+}
+#Enlaces .Enlace:hover .Info .Img img[data-icon=Descarga] {
+  content: url("../Icons/Blanco/Descarga.png");
+}
+
+/* ============================ ¿Quiénes somos? ============================ */
+/* ----------------------- MisionVision ----------------------- */
+#MisionVision {
+  width: 86%;
+  margin: 0 auto;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: auto auto;
+}
+#MisionVision .Card {
+  padding: 2vw;
+}
+#MisionVision .Card .Img {
+  background-color: rgb(25, 100, 40);
+  position: absolute;
+  border-radius: 100%;
+  min-width: 40px;
+  min-height: 40px;
+  width: 5vw;
+  height: 5vw;
+  max-width: 60px;
+  max-height: 60px;
+}
+#MisionVision .Card .Img img {
+  width: 100%;
+  height: 100%;
+}
+#MisionVision .Card .Img img {
+  width: 100%;
+  height: 100%;
+}
+#MisionVision .Card .Img.Icono {
+  top: -2vw;
+  left: -2vw;
+}
+#MisionVision .Card .Img.Icono img {
+  padding: 5px;
+}
+#MisionVision .Card .Img.Escudo {
+  right: -2vw;
+  bottom: -2vw;
+}
+#MisionVision .Card .Info {
+  position: relative;
+  border-radius: 10px;
+  border: 3px solid rgb(25, 100, 40);
+}
+#MisionVision .Card .Info .Title {
+  background-color: rgba(25, 100, 40, 0.5);
+  padding: 1.5vw;
+  color: white;
+  padding-left: 3vw;
+  padding-bottom: 0.5vw;
+  border-bottom: 3px solid rgb(25, 100, 40);
+}
+#MisionVision .Card .Info .Text {
+  padding: 1.5vw;
+}
+
+/* ----------------------- Historia ----------------------- */
+#Historia {
+  width: 86%;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 3px solid rgb(170, 35, 35);
+}
+#Historia .Encabezado {
+  background-color: rgba(170, 35, 35, 0.5);
+  padding: 1vw;
+  border-bottom: 3px solid rgb(170, 35, 35);
+}
+#Historia .Encabezado .Title {
+  color: white;
+}
+#Historia .History {
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 60% auto;
+}
+#Historia .History .Imagen img {
+  width: 100%;
+}
+
+/* ----------------------- LineaTiempo ----------------------- */
+#LineaTiempo {
+  width: 86%;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 3px solid rgb(170, 35, 35);
+}
+#LineaTiempo .Encabezado {
+  background-color: rgba(170, 35, 35, 0.5);
+  padding: 1vw;
+  border-bottom: 3px solid rgb(170, 35, 35);
+}
+#LineaTiempo .Encabezado .Title {
+  color: white;
+}
+#LineaTiempo .Imagen img {
+  width: 100%;
+}
+
+/* ----------------------- Ubicacion ----------------------- */
+#Ubicacion {
+  width: 86%;
+  margin: 0 auto;
+}
+#Ubicacion .MapaImg,
+#Ubicacion .Frame {
+  width: 50vw;
+  margin: auto;
+  height: 50vw;
+  min-width: 280px;
+  min-height: 280px;
+  max-width: 650px;
+  max-height: 650px;
+}
+#Ubicacion .MapaImg img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ============================ Simbolos ============================ */
+/* ----------------------- Simbolos ----------------------- */
+#Simbolos {
+  width: 86%;
+  margin: 0 auto;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 30% auto;
+  grid-column-gap: 15px;
+}
+#Simbolos .MainCarousel {
+  border: rgba(0, 0, 0, 0);
+}
+#Simbolos .Informacion {
+  overflow: auto;
+}
+
+/* ============================ Especialidades ============================ */
+/* ----------------------- Especialidad ----------------------- */
+#Especialidad {
+  width: 86%;
+  margin: 0 auto;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 30% auto 20%;
+}
+#Especialidad img {
+  width: 100%;
+}
+#Especialidad .InfEspecialidad {
+  overflow: hidden;
+  position: relative;
+}
+#Especialidad .InfEspecialidad .Fondo {
+  left: 0;
+  top: -120%;
+  width: 100%;
+  height: 100%;
+  transition: 0.4s;
+  position: absolute;
+}
+#Especialidad .InfEspecialidad .Fondo .Title {
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  color: white;
+  position: absolute;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+#Especialidad .InfEspecialidad:hover .Fondo {
+  top: 0;
+}
+#Especialidad.Left {
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 20% auto 30%;
+}
+#Especialidad .Info {
+  position: relative;
+}
+#Especialidad .Info .Contenedor {
+  height: 100%;
+  overflow: auto;
+  position: absolute;
+}
+#Especialidad[data-especialidad=Administracion] .Fondo {
+  background-color: rgba(10, 165, 210, 0.5);
+}
+#Especialidad[data-especialidad=Administracion] .Title {
+  color: rgb(10, 165, 210);
+}
+#Especialidad[data-especialidad=Turismo] .Fondo {
+  background-color: rgba(240, 30, 30, 0.5);
+}
+#Especialidad[data-especialidad=Turismo] .Title {
+  color: rgb(240, 30, 30);
+}
+#Especialidad[data-especialidad=Disenio] .Fondo {
+  background-color: rgba(100, 5, 110, 0.5);
+}
+#Especialidad[data-especialidad=Disenio] .Title {
+  color: rgb(100, 5, 110);
+}
+#Especialidad[data-especialidad=Prosoft] .Fondo {
+  background-color: rgba(0, 10, 150, 0.5);
+}
+#Especialidad[data-especialidad=Prosoft] .Title {
+  color: rgb(0, 10, 150);
+}
+#Especialidad[data-especialidad=Ambiental] .Fondo {
+  background-color: rgba(5, 175, 15, 0.5);
+}
+#Especialidad[data-especialidad=Ambiental] .Title {
+  color: rgb(5, 175, 15);
+}
+
+/* ============================ Formacion ============================ */
+/* ----------------------- Formacion ----------------------- */
+#Formacion {
+  width: 86%;
+  margin: 0 auto;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 40% auto;
+}
+#Formacion .Ciclo img {
+  width: 100%;
+}
+#Formacion .Info {
+  position: relative;
+}
+#Formacion .Info .Contenedor {
+  height: 100%;
+  overflow: auto;
+  position: absolute;
+}
+
+/* ----------------------- Campos ----------------------- */
+#Campos {
+  width: 86%;
+  margin: 0 auto;
+}
+
+/* ============================ P. Proyectos ============================ */
+/* ----------------------- Proyectos ----------------------- */
+#Transversales {
+  width: 86%;
+  margin: 0 auto;
+}
+#Transversales .Proyectos .Card {
+  position: relative;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 3px solid rgb(170, 35, 35);
+}
+#Transversales .Proyectos .Card img {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 3px solid rgb(170, 35, 35);
+}
+#Transversales .Proyectos .Card .Title {
+  color: rgb(170, 35, 35);
+  padding: 5px 10px;
+}
+#Transversales .Proyectos .Card .Text {
+  padding: 0 10px;
+  color: rgb(0, 0, 0);
+  padding-bottom: 5px;
+}
+#Transversales .Proyectos .Card .Text.Fecha {
+  background-color: rgba(170, 35, 35, 0.5);
+  border-right: 3px solid rgb(170, 35, 35);
+  border-bottom: 3px solid rgb(170, 35, 35);
+  top: 0;
+  left: 0;
+  color: white;
+  padding: 0 5px;
+  position: absolute;
+  border-radius: 10px 0;
+}
+
+/* ============================ Agregar usuario ============================ */
+/* ----------------------- AddInfo ----------------------- */
+#Formulario {
+  width: 86%;
+  margin: 0 auto;
+  align-items: center;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 40% auto;
+  grid-column-gap: 0;
+}
+#Formulario .Info {
+  background-size: cover;
+  background-image: url("../Images/FondoLogin.png");
+  display: grid;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 10%;
+  align-items: center;
+  border-radius: 10px;
+  border: 3px solid black;
+}
+#Formulario .Info .Title {
+  color: white;
+  text-align: center;
+}
+#Formulario .Info .Imagen {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+#Formulario .Info .Imagen img {
+  width: 100%;
+  height: 100%;
+}
+#Formulario .Informacion {
+  padding: 20px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  border: 3px solid black;
+  border-radius: 0 10px 10px 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-left: rgba(0, 0, 0, 0);
+}
+
+/* ----------------------- Roles ----------------------- */
+#Roles {
+  width: 86%;
+  margin: 0 auto;
+}
+#Roles .Title {
+  margin-bottom: 40px;
+}
+#Roles .Tabla {
+  grid-row-gap: 20px;
+  justify-content: space-between;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: repeat(5, auto);
+}
+#Roles .Tabla .Btn {
+  width: 100%;
+  height: 20vw;
+  position: relative;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+#Roles .Tabla .Btn .Imagen {
+  width: 100%;
+  height: 100%;
+}
+#Roles .Tabla .Btn .Imagen img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+#Roles .Tabla .Btn .Text {
+  top: 50%;
+  left: 50%;
+  color: white;
+  padding: 2px 5px;
+  position: absolute;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+#Roles .Tabla .Btn .Hitbox {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+/* ----------------------- AddUser ----------------------- */
+#AddUser {
+  width: 86%;
+  margin: 0 auto;
+}
+#AddUser .BtnsSDC {
+  margin-top: 20px;
+}
+
+/* ----------------------- Usuarios ----------------------- */
+#Usuarios {
+  overflow-x: auto;
+  width: 86%;
+  margin: 0 auto;
+}
+#Usuarios .Tabla tr th,
+#Usuarios .Tabla tr td {
+  padding: 2px 10px;
+  max-width: 240px;
+  border: 2px solid black;
+}
+#Usuarios .Tabla tr th .Title,
+#Usuarios .Tabla tr th .Text,
+#Usuarios .Tabla tr td .Title,
+#Usuarios .Tabla tr td .Text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#Usuarios .Tabla tr th .Title.Id,
+#Usuarios .Tabla tr th .Text.Id,
+#Usuarios .Tabla tr td .Title.Id,
+#Usuarios .Tabla tr td .Text.Id {
+  font-weight: bold;
+  text-align: center;
+}
+#Usuarios .Tabla tr th {
+  text-align: center;
+}
+#Usuarios .Tabla tr .Botones {
+  padding: 2px;
+}
+#Usuarios .Tabla tr .Botones .Btns {
+  flex-wrap: nowrap;
+  display: inline-flex;
+}
+#Usuarios .Tabla tr .Botones .Btns .Btn {
+  color: white;
+  margin-left: 5px;
+  position: relative;
+  padding: 2px 5px;
+  align-items: center;
+  border-radius: 5px;
+  border: 2px solid black;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content -webkit-max-content;
+  grid-template-columns: max-content max-content;
+}
+#Usuarios .Tabla tr .Botones .Btns .Btn img {
+  min-width: 25px;
+  min-height: 25px;
+  width: 2.6vw;
+  height: 2.6vw;
+  max-width: 50px;
+  max-height: 50px;
+}
+#Usuarios .Tabla tr .Botones .Btns .Btn img img {
+  width: 100%;
+  height: 100%;
+}
+#Usuarios .Tabla tr .Botones .Btns .Btn.Editar {
+  background-color: rgb(0, 130, 0);
+}
+#Usuarios .Tabla tr .Botones .Btns .Btn.Eliminar {
+  background-color: rgb(180, 0, 0);
+}
+#Usuarios .Tabla tr .Botones .Btns .Btn:first-child {
+  margin: 0;
+}
+#Usuarios .Tabla tr .Botones .Btns .Btn .Hitbox {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#Usuarios .Tabla tr:nth-child(odd) {
+  background-color: rgb(145, 145, 150);
+}
+#Usuarios .Tabla tr:nth-child(odd) .Text {
+  color: white;
+}
+#Usuarios .Tabla tr:nth-child(even) {
+  background-color: rgb(255, 255, 255);
+}
+
+/* ============================ Biblioteca ============================ */
+/* ----------------------- HeaderBi ----------------------- */
+#HeaderBi {
+  width: 86%;
+  margin: 0 auto;
+}
+#HeaderBi .Imagenes {
+  position: relative;
+  margin-bottom: 120px;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: repeat(2, auto);
+  grid-column-gap: 0;
+}
+#HeaderBi .Imagenes .Img1,
+#HeaderBi .Imagenes .Img2 {
+  width: 100%;
+  height: 100%;
+}
+#HeaderBi .Imagenes .Img1 {
+  border-radius: 0 0 0 20px;
+}
+#HeaderBi .Imagenes .Img2 {
+  border-radius: 0 0 20px 0;
+}
+#HeaderBi .Imagenes .JulioFlorez {
+  left: 50%;
+  top: 100%;
+  position: absolute;
+  border-radius: 100%;
+  border: 3px solid rgb(170, 35, 35);
+  transform: translate(-50%, -50%);
+  min-width: 200px;
+  min-height: 200px;
+  width: 18vw;
+  height: 18vw;
+  max-width: 400px;
+  max-height: 400px;
+}
+#HeaderBi .Imagenes .JulioFlorez img {
+  width: 100%;
+  height: 100%;
+}
+#HeaderBi .Info {
+  width: 86%;
+  margin: 0 auto;
+}
+#HeaderBi .Info .Title {
+  text-align: center;
+}
+#HeaderBi .Info .SubText {
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(25, 100, 40);
+  text-align: center;
+}
+
+/* ----------------------- Encargado ----------------------- */
+#Encargado {
+  width: 86%;
+  margin: 0 auto;
+  align-items: center;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+  grid-column-gap: 20px;
+}
+#Encargado .Imagen {
+  min-width: 200px;
+  min-height: 200px;
+  width: 22vw;
+  height: 22vw;
+  max-width: 600px;
+  max-height: 600px;
+}
+#Encargado .Imagen img {
+  width: 100%;
+  height: 100%;
+}
+#Encargado .Imagen img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  box-shadow: 0 0 20px black;
+}
+
+/* ----------------------- Frase ----------------------- */
+#Frase {
+  width: 86%;
+  margin: 0 auto;
+  align-items: center;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 40% auto;
+  grid-column-gap: 20px;
+}
+#Frase .Imagen img {
+  width: 100%;
+}
+#Frase .Info {
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  min-height: -webkit-max-content;
+  min-height: -moz-max-content;
+  min-height: max-content;
+}
+#Frase .Info .Caja {
+  position: absolute;
+}
+#Frase .Info .Caja .Title {
+  text-align: center;
+}
+
+/* ----------------------- Importancia ----------------------- */
+#Importancia {
+  width: 86%;
+  margin: 0 auto;
+  align-items: center;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 25% auto;
+}
+#Importancia .Imagen1 {
+  grid-row: 1/4;
+}
+#Importancia .Caja {
+  align-items: center;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 25% auto;
+}
+#Importancia img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ----------------------- Libros ----------------------- */
+#Libros {
+  width: 86%;
+  margin: 0 auto;
+}
+#Libros .MainCarousel {
+  border: rgba(0, 0, 0, 0);
+  margin-top: 20px;
+}
+#Libros .MainCarousel .Hitbox {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#Libros .MainCarousel .Hitbox .Title {
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  padding: 5px;
+  color: white;
+  position: absolute;
+  text-align: center;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+}
+#Libros .MainCarousel[data-cards="6"] {
+  height: 20vw;
+}
+#Libros .MainCarousel[data-cards="6"] .Hitbox {
+  box-shadow: inset 0 -10vw 10vw white;
+}
+#Libros .MainCarousel[data-cards="5"] {
+  height: 25vw;
+}
+#Libros .MainCarousel[data-cards="5"] .Hitbox {
+  box-shadow: inset 0 -13.5vw 13.5vw white;
+}
+#Libros .MainCarousel[data-cards="4"] {
+  height: 32vw;
+}
+#Libros .MainCarousel[data-cards="4"] .Hitbox {
+  box-shadow: inset 0 -16vw 16vw white;
+}
+#Libros .MainCarousel[data-cards="3"] {
+  height: 40vw;
+}
+#Libros .MainCarousel[data-cards="3"] .Hitbox {
+  box-shadow: inset 0 -20vw 20vw white;
+}
+
+/* ----------------------- Garcia ----------------------- */
+#Garcia {
+  width: 86%;
+  margin: 0 auto;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 35% auto;
+}
+#Garcia .Title {
+  color: rgb(170, 35, 35);
+}
+#Garcia .Autor {
+  height: 100%;
+  grid-row: 1/5;
+  overflow: auto;
+  position: relative;
+}
+#Garcia .Autor img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+#Garcia .Autor .Caja {
+  position: absolute;
+}
+#Garcia .Libro {
+  align-items: center;
+  margin-bottom: 10px;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 30% auto;
+}
+#Garcia .Libro img {
+  width: 100%;
+}
+#Garcia .Libro.Num2 {
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: auto 30%;
+}
+
+/* ============================ Libreria ============================ */
+/* ----------------------- AddLib ----------------------- */
+#AddLib {
+  width: 86%;
+  margin: 0 auto;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 40% auto;
+}
+#AddLib .Archivos {
+  display: grid;
+  grid-row-gap: 10px;
+  grid-template-rows: 50% auto;
+}
+#AddLib .Archivos .Input {
+  background-color: rgba(110, 110, 110, 0.4);
+  position: relative;
+  border-radius: 10px;
+  border: 2px dashed rgb(110, 110, 110);
+}
+#AddLib .Archivos .Input .File {
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  filter: opacity(0);
+  position: absolute;
+}
+#AddLib .Archivos .Input .Texto {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  position: absolute;
+  padding: 2px 10px;
+  transform: translate(0, -50%);
+}
+#AddLib .Archivos .Input .Texto .Title,
+#AddLib .Archivos .Input .Texto .Text {
+  font-weight: bold;
+  color: white;
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#AddLib .Formulario .Columna {
+  margin-bottom: 10px;
+}
+#AddLib .Formulario .Columna .form-label {
+  color: rgb(170, 35, 35);
+}
+#AddLib .Formulario .Columna .form-control {
+  padding: 0 10px;
+  max-height: 160px;
+  border: 2px solid black;
+}
+#AddLib .Formulario .Columna .form-control:focus {
+  box-shadow: none;
+}
+#AddLib .Botones {
+  grid-column: 1/3;
+  margin-top: 20px;
+  display: inline-flex;
+}
+#AddLib .Botones .Btn {
+  transition: 0.2s;
+  position: relative;
+  margin-left: 10px;
+  padding: 2px 10px;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+}
+#AddLib .Botones .Btn .Image {
+  position: relative;
+  min-width: 30px;
+  min-height: 30px;
+  width: 3.6vw;
+  height: 3.6vw;
+  max-width: 60px;
+  max-height: 60px;
+}
+#AddLib .Botones .Btn .Image img {
+  width: 100%;
+  height: 100%;
+}
+#AddLib .Botones .Btn .Image img {
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+#AddLib .Botones .Btn .Text {
+  font-weight: bold;
+  color: white;
+}
+#AddLib .Botones .Btn .Hitbox {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#AddLib .Botones .Btn.Guardar {
+  background-color: rgb(0, 180, 0);
+}
+#AddLib .Botones .Btn.Eliminar {
+  background-color: rgb(180, 0, 0);
+}
+#AddLib .Botones .Btn.Cancelar {
+  background-color: rgb(180, 180, 0);
+}
+#AddLib .Botones .Btn:hover {
+  padding: 2px 15px;
+}
+#AddLib.was-validated .form-control:valid,
+#AddLib.was-validated .form-select:valid {
+  border: 2px solid rgb(0, 130, 0);
+}
+#AddLib.was-validated .form-control:invalid,
+#AddLib.was-validated .form-select:invalid {
+  border: 2px solid rgb(200, 0, 0);
+}
+
+/* ----------------------- Libreria ----------------------- */
+#Libreria {
+  width: 86%;
+  margin: 0 auto;
+}
+#Libreria .Encabezado {
+  height: 8vw;
+  position: relative;
+  margin-bottom: 40px;
+  border-top: 4vw solid orange;
+  border-left: 2vw solid transparent;
+  border-bottom: 4vw solid orange;
+  border-right: 2vw solid transparent;
+}
+#Libreria .Encabezado .Title {
+  top: 50%;
+  left: 20px;
+  color: white;
+  position: absolute;
+  padding: 10px 20px;
+  transform: translate(0, -50%);
+}
+#Libreria .Seccion {
+  justify-content: center;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: repeat(6, 16%);
+}
+#Libreria .Seccion .Libro {
+  background-color: rgb(40, 45, 60);
+  width: 100%;
+  height: 20vw;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid black;
+}
+#Libreria .Seccion .Libro .Portada {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  position: absolute;
+  transform: translate(0, -50%);
+}
+#Libreria .Seccion .Libro .PDF {
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: 2px;
+  position: absolute;
+  border-radius: 0 0 5px 0;
+  border-right: 2px solid black;
+  min-width: 24px;
+  min-height: 24px;
+  width: 3.6vw;
+  height: 3.6vw;
+  max-width: 60px;
+  max-height: 60px;
+  border-bottom: 2px solid black;
+}
+#Libreria .Seccion .Libro .PDF img {
+  width: 100%;
+  height: 100%;
+}
+#Libreria .Seccion .Libro .Shadow {
+  top: 120%;
+  left: -10%;
+  width: 120%;
+  height: 110%;
+  transition: 0.2s;
+  position: absolute;
+  box-shadow: inset 0 -6vw 8vw 1vw black;
+}
+#Libreria .Seccion .Libro .Shadow .Text {
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 50%;
+  left: 50%;
+  color: white;
+  padding: 2px 5px;
+  position: absolute;
+  border-radius: 10%;
+  transform: translate(-50%, -50%);
+}
+#Libreria .Seccion .Libro .Corazones {
+  background-color: rgba(0, 0, 0, 0.6);
+  right: 0;
+  bottom: 0;
+  padding: 0 2px;
+  position: absolute;
+  align-items: center;
+  border-radius: 5px 0 0 0;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+}
+#Libreria .Seccion .Libro .Corazones img {
+  min-width: 20px;
+  min-height: 20px;
+  width: 2.6vw;
+  height: 2.6vw;
+  max-width: 50px;
+  max-height: 50px;
+}
+#Libreria .Seccion .Libro .Corazones img img {
+  width: 100%;
+  height: 100%;
+}
+#Libreria .Seccion .Libro .Corazones .Text {
+  font-weight: bold;
+  color: white;
+}
+#Libreria .Seccion .Libro .Hitbox {
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#Libreria .Seccion .Libro:hover .Shadow {
+  top: -10%;
+}
+
+/* ============================ Libros ============================ */
+/* ----------------------- Vista ----------------------- */
+#Vista {
+  width: 86%;
+  margin: 0 auto;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 40% auto;
+}
+#Vista .Portada .Imagen {
+  position: relative;
+}
+#Vista .Portada .Imagen .Porta {
+  width: 100%;
+  border: 3px solid black;
+}
+#Vista .Portada .Imagen .Valoracion {
+  background-color: rgba(0, 0, 0, 0.6);
+  left: 0;
+  bottom: 0;
+  padding: 2px 5px;
+  position: absolute;
+  align-items: center;
+  border-radius: 0 10px 0 0;
+  border-top: 3px solid black;
+  border-right: 3px solid black;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+}
+#Vista .Portada .Imagen .Valoracion .Image {
+  min-width: 30px;
+  min-height: 30px;
+  width: 3.5vw;
+  height: 3.5vw;
+  max-width: 50px;
+  max-height: 50px;
+}
+#Vista .Portada .Imagen .Valoracion .Image img {
+  width: 100%;
+  height: 100%;
+}
+#Vista .Portada .Imagen .Valoracion .Text {
+  font-weight: bold;
+  color: white;
+}
+#Vista .Portada .Imagen .Valoracion .Hitbox {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#Vista .Portada .Title {
+  text-align: center;
+}
+#Vista .Box {
+  height: 100%;
+  display: grid;
+  grid-row-gap: 10px;
+  grid-template-rows: auto -webkit-max-content;
+  grid-template-rows: auto max-content;
+}
+#Vista .Box .Resenas {
+  position: relative;
+}
+#Vista .Box .Resenas .Caja {
+  height: 100%;
+  overflow: auto;
+  position: absolute;
+}
+#Vista .Box .Resenas .Caja .Resena {
+  width: 90%;
+  position: relative;
+  margin-top: 35px;
+  margin-right: 30px;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+  grid-column-gap: 15px;
+}
+#Vista .Box .Resenas .Caja .Resena .Imagen {
+  position: relative;
+  min-width: 40px;
+  min-height: 40px;
+  width: 5.2vw;
+  height: 5.2vw;
+  max-width: 60px;
+  max-height: 60px;
+}
+#Vista .Box .Resenas .Caja .Resena .Imagen img {
+  width: 100%;
+  height: 100%;
+}
+#Vista .Box .Resenas .Caja .Resena .Imagen img {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  position: absolute;
+  border-radius: 100%;
+  border: 2px solid black;
+  transform: translate(0, -50%);
+}
+#Vista .Box .Resenas .Caja .Resena .BoxCaja {
+  position: relative;
+}
+#Vista .Box .Resenas .Caja .Resena .BoxCaja .Tabla {
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+#Vista .Box .Resenas .Caja .Resena .BoxCaja .Tabla .Elementos {
+  border-bottom: 1.5px solid rgb(153, 151, 151);
+}
+#Vista .Box .Resenas .Caja .Resena .BoxCaja .Tabla .Elementos .SubElement {
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: auto -webkit-max-content;
+  grid-template-columns: auto max-content;
+}
+#Vista .Box .Resenas .Caja .Resena .BoxCaja .Tabla .Direc {
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#Vista .Box .Resenas .Caja .Resena .BoxCaja .Tabla .Direc.Rol {
+  color: rgb(102, 102, 102);
+}
+#Vista .Box .Resenas .Caja .Resena .BoxCaja .Tabla .Direc.Hora {
+  padding: 0 10px;
+}
+#Vista .Box .Resenas .Caja .Resena .BoxCaja .Tabla .Direc.Fecha, #Vista .Box .Resenas .Caja .Resena .BoxCaja .Tabla .Direc.Hora {
+  color: rgb(25, 100, 40);
+  text-align: right;
+}
+#Vista .Box .Resenas .Caja .Resena .BoxCaja .Tabla .Direc.MinText {
+  font-weight: bold;
+  font-weight: 0;
+  font-family: "QuickSand";
+  font-size: clamp(17px, 1.8vw, 26px);
+}
+#Vista .Box .Resenas .Caja .Resena .BoxCaja::before {
+  width: 0;
+  height: 0;
+  top: 10px;
+  content: "";
+  right: 100%;
+  display: block;
+  position: absolute;
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent black;
+}
+#Vista .Box .Resenas .Caja .Resena .Asunto {
+  padding: 5px;
+  overflow: auto;
+  padding-top: 0;
+  max-height: 200px;
+  margin-bottom: 5px;
+}
+#Vista .Box .Resenas .Caja .Resena .Reportar {
+  background-color: rgb(170, 35, 35);
+  top: 0;
+  left: 100%;
+  padding: 0.8vw;
+  border-radius: 100%;
+  position: absolute;
+  border: 2px solid black;
+  transform: translate(-50%, -50%);
+  min-width: 30px;
+  min-height: 30px;
+  width: 4.5vw;
+  height: 4.5vw;
+  max-width: 60px;
+  max-height: 60px;
+}
+#Vista .Box .Resenas .Caja .Resena .Reportar img {
+  width: 100%;
+  height: 100%;
+}
+#Vista .Box .Resenas .Caja .Resena .Reportar img {
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+#Vista .Box .Resenas .Caja .Resena .Reportar .HitboxR {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#Vista .Box .Resenas .SinNotificaciones {
+  background-color: rgba(170, 170, 170, 0.8);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+}
+#Vista .Box .Resenas .SinNotificaciones .Title {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  color: white;
+  padding: 0 10px;
+  position: absolute;
+  text-align: center;
+  transform: translate(0, -50%);
+}
+#Vista .Box .Publicacion .form-control {
+  padding: 0 10px;
+  min-height: 80px;
+  max-height: 140px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+#Vista .Box .Publicacion .form-control:focus {
+  box-shadow: none;
+}
+#Vista .Box .Publicacion .Caja {
+  position: relative;
+}
+#Vista .Box .Publicacion .Caja .TextArea {
+  border-radius: 0 10px 10px 10px;
+}
+#Vista .Box .Publicacion .Caja:before {
+  background-color: rgb(0, 0, 0);
+  top: 0;
+  left: 0;
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+}
+#Vista .Box .Publicacion .Botones {
+  margin-top: 10px;
+  display: inline-flex;
+}
+#Vista .Box .Publicacion .Botones .Btn {
+  transition: 0.2s;
+  position: relative;
+  padding: 2px 5px;
+  margin-right: 10px;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+}
+#Vista .Box .Publicacion .Botones .Btn .Image {
+  position: relative;
+  min-width: 30px;
+  min-height: 30px;
+  width: 3.6vw;
+  height: 3.6vw;
+  max-width: 60px;
+  max-height: 60px;
+}
+#Vista .Box .Publicacion .Botones .Btn .Image img {
+  width: 100%;
+  height: 100%;
+}
+#Vista .Box .Publicacion .Botones .Btn .Image img {
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+#Vista .Box .Publicacion .Botones .Btn .Text {
+  font-weight: bold;
+  color: white;
+}
+#Vista .Box .Publicacion .Botones .Btn .Hitbox {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#Vista .Box .Publicacion .Botones .Btn.Publicar {
+  background-color: rgb(0, 180, 0);
+}
+#Vista .Box .Publicacion .Botones .Btn.Cancelar {
+  background-color: rgb(180, 180, 0);
+}
+#Vista .Box .Publicacion .Botones .Btn:hover {
+  padding: 2px 10px;
+}
+#Vista .Box .Publicacion.was-validated .form-control:valid {
+  border: 2px solid rgb(0, 130, 0);
+}
+#Vista .Box .Publicacion.was-validated .form-control:invalid {
+  border: 2px solid rgb(200, 0, 0);
+}
+
+/* ----------------------- PDFLibro ----------------------- */
+#PDFLibro {
+  width: 86%;
+  margin: 0 auto;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 50% auto;
+}
+#PDFLibro .PDF {
+  height: 100%;
+  position: relative;
+  min-height: 500px;
+}
+#PDFLibro .PDF .PDFVisual {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#PDFLibro .SinPDF {
+  background-color: rgba(110, 110, 110, 0.4);
+  position: relative;
+  border: 2px solid rgb(110, 110, 110);
+}
+#PDFLibro .SinPDF .Title {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  color: white;
+  position: absolute;
+  text-align: center;
+  padding: 2px 10px;
+  transform: translate(0, -50%);
+}
+
+/* ============================ Comedor ============================ */
+/* ----------------------- Secciones ----------------------- */
+#Secciones {
+  display: grid;
+  width: 86%;
+  margin: 0 auto;
+  grid-row-gap: 40px;
+}
+#Secciones .Contenedor {
+  align-items: center;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 40% auto;
+}
+#Secciones .Contenedor .Title {
+  color: rgb(25, 100, 40);
+}
+#Secciones .Contenedor .Card {
+  width: 90%;
+  margin: auto;
+  transition: 0.6s;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+#Secciones .Contenedor .Card .Imagen {
+  width: 100%;
+  height: 28vw;
+  overflow: hidden;
+  position: relative;
+}
+#Secciones .Contenedor .Card .Imagen img {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  position: absolute;
+  transform: translate(0, -50%);
+}
+#Secciones .Contenedor .Card .Info {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.6s;
+  position: absolute;
+  background: linear-gradient(90deg, rgba(27, 124, 235, 0.3), rgba(0, 128, 106, 0.3));
+}
+#Secciones .Contenedor .Card .Info .Title,
+#Secciones .Contenedor .Card .Info .Text {
+  background-color: rgba(0, 0, 0, 0.4);
+  left: 50%;
+  transition: 0.6s;
+  color: white;
+  position: absolute;
+  padding: 5px 10px;
+  border-radius: 10px;
+  transform: translate(-50%, 0);
+}
+#Secciones .Contenedor .Card .Info .Title {
+  top: -10%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+#Secciones .Contenedor .Card .Info .Text {
+  width: 100%;
+  bottom: -10%;
+}
+#Secciones .Contenedor .Card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+#Secciones .Contenedor .Card:hover .Info {
+  opacity: 1;
+}
+#Secciones .Contenedor .Card:hover .Info .Title {
+  top: 10px;
+}
+#Secciones .Contenedor .Card:hover .Info .Text {
+  bottom: 0;
+}
+#Secciones .Contenedor[data-orientacion=right] {
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: auto 40%;
+}
+
+/* ----------------------- Menu ----------------------- */
+#Menu {
+  width: 86%;
+  margin: 0 auto;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 60% auto;
+}
+#Menu .PDF {
+  height: 100%;
+  position: relative;
+  min-height: 500px;
+}
+#Menu .PDF .PDFVisual {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#Menu .SinPDF {
+  background-color: rgba(110, 110, 110, 0.4);
+  position: relative;
+  border: 2px solid rgb(110, 110, 110);
+}
+#Menu .SinPDF .Title {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  padding: 2px 10px;
+  color: rgb(50, 50, 50);
+  transform: translate(0, -50%);
+}
+#Menu .MenuMes .Input {
+  background-color: rgba(110, 110, 110, 0.4);
+  height: 20vw;
+  position: relative;
+  min-height: 160px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 2px dashed rgb(110, 110, 110);
+}
+#Menu .MenuMes .Input .InputPDF {
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  filter: opacity(0);
+  position: absolute;
+}
+#Menu .MenuMes .Input .Texto {
+  top: 50%;
+  width: 100%;
+  position: absolute;
+  transform: translate(0, -50%);
+}
+#Menu .MenuMes .Input .Texto .Title,
+#Menu .MenuMes .Input .Texto .Text {
+  font-weight: bold;
+  width: 100%;
+  overflow: hidden;
+  padding: 2px 5px;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: rgb(50, 50, 50);
+}
+#Menu .MenuMes .Botones .Btn {
+  transition: 0.2s;
+  position: relative;
+  padding: 2px 10px;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+}
+#Menu .MenuMes .Botones .Btn .Image {
+  position: relative;
+  min-width: 30px;
+  min-height: 30px;
+  width: 3.6vw;
+  height: 3.6vw;
+  max-width: 60px;
+  max-height: 60px;
+}
+#Menu .MenuMes .Botones .Btn .Image img {
+  width: 100%;
+  height: 100%;
+}
+#Menu .MenuMes .Botones .Btn .Image img {
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+#Menu .MenuMes .Botones .Btn .Text {
+  font-weight: bold;
+  color: white;
+}
+#Menu .MenuMes .Botones .Btn .Hitbox {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#Menu .MenuMes .Botones .Btn.Guardar {
+  background-color: rgb(0, 180, 0);
+}
+#Menu .MenuMes .Botones .Btn.Eliminar {
+  background-color: rgb(180, 0, 0);
+}
+#Menu .MenuMes .Botones .Btn.Cancelar {
+  background-color: rgb(180, 180, 0);
+}
+#Menu .MenuMes .Botones .Btn:hover {
+  padding: 2px 15px;
+}
+
+/* ============================ Orientación ============================ */
+/* ----------------------- Educativa ----------------------- */
+#QueEsLaOrientacion {
+  width: 86%;
+  margin: 0 auto;
+  border-radius: 10px;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 40% auto;
+}
+#QueEsLaOrientacion img {
+  width: 100%;
+}
+#QueEsLaOrientacion .Info {
+  margin: 5px;
+  overflow: auto;
+  position: relative;
+}
+#QueEsLaOrientacion .Info .Caja {
+  height: 100%;
+  padding: 10px;
+  position: absolute;
+  border-radius: 10px;
+  border: 3px solid rgb(170, 35, 35);
+}
+
+/* ----------------------- Educativa ----------------------- */
+#Educativa {
+  width: 86%;
+  margin: 0 auto;
+}
+#Educativa img {
+  float: left;
+  width: 36vw;
+  margin-right: 10px;
+}
+
+/* ----------------------- Bienestar ----------------------- */
+#Bienestar {
+  width: 86%;
+  margin: 0 auto;
+}
+#Bienestar .Url {
+  width: 80%;
+  margin: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+#Bienestar .Url img {
+  width: 100%;
+}
+
+/* ============================ Servicio Social ============================ */
+/* ----------------------- ServicioSocial ----------------------- */
+#ServicioSocial {
+  width: 86%;
+  margin: 0 auto;
+}
+#ServicioSocial .Space {
+  width: 100%;
+}
+#ServicioSocial .Contenedor-Tabla {
+  overflow-x: auto;
+}
+#ServicioSocial .Contenedor-Tabla .Tabla {
+  width: 100%;
+  margin-bottom: 20px;
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr th,
+#ServicioSocial .Contenedor-Tabla .Tabla tr td {
+  padding: 2px 10px;
+  max-width: 240px;
+  border: 2px solid black;
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr th .Text,
+#ServicioSocial .Contenedor-Tabla .Tabla tr td .Text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr th .Text.Left,
+#ServicioSocial .Contenedor-Tabla .Tabla tr td .Text.Left {
+  text-align: left;
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr th .Text.H,
+#ServicioSocial .Contenedor-Tabla .Tabla tr td .Text.H {
+  text-align: center;
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr th.MaxWidht,
+#ServicioSocial .Contenedor-Tabla .Tabla tr td.MaxWidht {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr th {
+  text-align: center;
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr .Botones {
+  padding: 2px;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr .Btns {
+  flex-wrap: nowrap;
+  display: inline-flex;
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr .Btns .Btn {
+  color: white;
+  margin-left: 5px;
+  position: relative;
+  padding: 2px 5px;
+  align-items: center;
+  border-radius: 5px;
+  border: 2px solid black;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content -webkit-max-content;
+  grid-template-columns: max-content max-content;
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr .Btns .Btn img {
+  min-width: 25px;
+  min-height: 25px;
+  width: 2.6vw;
+  height: 2.6vw;
+  max-width: 50px;
+  max-height: 50px;
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr .Btns .Btn img img {
+  width: 100%;
+  height: 100%;
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr .Btns .Btn.Verificar {
+  background-color: rgb(250, 190, 0);
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr .Btns .Btn.Agregar {
+  background-color: rgb(0, 100, 200);
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr .Btns .Btn.Editar {
+  background-color: rgb(0, 130, 0);
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr .Btns .Btn.Eliminar {
+  background-color: rgb(180, 0, 0);
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr .Btns .Btn:first-child {
+  margin: 0;
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr .Btns .Btn .Hitbox {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr:nth-child(odd) {
+  background-color: rgb(145, 145, 150);
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr:nth-child(odd) .Text {
+  color: white;
+}
+#ServicioSocial .Contenedor-Tabla .Tabla tr:nth-child(even) {
+  background-color: rgb(255, 255, 255);
+}
+#ServicioSocial .SinServicio {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  border: 2px solid black;
+  background-color: rgba(170, 170, 170, 0.8);
+}
+#ServicioSocial .SinServicio .Title {
+  text-align: center;
+  padding: 20px 10px;
+}
+
+/* ----------------------- MoreHours ----------------------- */
+#MoreHours {
+  width: 86%;
+  margin: 0 auto;
+}
+#MoreHours .Elemento {
+  margin-bottom: 10px;
+}
+#MoreHours .Elemento .Input.HrsMin {
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto -webkit-max-content auto;
+  grid-template-columns: max-content auto max-content auto;
+  grid-column-gap: 0;
+}
+#MoreHours .Elemento .Input.HrsMin .Title {
+  padding: 0 2px;
+}
+
+/* ----------------------- ServicioVerificado ----------------------- */
+#ServicioVerificado {
+  padding: 10px;
+  position: relative;
+  padding-top: 4vw;
+  width: 86%;
+  margin: 0 auto;
+  border: 2px solid black;
+  background-color: white;
+  margin-top: 40px;
+}
+#ServicioVerificado .Titulo {
+  top: 0;
+  left: 5vw;
+  padding: 0 10px;
+  position: absolute;
+  margin-right: 20%;
+  transform: translate(0, -50%);
+}
+#ServicioVerificado .Titulo .Title {
+  color: rgb(250, 200, 0);
+  -webkit-text-stroke: 2px black;
+  font-family: "Comic Sans MS", "Arial";
+}
+#ServicioVerificado .Titulo .Line {
+  left: 0;
+  top: 50%;
+  z-index: -1;
+  height: 5px;
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  transform: translate(0, -50%);
+}
+#ServicioVerificado .Text.T2 {
+  margin-top: 40px;
+  padding-right: 12vw;
+}
+#ServicioVerificado .Escudo {
+  float: left;
+  margin-right: 10px;
+  min-width: 40px;
+  min-height: 40px;
+  width: 8vw;
+  height: 8vw;
+  max-width: 160px;
+  max-height: 160px;
+}
+#ServicioVerificado .Escudo img {
+  width: 100%;
+  height: 100%;
+}
+#ServicioVerificado .Medalla {
+  right: 0;
+  top: 100%;
+  position: absolute;
+  transform: translate(0, -50%);
+  min-width: 60px;
+  min-height: 60px;
+  width: 14vw;
+  height: 14vw;
+  max-width: 200px;
+  max-height: 200px;
+}
+#ServicioVerificado .Medalla img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ----------------------- AddServicioSocial ----------------------- */
+#AddServicioSocial .BtnsSDC {
+  margin-top: 20px;
+}
+
+/* ============================ Perfil ============================ */
+/* ----------------------- Perfil ----------------------- */
+#Perfil {
+  width: 86%;
+  margin: 0 auto;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 30% auto;
+}
+#Perfil .Informacion {
+  padding: 0 10px;
+  overflow: hidden;
+  border-right: 3px solid rgb(170, 35, 35);
+}
+#Perfil .Informacion .Imagen {
+  margin: 0 auto;
+  position: relative;
+  border-radius: 100%;
+  margin-bottom: 20px;
+  min-width: 100px;
+  min-height: 100px;
+  width: 18vw;
+  height: 18vw;
+  max-width: 500px;
+  max-height: 500px;
+}
+#Perfil .Informacion .Imagen img {
+  width: 100%;
+  height: 100%;
+}
+#Perfil .Informacion .Imagen .Perfil {
+  background-color: black;
+  top: 50%;
+  width: 100%;
+  position: absolute;
+  border-radius: 100%;
+  border: 3px solid black;
+  transform: translate(0, -50%);
+}
+#Perfil .Informacion .Imagen .EditarIcon {
+  background-color: rgb(170, 35, 35);
+  top: 5px;
+  right: 5px;
+  position: absolute;
+  border-radius: 100%;
+  border: 2px solid black;
+  min-width: 30px;
+  min-height: 30px;
+  width: 4.5vw;
+  height: 4.5vw;
+  max-width: 60px;
+  max-height: 60px;
+}
+#Perfil .Informacion .Imagen .EditarIcon img {
+  width: 100%;
+  height: 100%;
+}
+#Perfil .Informacion .Imagen .EditarIcon img {
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+#Perfil .Informacion .Imagen .EditarFoto {
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  height: 100%;
+  transition: 0.4s;
+  filter: opacity(0);
+  position: absolute;
+  border-radius: 100%;
+}
+#Perfil .Informacion .Imagen .EditarFoto img {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  min-width: 30px;
+  min-height: 30px;
+  width: 3.6vw;
+  height: 3.6vw;
+  max-width: 60px;
+  max-height: 60px;
+  transform: translate(-50%, -50%);
+}
+#Perfil .Informacion .Imagen .EditarFoto img img {
+  width: 100%;
+  height: 100%;
+}
+#Perfil .Informacion .Imagen:hover .EditarFoto {
+  background-color: rgba(0, 0, 0, 0.6);
+  filter: opacity(1);
+}
+#Perfil .Informacion .Tabla .Item {
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgb(170, 35, 35);
+}
+#Perfil .Informacion .Tabla .Item .Text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#Perfil .Informacion .Tabla .Item .Text.Sub {
+  font-weight: bold;
+  color: rgb(25, 100, 40);
+}
+#Perfil .Informacion .Tabla .Item:last-child {
+  border: rgba(0, 0, 0, 0);
+}
+#Perfil .Box {
+  height: 100%;
+  display: grid;
+  grid-row-gap: 10px;
+  grid-template-rows: auto -webkit-max-content;
+  grid-template-rows: auto max-content;
+}
+#Perfil .Box .Notificaciones {
+  overflow: auto;
+  position: relative;
+  min-height: 600px;
+}
+#Perfil .Box .Notificaciones .Caja {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding-right: 30px;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion {
+  width: 100%;
+  position: relative;
+  margin-top: 35px;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+  grid-column-gap: 15px;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .Perfi {
+  position: relative;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .Perfi .Imagen {
+  position: relative;
+  min-width: 40px;
+  min-height: 40px;
+  width: 5.2vw;
+  height: 5.2vw;
+  max-width: 60px;
+  max-height: 60px;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .Perfi .Imagen img {
+  width: 100%;
+  height: 100%;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .Perfi .Imagen img {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  position: absolute;
+  border-radius: 100%;
+  border: 2px solid black;
+  transform: translate(0, -50%);
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .Perfi .Important {
+  background-color: rgb(170, 35, 35);
+  top: 90%;
+  left: 90%;
+  display: none;
+  position: absolute;
+  border-radius: 100%;
+  border: 2px solid black;
+  min-width: 30px;
+  min-height: 30px;
+  width: 3vw;
+  height: 3vw;
+  max-width: 30px;
+  max-height: 30px;
+  transform: translate(-50%, -50%);
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .Perfi .Important img {
+  width: 100%;
+  height: 100%;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja {
+  position: relative;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla {
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla .Elementos {
+  border-bottom: 1.5px solid rgb(153, 151, 151);
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla .Elementos .SubElement {
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: auto -webkit-max-content;
+  grid-template-columns: auto max-content;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla .Direc {
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla .Direc.Rol {
+  color: rgb(102, 102, 102);
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla .Direc.Hora {
+  padding: 0 10px;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla .Direc.Fecha, #Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla .Direc.Hora {
+  color: rgb(25, 100, 40);
+  text-align: right;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla .Direc.MinText {
+  font-weight: bold;
+  font-weight: 0;
+  font-family: "QuickSand";
+  font-size: clamp(15px, 1.8vw, 26px);
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla .Info {
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla .Info .Text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla .Info .Text.Imp {
+  font-weight: bold;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla .Info .Text.Ti {
+  font-weight: bold;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla .Info.Under {
+  border-bottom: 1.5px solid rgb(153, 151, 151);
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla .Info.Under .Tags {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  flex-wrap: nowrap;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla .Info.Under .Tags .Para {
+  right: 0;
+  color: white;
+  padding-right: 0;
+  padding-left: 5px;
+  position: absolute;
+  font-weight: bold;
+  background-color: rgb(25, 100, 40);
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla .Info.Under .Tags .Para span {
+  padding: 2px;
+  box-shadow: -1vw 0vw 1vw 0.5vw rgb(25, 100, 40);
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla .Info.Under .Tags .Text {
+  overflow: visible;
+  padding-right: 5px;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja::before {
+  width: 0;
+  height: 0;
+  top: 10px;
+  content: "";
+  right: 100%;
+  display: block;
+  position: absolute;
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent black;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .Asunto {
+  padding: 5px;
+  overflow: auto;
+  padding-top: 0;
+  max-height: 200px;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .Elm-Rep {
+  top: 0;
+  right: 10px;
+  border: rgba(0, 0, 0, 0);
+  position: absolute;
+  display: inline-flex;
+  align-items: flex-end;
+  transform: translate(0, -60%);
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .Elm-Rep .Hitbox {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .Elm-Rep .Reportar,
+#Perfil .Box .Notificaciones .Caja .Notificacion .Elm-Rep .Eliminar {
+  position: relative;
+  border-radius: 100%;
+  border: 2px solid black;
+  background-color: rgb(200, 0, 0);
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .Elm-Rep .Reportar {
+  margin-left: 10px;
+  min-width: 30px;
+  min-height: 30px;
+  width: 4.2vw;
+  height: 4.2vw;
+  max-width: 60px;
+  max-height: 60px;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .Elm-Rep .Reportar img {
+  width: 100%;
+  height: 100%;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .Elm-Rep .Eliminar {
+  min-width: 24px;
+  min-height: 24px;
+  width: 3.5vw;
+  height: 3.5vw;
+  max-width: 54px;
+  max-height: 54px;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .Elm-Rep .Eliminar img {
+  width: 100%;
+  height: 100%;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .Like {
+  background-color: white;
+  top: 100%;
+  left: 15px;
+  padding: 2px;
+  position: absolute;
+  align-items: center;
+  padding-right: 10px;
+  border-radius: 10px;
+  transform: translate(0, -50%);
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .Like img {
+  min-width: 25px;
+  min-height: 25px;
+  width: 3.4vw;
+  height: 3.4vw;
+  max-width: 40px;
+  max-height: 40px;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .Like img img {
+  width: 100%;
+  height: 100%;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .Like .Text {
+  font-weight: bold;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion .Like .Hitbox {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion[data-important=true] .Imp {
+  color: rgb(202, 0, 0);
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion[data-important=true] .Imp.Ti {
+  color: rgb(170, 0, 0);
+}
+#Perfil .Box .Notificaciones .Caja .Notificacion[data-important=true] .Important {
+  display: block;
+}
+#Perfil .Box .Notificaciones .SinNotificaciones {
+  background-color: rgba(170, 170, 170, 0.8);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+}
+#Perfil .Box .Notificaciones .SinNotificaciones .Title {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  color: white;
+  padding: 0 10px;
+  position: absolute;
+  text-align: center;
+  transform: translate(0, -50%);
+}
+#Perfil .Box .Btn-Form-Publicar {
+  border: rgba(0, 0, 0, 0);
+  padding: 5px 10px;
+  align-items: center;
+  background-color: rgb(25, 100, 40);
+  border-radius: 10px 10px 0 0;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto -webkit-max-content;
+  grid-template-columns: max-content auto max-content;
+}
+#Perfil .Box .Btn-Form-Publicar .Imagen {
+  position: relative;
+  border-radius: 100%;
+  border: 2px solid black;
+  min-width: 40px;
+  min-height: 40px;
+  width: 5vw;
+  height: 5vw;
+  max-width: 60px;
+  max-height: 60px;
+}
+#Perfil .Box .Btn-Form-Publicar .Imagen img {
+  width: 100%;
+  height: 100%;
+}
+#Perfil .Box .Btn-Form-Publicar .Imagen img {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  position: absolute;
+  border-radius: 100%;
+  transform: translate(0, -50%);
+}
+#Perfil .Box .Btn-Form-Publicar .Text {
+  text-align: left;
+  overflow: hidden;
+  padding: 4px 20px;
+  border-radius: 40px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border: 2px solid black;
+  background-color: rgb(226, 226, 226);
+}
+#Perfil .Box .Btn-Form-Publicar .Icon {
+  min-width: 30px;
+  min-height: 30px;
+  width: 4vw;
+  height: 4vw;
+  max-width: 50px;
+  max-height: 50px;
+}
+#Perfil .Box .Btn-Form-Publicar .Icon img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ----------------------- Editar ----------------------- */
+#EditarPerfil {
+  left: 50%;
+  top: -50%;
+  z-index: 100;
+  position: fixed;
+  transform: translate(-50%, -50%);
+}
+#EditarPerfil .Caja {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: auto;
+  padding: 20px;
+  position: relative;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+}
+#EditarPerfil .Caja .EditImg {
+  background-color: rgba(110, 110, 110, 0.4);
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  min-width: 150px;
+  min-height: 150px;
+  width: 24vw;
+  height: 24vw;
+  max-width: 300px;
+  max-height: 300px;
+  border: 2px dashed rgb(110, 110, 110);
+}
+#EditarPerfil .Caja .EditImg img {
+  width: 100%;
+  height: 100%;
+}
+#EditarPerfil .Caja .EditImg .Img {
+  position: absolute;
+}
+#EditarPerfil .Caja .EditImg .Img[data-size=Width] {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  transform: translate(0, -50%);
+}
+#EditarPerfil .Caja .EditImg .Img[data-size=Height] {
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  transform: translate(-50%, 0);
+}
+#EditarPerfil .Caja .Title {
+  max-width: 220px;
+}
+#EditarPerfil .Caja .Text {
+  max-width: 260px;
+}
+#EditarPerfil .Caja .Title,
+#EditarPerfil .Caja .Text {
+  margin: auto;
+  color: white;
+  padding: 0 5px;
+  overflow: hidden;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#EditarPerfil .Caja .Hitbox {
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  filter: opacity(0);
+  position: absolute;
+}
+#EditarPerfil .Botones {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid black;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: repeat(3, auto);
+}
+#EditarPerfil .Botones .Btn {
+  border: rgba(0, 0, 0, 0);
+  position: relative;
+  padding: 2px 5px;
+  align-items: center;
+  border-radius: 10px;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto;
+  grid-template-columns: max-content auto;
+  grid-column-gap: 0;
+}
+#EditarPerfil .Botones .Btn .Image {
+  position: relative;
+  min-width: 30px;
+  min-height: 30px;
+  width: 3.6vw;
+  height: 3.6vw;
+  max-width: 60px;
+  max-height: 60px;
+}
+#EditarPerfil .Botones .Btn .Image img {
+  width: 100%;
+  height: 100%;
+}
+#EditarPerfil .Botones .Btn .Image img {
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+#EditarPerfil .Botones .Btn .Text {
+  color: white;
+}
+#EditarPerfil .Botones .Btn .Hitbox {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#EditarPerfil .Botones .Btn.Guardar {
+  background-color: rgb(0, 180, 0);
+}
+#EditarPerfil .Botones .Btn.Eliminar {
+  background-color: rgb(180, 0, 0);
+}
+#EditarPerfil .Botones .Btn.Cancelar {
+  background-color: rgb(180, 180, 0);
+}
+
+/* ----------------------- Reportar ----------------------- */
+#Reportar {
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 50%;
+  top: -50%;
+  width: 80%;
+  z-index: 100;
+  padding: 20px;
+  position: fixed;
+  min-width: 400px;
+  max-width: 600px;
+  border-radius: 10px;
+  border: 3px solid black;
+  transform: translate(-50%, -50%);
+}
+#Reportar .Title {
+  text-align: center;
+}
+#Reportar .Columna {
+  margin-bottom: 20px;
+}
+#Reportar .Columna .form-label {
+  color: white;
+}
+#Reportar .Columna .form-control,
+#Reportar .Columna .form-select {
+  background-color: white;
+  border: rgba(0, 0, 0, 0);
+  padding: 2px 10px;
+}
+#Reportar .Columna .form-control:disabled,
+#Reportar .Columna .form-select:disabled {
+  background-color: rgb(180, 180, 180);
+}
+#Reportar .Columna .form-control:focus,
+#Reportar .Columna .form-select:focus {
+  box-shadow: none;
+}
+#Reportar .Columna .form-control {
+  max-height: 160px;
+}
+#Reportar .Columna .form-check-label {
+  color: white;
+}
+#Reportar .Columna .form-check-input {
+  min-width: 25px;
+  min-height: 25px;
+  width: 2.5vw;
+  height: 2.5vw;
+  max-width: 50px;
+  max-height: 50px;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+#Reportar .Columna .form-check-input img {
+  width: 100%;
+  height: 100%;
+}
+#Reportar .Columna .form-check-input:checked {
+  background-color: rgb(0, 130, 0);
+}
+#Reportar .Columna .form-check-input:focus {
+  box-shadow: none;
+}
+#Reportar.was-validated .form-check-input:valid,
+#Reportar.was-validated .form-control:valid,
+#Reportar.was-validated .form-select:valid {
+  border: 1px solid rgb(0, 130, 0);
+}
+#Reportar.was-validated .form-check-input:invalid,
+#Reportar.was-validated .form-control:invalid,
+#Reportar.was-validated .form-select:invalid {
+  border: 1px solid rgb(200, 0, 0);
+}
+#Reportar .Error {
+  font-style: italic;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  color: rgb(220, 0, 0);
+}
+#Reportar .Cerrar {
+  background-color: rgb(170, 35, 35);
+  top: 0;
+  left: 100%;
+  position: absolute;
+  border-radius: 10px;
+  border: 2px solid black;
+  min-width: 30px;
+  min-height: 30px;
+  width: 4vw;
+  height: 4vw;
+  max-width: 60px;
+  max-height: 60px;
+  transform: translate(-50%, -50%);
+}
+#Reportar .Cerrar img {
+  width: 100%;
+  height: 100%;
+}
+#Reportar .Cerrar img {
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+#Reportar .Cerrar .Hitbox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#Reportar .Btn {
+  background-color: rgb(25, 100, 40);
+  color: white;
+  border: rgba(0, 0, 0, 0);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+/* ----------------------- Publicar ----------------------- */
+#Publicar {
+  left: 50%;
+  top: -100%;
+  width: 50vw;
+  z-index: 100;
+  transition: 1s;
+  position: fixed;
+  min-width: 400px;
+  max-width: 600px;
+  min-height: 400px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: auto -webkit-max-content;
+  grid-template-columns: auto max-content;
+  grid-column-gap: 0;
+}
+#Publicar .Informacion {
+  border-radius: 10px;
+  background-color: white;
+  border: 2px solid black;
+  display: grid;
+  grid-row-gap: 10px;
+  grid-template-rows: -webkit-max-content auto -webkit-max-content -webkit-max-content;
+  grid-template-rows: max-content auto max-content max-content;
+}
+#Publicar .Informacion .Info {
+  padding: 10px;
+  padding-bottom: 0;
+}
+#Publicar .Informacion .Info .Perfil {
+  align-items: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: -webkit-max-content auto -webkit-max-content;
+  grid-template-columns: max-content auto max-content;
+}
+#Publicar .Informacion .Info .Perfil .Imagen {
+  overflow: hidden;
+  position: relative;
+  border-radius: 100%;
+  border: 2px solid black;
+  min-width: 40px;
+  min-height: 40px;
+  width: 5vw;
+  height: 5vw;
+  max-width: 60px;
+  max-height: 60px;
+}
+#Publicar .Informacion .Info .Perfil .Imagen img {
+  width: 100%;
+  height: 100%;
+}
+#Publicar .Informacion .Info .Perfil .Imagen img {
+  left: 0;
+  top: 50%;
+  padding: 0;
+  width: 100%;
+  border: rgba(0, 0, 0, 0);
+  position: absolute;
+  border-radius: 100%;
+  transform: translate(0, -50%);
+}
+#Publicar .Informacion .Info .Perfil .Btn-Cerrar {
+  position: relative;
+  border-radius: 10px;
+  border: 2px solid black;
+  background-color: #c50000;
+  min-width: 30px;
+  min-height: 30px;
+  width: 4vw;
+  height: 4vw;
+  max-width: 50px;
+  max-height: 50px;
+}
+#Publicar .Informacion .Info .Perfil .Btn-Cerrar img {
+  width: 100%;
+  height: 100%;
+}
+#Publicar .Informacion .Info .Perfil .Btn-Cerrar img {
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  position: absolute;
+}
+#Publicar .Informacion .Info .Contenedor-Tags {
+  margin: 0;
+  padding: 3px;
+  list-style: none;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  display: inline-flex;
+  max-height: 100px;
+  overflow-x: hidden;
+}
+#Publicar .Informacion .Info .Contenedor-Tags .Tag {
+  margin-right: 5px;
+  border-radius: 5px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-bottom: 5px;
+  background-color: rgba(1, 70, 175, 0.5490196078);
+}
+#Publicar .Informacion .Info .Contenedor-Tags .Tag span {
+  color: white;
+  padding: 2px 5px;
+}
+#Publicar .Informacion .Info .Contenedor-Tags .Tag .Delete {
+  color: white;
+  padding: 0 3px;
+  border: rgba(0, 0, 0, 0);
+  font-weight: bold;
+  border-radius: 0 5px 5px 0;
+  background-color: #0058db;
+}
+#Publicar .Informacion .Contenido {
+  padding: 10px;
+}
+#Publicar .Informacion .Contenido .Comentario .Input {
+  width: 100%;
+  height: 15vw;
+  border: rgba(0, 0, 0, 0);
+  padding: 2px 5px;
+  min-height: 150px;
+  max-height: 250px;
+}
+#Publicar .Informacion .Contenido .Comentario .Input:focus {
+  outline: none;
+}
+#Publicar .Informacion .Contenido .Imagenes {
+  height: 100%;
+  position: relative;
+  min-height: 150px;
+  border-radius: 10px;
+  background-color: #b7bac2;
+  border: 2px dashed #72737a;
+}
+#Publicar .Informacion .Contenido .Imagenes .Input-Img {
+  opacity: 0;
+  z-index: 2;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#Publicar .Informacion .Contenido .Imagenes .Texto {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  color: white;
+  overflow: hidden;
+  position: absolute;
+  transform: translate(0, -50%);
+}
+#Publicar .Informacion .Contenido .Imagenes .Texto .Title {
+  padding: 0 10px;
+}
+#Publicar .Informacion .Contenido .Imagenes .Texto .Text {
+  padding: 0 5px;
+}
+#Publicar .Informacion .Contenido .Imagenes .Texto .Text,
+#Publicar .Informacion .Contenido .Imagenes .Texto .Title {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#Publicar .Informacion .Contenido .Etiquetas .Input-Tag {
+  align-items: center;
+  margin-bottom: 10px;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: auto -webkit-max-content;
+  grid-template-columns: auto max-content;
+}
+#Publicar .Informacion .Contenido .Etiquetas .Input-Tag .Add-Tag {
+  width: 100%;
+  padding: 2px 5px;
+  border-radius: 10px;
+  border: 2px solid black;
+  background-color: #dadada;
+}
+#Publicar .Informacion .Contenido .Etiquetas .Input-Tag .Add-Tag:focus {
+  outline: none;
+}
+#Publicar .Informacion .Contenido .Etiquetas .Input-Tag img {
+  min-width: 30px;
+  min-height: 30px;
+  width: 3vw;
+  height: 3vw;
+  max-width: 50px;
+  max-height: 50px;
+}
+#Publicar .Informacion .Contenido .Etiquetas .Input-Tag img img {
+  width: 100%;
+  height: 100%;
+}
+#Publicar .Informacion .Contenido .Etiquetas .Resultados {
+  margin: 0;
+  padding: 5px;
+  list-style: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 250px;
+  border: 2px solid black;
+  background-color: #f1f1f1;
+  border-radius: 10px 0 0 10px;
+}
+#Publicar .Informacion .Contenido .Etiquetas .Resultados .Item {
+  border: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  text-align: left;
+  padding: 0 5px;
+  border-radius: 5px;
+  margin-bottom: 2px;
+  background-color: rgba(0, 0, 0, 0);
+}
+#Publicar .Informacion .Galeria-Fotos {
+  padding: 0 10px;
+}
+#Publicar .Informacion .Galeria-Fotos .Galeria {
+  justify-content: center;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: repeat(4, 24%);
+}
+#Publicar .Informacion .Galeria-Fotos .Galeria .Imagen {
+  height: 11vw;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 5px;
+}
+#Publicar .Informacion .Galeria-Fotos .Galeria .Imagen img {
+  position: absolute;
+}
+#Publicar .Informacion .Galeria-Fotos .Galeria .Imagen .Btn-Count {
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  border: rgba(0, 0, 0, 0);
+  font-weight: bold;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: inset 0 0 20vw black;
+}
+#Publicar .Informacion .Galeria-Fotos .Galeria .Imagen .Btn-Count .Text {
+  color: white;
+  font-weight: bold;
+}
+#Publicar .Informacion .Galeria-Fotos .Galeria .Imagen .Btn-Count .Hitbox {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#Publicar .Informacion .Galeria-Fotos .Galeria .Imagen[data-size=Width] img {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  transform: translate(0, -50%);
+}
+#Publicar .Informacion .Galeria-Fotos .Galeria .Imagen[data-size=Height] img {
+  top: 0;
+  left: 50%;
+  height: 100%;
+  transform: translate(-50%, 0);
+}
+#Publicar .Informacion .Galeria-Fotos .Galeria .Imagen .Box-Shadow {
+  z-index: 2;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#Publicar .Informacion .Galeria-Fotos .Galeria .Imagen .Box-Shadow:hover {
+  box-shadow: inset 0 0 8vw black;
+}
+#Publicar .Informacion .Galeria-Fotos .Galeria .Imagen .Box-Shadow:hover::after {
+  top: 0;
+  z-index: 3;
+  right: 5px;
+  content: "X";
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+#Publicar .Informacion .Galeria-Fotos .Mostrar-Menos {
+  width: 100%;
+  display: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 2px solid black;
+  background-color: #72737a;
+}
+#Publicar .Informacion .Galeria-Fotos.Max-Count .Galeria {
+  height: 25vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 10px;
+}
+#Publicar .Informacion .Galeria-Fotos.Max-Count .Mostrar-Menos {
+  display: block;
+}
+#Publicar .Informacion .Btn-Publicar {
+  width: 100%;
+  padding: 5px;
+  border: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+}
+#Publicar .Informacion .Btn-Publicar .Text {
+  font-weight: bold;
+  width: 100%;
+  color: white;
+  position: relative;
+  padding: 2px 10px;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid black;
+  background-color: rgb(21, 161, 21);
+}
+#Publicar .Informacion .Btn-Publicar .Text:hover {
+  background-color: rgb(12, 119, 17);
+}
+#Publicar .Informacion .Btn-Publicar .Text .Hitbox {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#Publicar .Informacion .Secciones {
+  display: none;
+}
+#Publicar .Menu-Lateral {
+  display: flex;
+  padding: 5px;
+  margin-top: 20px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  flex-direction: column;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 0 10px 10px 0;
+  border-left: rgba(0, 0, 0, 0);
+}
+#Publicar .Menu-Lateral img {
+  margin-bottom: 10px;
+  min-width: 30px;
+  min-height: 30px;
+  width: 3.5vw;
+  height: 3.5vw;
+  max-width: 50px;
+  max-height: 50px;
+}
+#Publicar .Menu-Lateral img img {
+  width: 100%;
+  height: 100%;
+}
+#Publicar .Menu-Lateral img:last-child {
+  margin: 0;
+}
+#Publicar .Menu-Lateral img[data-important=true] {
+  opacity: 1;
+}
+#Publicar .Menu-Lateral img[data-important=false] {
+  opacity: 0.4;
+}
+
+/* ============================ Cursos ============================ */
+/* ----------------------- Cursos ----------------------- */
+#Cursos {
+  width: 86%;
+  margin: 0 auto;
+  justify-content: center;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: repeat(4, auto);
+  grid-Column-gap: 20px;
+  grid-row-gap: 30px;
+}
+#Cursos .Curso2 {
+  position: relative;
+  border-radius: 8px;
+  transition: linear all 0.2s;
+  border: 2px solid black;
+  min-width: 120px;
+  min-height: 120px;
+  width: 18vw;
+  height: 18vw;
+  max-width: 300px;
+  max-height: 300px;
+}
+#Cursos .Curso2 img {
+  width: 100%;
+  height: 100%;
+}
+#Cursos .Curso2 img {
+  border-radius: 5px;
+}
+#Cursos .Curso2 .Text {
+  font-weight: bold;
+  background-color: rgb(25, 100, 40);
+  top: 0;
+  left: 10px;
+  color: white;
+  padding: 0 5px;
+  position: absolute;
+  border-radius: 10px;
+  border: 2px solid black;
+  transform: translate(0, -50%);
+}
+#Cursos .Curso2 .Hitbox {
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#Cursos .Curso2:hover {
+  transform: scale(1.04);
+}
+
+/* ============================ Estudiantes ============================ */
+/* ----------------------- Categoria ----------------------- */
+#Categoria {
+  width: 86%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: repeat(3, auto);
+}
+#Categoria .Text {
+  width: 100%;
+  color: white;
+  padding: 2px 5px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+#Categoria .Text.T {
+  background-color: rgb(0, 160, 0);
+}
+#Categoria .Text.E {
+  background-color: rgb(0, 60, 160);
+}
+#Categoria .Text.S {
+  background-color: rgb(160, 0, 0);
+}
+
+/* ----------------------- Estudiantes ----------------------- */
+#Estudiantes {
+  width: 86%;
+  margin: 0 auto;
+  justify-content: center;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: repeat(4, 24%);
+}
+#Estudiantes .Estudiante {
+  height: 24vw;
+  color: black;
+  overflow: hidden;
+  position: relative;
+  min-height: 200px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  display: grid;
+  grid-row-gap: 10px;
+  grid-template-rows: 50% auto;
+  border: 2px solid black;
+  grid-row-gap: 0;
+}
+#Estudiantes .Estudiante .Fondo {
+  height: 100%;
+}
+#Estudiantes .Estudiante .Fondo.Num1 {
+  background-color: white;
+  position: relative;
+}
+#Estudiantes .Estudiante .Fondo.Num1 .Box1 {
+  height: 100%;
+  border-radius: 0 0 0 20px;
+}
+#Estudiantes .Estudiante .Fondo.Num1 .Box1 .Text {
+  font-weight: bold;
+  top: 0;
+  left: 5px;
+  color: white;
+  position: absolute;
+}
+#Estudiantes .Estudiante .Fondo.Num1 .Box1 .Image {
+  top: 75%;
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  min-width: 70px;
+  min-height: 70px;
+  width: 12vw;
+  height: 12vw;
+  max-width: 200px;
+  max-height: 200px;
+}
+#Estudiantes .Estudiante .Fondo.Num1 .Box1 .Image img {
+  width: 100%;
+  height: 100%;
+}
+#Estudiantes .Estudiante .Fondo.Num1 .Box1 .Image img {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  position: absolute;
+  transform: translate(0, -50%);
+}
+#Estudiantes .Estudiante .Fondo.Num1 .Box1 .Icono {
+  top: 2px;
+  right: 5px;
+  position: absolute;
+  min-width: 30px;
+  min-height: 30px;
+  width: 3vw;
+  height: 3vw;
+  max-width: 40px;
+  max-height: 40px;
+}
+#Estudiantes .Estudiante .Fondo.Num1 .Box1 .Icono img {
+  width: 100%;
+  height: 100%;
+}
+#Estudiantes .Estudiante .Fondo.Num2 .Box2 {
+  background-color: white;
+  height: 100%;
+  padding-top: 20%;
+  border-radius: 0 20px 0 0;
+}
+#Estudiantes .Estudiante .Fondo.Num2 .Box2 .Text {
+  width: 95%;
+}
+#Estudiantes .Estudiante .Fondo.Num2 .Box2 .Text.Weight {
+  font-weight: bold;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+#Estudiantes .Estudiante .Hitbox {
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+#Estudiantes .Estudiante input {
+  position: absolute;
+}
+#Estudiantes .Estudiante[data-service=T] .Box1,
+#Estudiantes .Estudiante[data-service=T] .Num2 {
+  background-color: rgb(0, 160, 0);
+}
+#Estudiantes .Estudiante[data-service=T] .Image {
+  border: 3px solid rgb(0, 160, 0);
+}
+#Estudiantes .Estudiante[data-service=E] .Box1,
+#Estudiantes .Estudiante[data-service=E] .Num2 {
+  background-color: rgb(0, 60, 160);
+}
+#Estudiantes .Estudiante[data-service=E] .Image {
+  border: 3px solid rgb(0, 60, 160);
+}
+#Estudiantes .Estudiante[data-service=S] .Box1,
+#Estudiantes .Estudiante[data-service=S] .Num2 {
+  background-color: rgb(160, 0, 0);
+}
+#Estudiantes .Estudiante[data-service=S] .Image {
+  border: 3px solid rgb(160, 0, 0);
+}
+
+/* ----------------------- Curso ----------------------- */
+#Curso {
+  position: relative;
+  width: 86%;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+#Curso .Title {
+  font-family: "Comic Sans MS";
+  color: white;
+  padding: 10px 0;
+  margin-left: 40px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  -webkit-text-stroke: 2.5px black;
+}
+#Curso .Box {
+  left: 0;
+  z-index: -1;
+  position: absolute;
+  border-radius: 100% 0;
+}
+#Curso .Box.Num1 {
+  background-color: rgb(7, 80, 236);
+  bottom: 0;
+  height: 90%;
+  width: 100%;
+}
+#Curso .Box.Num2 {
+  background-color: rgb(2, 58, 179);
+  top: 0;
+  width: 80%;
+  height: 100%;
+}
+
+/* ============================ Iniciar sesión ============================ */
+/* ----------------------- Formulario ----------------------- */
+#Formulario {
+  width: 86%;
+  margin: 0 auto;
+  align-items: center;
+  display: grid;
+  grid-column-gap: 5px;
+  grid-template-columns: 40% auto;
+  grid-column-gap: 0;
+}
+#Formulario .Info {
+  background-size: cover;
+  background-image: url("../Images/FondoLogin.png");
+  display: grid;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 10%;
+  align-items: center;
+  border-radius: 10px;
+  border: 3px solid black;
+}
+#Formulario .Info .Title {
+  color: white;
+  text-align: center;
+}
+#Formulario .Info .Imagen {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+#Formulario .Info .Imagen img {
+  width: 100%;
+  height: 100%;
+}
+#Formulario .needs-validation {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 20px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  border: 3px solid black;
+  border-radius: 0 10px 10px 0;
+  border-left: rgba(0, 0, 0, 0);
+}
+#Formulario .needs-validation .Columna {
+  margin-bottom: 10px;
+}
+#Formulario .needs-validation .Columna .form-label {
+  color: rgb(170, 35, 35);
+}
+#Formulario .needs-validation .Columna .form-control {
+  border: rgba(0, 0, 0, 0);
+  padding: 0 10px;
+  background-color: rgba(0, 0, 0, 0);
+}
+#Formulario .needs-validation .Columna .form-control:focus {
+  box-shadow: none;
+}
+#Formulario .needs-validation .Error {
+  font-style: italic;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  color: rgb(220, 0, 0);
+}
+#Formulario .needs-validation .Btn {
+  background-color: rgb(25, 100, 40);
+  transition: 0.2s;
+  color: white;
+  border: rgba(0, 0, 0, 0);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+#Formulario .needs-validation .Btn:hover {
+  font-weight: bold;
+}
+
+/* ============================ @Media ============================ */
+@media (max-width: 1000px) {
+  #Enlaces {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: repeat(5, auto);
+  }
+  #Categoria {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: repeat(2, auto);
+  }
+}
+@media (max-width: 900px) {
+  #InfoInst {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #InfoInst .MainCarousel {
+    width: 70%;
+    margin: 10px auto;
+    border: 3px solid rgb(170, 35, 35);
+  }
+  #Enlaces {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: repeat(4, auto);
+  }
+  #MisionVision {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Simbolos .Informacion {
+    max-height: 300px;
+  }
+  #Importancia .Imagen1 {
+    grid-row: 1/3;
+  }
+  #Importancia .Caja {
+    grid-column: 1/3;
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: 25% auto;
+  }
+  #Historia .History {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Historia .History .Info {
+    padding: 5px;
+  }
+  #Garcia {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: 40% auto;
+  }
+  #Garcia .Autor {
+    grid-row: 1/4;
+  }
+  #Garcia .Num3 {
+    grid-column: 1/3;
+  }
+  #PDF {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #PDF embed {
+    width: 90%;
+    margin: auto;
+    height: 74vw;
+    min-height: 400px;
+    margin-bottom: 20px;
+  }
+  #PDF .Info .Caja {
+    position: relative;
+  }
+  #Roles .Tabla {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: repeat(4, auto);
+  }
+  #Roles .Tabla .Btn {
+    height: 24vw;
+  }
+  #Libreria .Seccion {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: repeat(5, 19%);
+  }
+  #Libreria .Seccion .Libro {
+    height: 24vw;
+  }
+  #Footer .Enlaces {
+    justify-items: center;
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+  #Footer .Enlaces .Lista {
+    margin-bottom: 15px;
+  }
+  #Footer .Enlaces .Lista .Item .Title {
+    text-align: center;
+  }
+  #Footer .Enlaces .Lista .Item .Link {
+    margin: 0 auto;
+  }
+  #Footer .Enlaces .Lista .Item .Link .Text {
+    white-space: nowrap;
+  }
+}
+@media (max-width: 800px) {
+  #Calendario {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Calendario .Info {
+    margin-bottom: 10px;
+  }
+  #Calendario iframe {
+    height: 54vw;
+    min-height: 250px;
+  }
+  #Formacion {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Formacion .Ciclo {
+    width: 80%;
+    margin: auto;
+  }
+  #Formacion .Ciclo img {
+    width: 100%;
+  }
+  #Formacion .Info {
+    min-height: 300px;
+  }
+  #Formacion .Info .Contenedor {
+    height: 100%;
+  }
+  #Destacados .Visualizer .Card {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: 30% auto;
+  }
+  #Destacados .Visualizer .Card .Datos {
+    grid-column: 1/3;
+    padding-top: 20px;
+    align-items: center;
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto -webkit-max-content;
+    grid-template-columns: auto max-content;
+  }
+  #Destacados .Visualizer .Card .Datos .Item {
+    border: rgba(0, 0, 0, 0);
+    padding: 0 15px;
+    margin-bottom: 5px;
+    border-right: 1px solid black;
+  }
+  #Destacados .Visualizer .Card .Datos .Item:first-child {
+    border: rgba(0, 0, 0, 0);
+    grid-column: 1/3;
+  }
+  #Destacados .Visualizer .Card .Datos .Item:last-child {
+    border: rgba(0, 0, 0, 0);
+  }
+  #Garcia {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Garcia .Autor {
+    grid-row: 1/2;
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: 40% auto;
+  }
+  #Garcia .Autor .Caja {
+    height: 100%;
+    overflow: auto;
+    position: relative;
+    min-height: 250px;
+  }
+  #Garcia .Autor .Caja .Info {
+    position: absolute;
+  }
+  #Garcia .Libro {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: 25% auto;
+  }
+  #Garcia .Num3 {
+    grid-column: 1/2;
+  }
+  #PDFLibro {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #PDFLibro .PDFVisual {
+    height: 60vw;
+    min-height: 400px;
+  }
+  #PDFLibro .SinPDF {
+    min-height: 120px;
+  }
+  #Perfil {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Perfil .Informacion {
+    border: rgba(0, 0, 0, 0);
+    align-items: center;
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: -webkit-max-content auto;
+    grid-template-columns: max-content auto;
+    grid-column-gap: 20px;
+  }
+  #Perfil .Informacion .Imagen {
+    min-width: 200px;
+    min-height: 200px;
+    width: 26vw;
+    height: 26vw;
+    max-width: 300px;
+    max-height: 300px;
+  }
+  #Perfil .Informacion .Imagen img {
+    width: 100%;
+    height: 100%;
+  }
+  #Perfil .Informacion .Tabla {
+    overflow: hidden;
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: 50% auto;
+  }
+  #Perfil .Informacion .Tabla .Item {
+    width: 100%;
+    overflow: hidden;
+  }
+  #Perfil .Notificaciones {
+    max-height: 600px;
+  }
+  #Perfil .Notificaciones .Caja {
+    position: relative;
+  }
+  #Cursos {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: repeat(3, auto);
+    grid-Column-gap: 20px;
+    grid-row-gap: 30px;
+  }
+  #Cursos .Curso2 {
+    min-width: 120px;
+    min-height: 120px;
+    width: 22vw;
+    height: 22vw;
+    max-width: 300px;
+    max-height: 300px;
+  }
+  #Cursos .Curso2 img {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 700px) {
+  #Video {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Video iframe {
+    margin-top: 10px;
+    min-height: 300px;
+  }
+  #Video.Left {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Video.Left iframe {
+    margin-bottom: 10px;
+  }
+  #Enlaces {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: repeat(3, auto);
+  }
+  #Simbolos {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Simbolos .MainCarousel {
+    width: 60%;
+    margin: 10px auto;
+    border: 3px solid rgb(170, 35, 35);
+  }
+  #Especialidad {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Especialidad .Info {
+    margin: 20px 0;
+  }
+  #Especialidad .Info .Contenedor {
+    position: relative;
+  }
+  #Especialidad.Left {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Especialidad .Logo {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: 50% auto;
+  }
+  #Especialidad .Logo .Contenedor {
+    overflow: hidden;
+    position: relative;
+  }
+  #Especialidad .Logo .Contenedor img {
+    top: 50%;
+    position: absolute;
+    transform: translate(0, -50%);
+  }
+  #Destacados .Elementos {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: repeat(3, auto);
+  }
+  #Frase {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Frase .Imagen {
+    width: 60%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  #Frase .Info {
+    max-height: 300px;
+  }
+  #Frase .Info .Caja {
+    position: relative;
+  }
+  #Formulario {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Formulario .Info {
+    width: 80%;
+    margin: auto;
+    border-bottom: rgba(0, 0, 0, 0);
+    border-radius: 10px 10px 0 0;
+  }
+  #Formulario .needs-validation,
+#Formulario .Informacion {
+    border-radius: 10px;
+    border: 3px solid black;
+  }
+  #Estudiantes {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: repeat(3, 32%);
+  }
+  #Estudiantes .Estudiante {
+    height: 28vw;
+  }
+  #AddUser {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #AddUser .Select {
+    grid-column: 1/2;
+  }
+  #Roles .Tabla {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: repeat(3, auto);
+  }
+  #Roles .Tabla .Btn {
+    height: 32vw;
+  }
+  #AddLib {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #AddLib .Archivos {
+    display: grid;
+    grid-row-gap: 10px;
+    grid-template-rows: auto;
+    margin-bottom: 20px;
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: 50% auto;
+  }
+  #AddLib .Archivos .Input {
+    height: 30vw;
+  }
+  #AddLib .Botones {
+    grid-column: 1/2;
+  }
+  #Libreria .Seccion {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: repeat(4, 24%);
+  }
+  #Libreria .Seccion .Libro {
+    height: 30vw;
+  }
+  #Vista {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Vista .Portada {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: 40% auto;
+  }
+  #Vista .Portada .Caja {
+    height: 100%;
+    overflow: auto;
+    position: relative;
+  }
+  #Vista .Portada .Caja .Caja2 {
+    position: absolute;
+  }
+  #Vista .Resenas {
+    min-height: 400px;
+    max-height: 600px;
+  }
+  #Vista .Resenas .Caja {
+    position: relative;
+  }
+  #Perfil .Informacion {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Perfil .Informacion .Tabla {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: 32% 32% auto;
+  }
+}
+@media (max-width: 600px) {
+  #HeaderBi .Imagenes {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #HeaderBi .Imagenes .Img1 {
+    border-radius: 0 0 20px 20px;
+  }
+  #HeaderBi .Imagenes .Img2 {
+    display: none;
+  }
+  #Encargado {
+    grid-row-gap: 20px;
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Encargado .Imagen {
+    margin: auto;
+  }
+  #Encargado .Info .Title {
+    text-align: center;
+  }
+  #Importancia .Imagen1 {
+    grid-row: 1/2;
+  }
+  #Importancia .Inf2 {
+    grid-column: 1/3;
+  }
+  #Importancia .Caja {
+    grid-column: 1/3;
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: 25% auto;
+  }
+  #Garcia {
+    grid-row-gap: 20px;
+  }
+  #Garcia .Autor {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Garcia .Autor img {
+    width: 50%;
+    margin: auto;
+  }
+  #Garcia .Libro {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: 25% auto;
+  }
+  #Secciones .Contenedor {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Secciones .Contenedor[data-orientacion=right] {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Secciones .Contenedor .Title {
+    text-align: center;
+  }
+  #Secciones .Contenedor .Card {
+    width: 80%;
+    margin: 20px auto;
+  }
+  #Secciones .Contenedor .Card .Imagen {
+    height: 36vw;
+  }
+  #QueEsLaOrientacion {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #QueEsLaOrientacion .Info .Caja {
+    position: relative;
+  }
+  #Educativa img {
+    margin: 0;
+    width: 100%;
+    padding: 0 10%;
+    margin-bottom: 20px;
+  }
+  #Categoria {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Perfil .Informacion .Tabla {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: 50% auto;
+  }
+  #MoreHours .Col-6 {
+    width: 100%;
+  }
+  #MoreHours .Col-3 {
+    width: 50%;
+  }
+  #MoreHours .Col-7 {
+    width: 100%;
+  }
+  #MoreHours .Col-5 {
+    width: 100%;
+  }
+  #Cursos {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: repeat(2, auto);
+    grid-Column-gap: 20px;
+    grid-row-gap: 30px;
+  }
+  #Cursos .Curso2 {
+    min-width: 120px;
+    min-height: 120px;
+    width: 30vw;
+    height: 30vw;
+    max-width: 300px;
+    max-height: 300px;
+  }
+  #Cursos .Curso2 img {
+    width: 100%;
+    height: 100%;
+  }
+  #Estudiantes .Estudiante {
+    height: 34vw;
+  }
+  #AddServicioSocial .Col-8,
+#AddServicioSocial .Col-7,
+#AddServicioSocial .Col-5,
+#AddServicioSocial .Col-4 {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  #Noticias {
+    width: 70%;
+  }
+  #Enlaces {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: repeat(2, auto);
+  }
+  #Transversales .Proyectos {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: repeat(1, auto);
+  }
+  #Destacados .Visualizer .Card .Datos {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto auto;
+  }
+  #Destacados .Visualizer .Card .Datos .Item.Autor {
+    grid-column: 1/3;
+  }
+  #Destacados .Elementos {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: repeat(2, auto);
+  }
+  #Importancia .Imagen1 {
+    grid-row: 1/2;
+  }
+  #Importancia .Inf2 {
+    grid-column: 1/3;
+  }
+  #Importancia .Caja {
+    grid-column: 1/3;
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Importancia .Caja .Imagen {
+    display: none;
+  }
+  #Perfil .Informacion .Imagen {
+    min-width: 150px;
+    min-height: 150px;
+    width: 34vw;
+    height: 34vw;
+    max-width: 300px;
+    max-height: 300px;
+  }
+  #Perfil .Informacion .Imagen img {
+    width: 100%;
+    height: 100%;
+  }
+  #Perfil .Informacion .Lista {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla .Elementos .SubElement {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Perfil .Box .Notificaciones .Caja .Notificacion .BoxCaja .Tabla .Elementos .SubElement .Fecha {
+    text-align: left;
+  }
+  #Reportar .Cerrar {
+    top: 5px;
+    left: 5px;
+    transform: translate(0, 0);
+  }
+  #Roles .Tabla {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: 50% auto;
+  }
+  #Roles .Tabla .Btn {
+    height: 46vw;
+  }
+  #Libreria .Seccion {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: repeat(3, 33%);
+  }
+  #Libreria .Seccion .Libro {
+    height: 40vw;
+  }
+  #Footer .Enlaces .Lista {
+    width: 96%;
+    overflow: hidden;
+  }
+  #Footer .Enlaces .Lista .Item .Link {
+    justify-content: center;
+  }
+  #Vista .Box .Resenas .Caja .Resena .BoxCaja .Tabla .Elementos .SubElement {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Vista .Box .Resenas .Caja .Resena .BoxCaja .Tabla .Elementos .SubElement .Fecha {
+    text-align: left;
+  }
+  #Estudiantes {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: repeat(2, 49%);
+  }
+  #Estudiantes .Estudiante {
+    height: 36vw;
+  }
+  #Publicar {
+    width: 100%;
+    min-width: 0;
+    min-height: 500px;
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Publicar .Menu-Lateral {
+    margin: 0 20px;
+    flex-direction: row;
+    border: 2px solid black;
+    border-radius: 0 0 10px 10px;
+    border-top: rgba(0, 0, 0, 0);
+  }
+  #Publicar .Menu-Lateral img {
+    margin: 0;
+    margin-right: 10px;
+  }
+}
+@media (max-width: 400px) {
+  #Nav .NavVertical {
+    width: 100%;
+    min-width: none;
+  }
+  #Video iframe {
+    min-height: 180px;
+  }
+  #Destacados .Visualizer .Card {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Destacados .Visualizer .Card .Image {
+    width: 60%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  #Destacados .Visualizer .Card .Info {
+    max-height: 300px;
+    min-height: -webkit-max-content;
+    min-height: -moz-max-content;
+    min-height: max-content;
+  }
+  #Destacados .Visualizer .Card .Info .Caja {
+    position: relative;
+  }
+  #Destacados .Visualizer .Card .Datos {
+    grid-column: 1/2;
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Destacados .Visualizer .Card .Datos .Item.Autor {
+    grid-column: 1/3;
+  }
+  #Importancia {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Importancia .Imagen1 {
+    display: none;
+  }
+  #Importancia .Inf2 {
+    grid-column: 1/2;
+  }
+  #Importancia .Caja {
+    grid-column: 1/2;
+  }
+  #Formulario .Info {
+    width: 100%;
+    padding: 20px 10px;
+  }
+  #Formulario .needs-validation,
+#Formulario .Informacion {
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 0 0 10px 10px;
+  }
+  #Reportar {
+    width: 90%;
+    min-width: 0;
+  }
+  #AddLib .Archivos {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #AddLib .Archivos .Input {
+    height: 30vw;
+  }
+  #Vista .Portada {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: auto;
+  }
+  #Vista .Portada .Imagen {
+    width: 60%;
+    margin: auto;
+  }
+  #Vista .Portada .Caja .Caja2 {
+    position: relative;
+  }
+}
+@media (max-width: 200px) {
+  body {
+    min-width: 320px;
+  }
+}
+/* ============================ Sub Class ============================ */
+.HiperBig {
+  font-weight: bold;
+  font-family: "QuickSand";
+  font-size: clamp(45px, 4.4vw, 78px);
+}
+
+.SuperBig {
+  font-weight: bold;
+  font-family: "QuickSand";
+  font-size: clamp(28px, 4vw, 64px);
+}
+
+.Super {
+  font-weight: bold;
+  font-family: "QuickSand";
+  font-size: clamp(18px, 3vw, 60px);
+}
+
+.Min {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-family: "QuickSand";
+  font-size: clamp(22px, 2.6vw, 34px);
+}
+
+.TxBig {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-family: "QuickSand";
+  font-size: clamp(18px, 2.4vw, 30px);
+}
+
+.Link {
+  cursor: pointer;
+  text-decoration: none;
+}
+.Link .Text {
+  color: rgb(255, 255, 255);
+  font-weight: 0;
+  font-family: "QuickSand";
+  font-size: clamp(20px, 2vw, 30px);
+}
+
+.IconN {
+  min-width: 25px;
+  min-height: 25px;
+  width: 2vw;
+  height: 2vw;
+  max-width: 35px;
+  max-height: 35px;
+}
+.IconN img {
+  width: 100%;
+  height: 100%;
+}
+
+.IconG {
+  min-width: 30px;
+  min-height: 30px;
+  width: 2.2vw;
+  height: 2.2vw;
+  max-width: 45px;
+  max-height: 45px;
+}
+.IconG img {
+  width: 100%;
+  height: 100%;
+}
+
+.IconM {
+  min-width: 20px;
+  min-height: 20px;
+  width: 1.8vw;
+  height: 1.8vw;
+  max-width: 30px;
+  max-height: 30px;
+}
+.IconM img {
+  width: 100%;
+  height: 100%;
+}
+
+.IconB {
+  min-width: 40px;
+  min-height: 40px;
+  width: 2.6vw;
+  height: 2.6vw;
+  max-width: 60px;
+  max-height: 60px;
+}
+.IconB img {
+  width: 100%;
+  height: 100%;
+}
+
+.InfoOculta {
+  display: none;
+}
+
+/*
+.Col-1 {
+    width: 8.33%;
+    padding: 0 5px;
+}
+.Col-2 {
+    width: 16.66%;
+    padding: 0 5px;
+}
+.Col-3 {
+    width: 24.99%;
+    padding: 0 5px;
+}
+.Col-4 {
+    width: 33.32%;
+    padding: 0 5px;
+}
+.Col-5 {
+    width: 41.65%;
+    padding: 0 5px;
+}
+.Col-6 {
+    width: 49.98%;
+    padding: 0 5px;
+}
+.Col-7 {
+    width: 58.31%;
+    padding: 0 5px;
+}
+.Col-8 {
+    width: 66.64%;
+    padding: 0 5px;
+}
+.Col-9 {
+    width: 74.97%;
+    padding: 0 5px;
+}
+.Col-10 {
+    width: 83.3%;
+    padding: 0 5px;
+}
+.Col-11 {
+    width: 91.63%;
+    padding: 0 5px;
+}
+.Col-12 {
+    width: 100%;
+    padding: 0 5px;
+}
+*//*# sourceMappingURL=Styles.css.map */

@@ -1,0 +1,1210 @@
+header{
+    width: 100%;
+    height: 600px;
+    background: #4f181a;
+    margin-bottom: 100px;
+}
+
+.color1 {color: #4f181a;}
+.color2 {color: #7c3327;}
+.color3 {color: #b75e35;}
+.color4 {color: #f99945;}
+.color5 {color: #ffe96a;}
+
+.izquierda_cards_archy{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+
+.izquierda_cards_archy h1{
+    font-size: 90px;
+    text-align: center;
+    margin-top: 10%;
+    color: white;
+    text-shadow: 2px 2px 1px black;
+}
+
+
+.ov-btn-slide-left {
+    background: #fff; 
+    color: black; 
+    border: 2px solid #ffe96a; 
+    padding: 16px 20px;
+    border-radius: 3px; 
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    margin-left: 40%;
+    border-radius: 10px;
+    text-decoration: none;
+    
+  }
+  .ov-btn-slide-left:hover {
+    color: black; 
+  }
+  .ov-btn-slide-left::after {
+    content: "";
+    background: #ffe96a; 
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    right: 100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  .ov-btn-slide-left:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+
+
+
+
+  
+.ov-btn-slide-right {
+    background: #fff; 
+    color: black; 
+    border: 2px solid #ffe96a ; 
+    padding: 16px 20px;
+    border-radius: 3px; 
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    margin-left: 35%;
+    border-radius: 10px;
+    margin-top: 10%;
+    text-decoration: none;
+  }
+  .ov-btn-slide-right:hover {
+    color: black; 
+  }
+  .ov-btn-slide-right::after {
+    content: "";
+    background: #ffe96a; 
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: -100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  .ov-btn-slide-right:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+
+
+.derecha_cards_archy{
+    width: 50%;
+    float: right;
+    height: 100%;
+}
+
+.cuadro1{
+    width: 60%;
+    height: 40%;
+  
+    border-radius: 10px;
+    margin-left: 40%;
+    margin-top: 5%;
+    overflow: hidden;
+}
+
+.cuadro1 img{
+    width: 100%;
+    height: 100%;
+    animation-name: img1;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    border-radius: 10px;
+    transition: 0.8s;
+    
+}
+
+@keyframes img1 {
+
+    10%{
+        width: 110%;
+        
+    }
+     
+    20%{
+
+        width: 100%;
+        height: 110%;
+        
+
+    }
+
+    40%{
+
+        width: 150%;
+        height: 110%;
+        
+
+    }
+
+    60%{
+        width: 100%;
+        height: 100%;
+    }
+    80%{
+
+        width: 150%;
+        height: 150%;
+        
+
+    }
+
+    90%{
+        width: 130%;
+        height: 120%;
+    }
+
+    100%{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+
+
+.cuadro2{
+    width: 60%;
+    height: 40%;
+    
+    border-radius: 10px;
+    margin-top: 5%;
+    overflow: hidden;
+    background-image: url('../Imagenes/header-img.jpg');
+    background-size: cover;
+    transition: 0.8s;
+    animation-name: img2;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+
+
+@keyframes img2 {
+
+    10%{
+        background-image: url('../Imagenes/header-img2.jpg');
+        background-size: cover;
+    }
+     
+    20%{
+
+        background-image: url('../Imagenes/header-img3.jpg');
+        background-size: cover;
+
+    }
+
+    40%{
+
+        
+        background-image: url('../Imagenes/header-img4.jpg');
+        background-size: cover;
+    }
+
+    60%{
+        background-image: url('../Imagenes/header-img5.jpg');
+        background-size: cover;
+    }
+    80%{
+
+        background-image: url('../Imagenes/header-img6.jpg');
+        background-size: cover;
+        
+
+    }
+
+ 
+}
+
+
+
+
+
+/*
+
+------------------------------SALTO DE LINEA --------------------
+
+*/
+.contenedor_cards{
+    width: 100%;
+    height: 400px;
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: 30% 30% 30% ;
+    
+    
+
+}
+
+
+
+.cards_pedido{
+
+    
+    margin-left: 20%;
+    width: 80%;
+    height: 80%;
+    border-radius: 10px 10px;
+    border: 1px rgb(24, 21, 21) solid;
+    margin-top: 40px;
+    transition: 0.5s;
+    
+
+}
+
+.cards_pedido:hover{
+    margin-top: 1px;
+    box-shadow: 12px 10px 16px black;
+}
+
+.cards_pedido .img_txt_pedido{
+    width: 100%;
+    height: 50%;
+    background: #b75e35;
+    overflow: hidden;
+}
+
+.cards_pedido .img_txt_pedido img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    z-index: 11;
+    visibility: 0.5;
+    
+}
+
+.cards_pedido .img_txt_pedido h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 200;
+    z-index: 10;
+    margin-top: -100px;
+    text-shadow: 3px 3px 3px rgb(245, 245, 245);
+    color: black;
+}
+
+.cards_pedido .link_pedido{
+    width: 100%;
+    height: 50%;
+    background: #b75e35;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 10px 10px;
+
+}
+.buttom_pedido{
+    width: 70%;
+    border-radius: 10px;
+    border: 1px solid black;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 520;
+    transition: 0.5s;
+    text-shadow: 2px 2px 2px white;
+    color: black;
+    background: white;
+    cursor: pointer;
+
+}
+
+.buttom_pedido:hover{
+    text-shadow: 2px 2px 2px black;
+    color: white;
+    background: #7c3327;
+    box-shadow: 8px 8px 12px black;
+}
+
+
+@media(max-width: 900px){
+
+
+    .contenedor_cards{
+     
+        height: 400px;
+      
+        
+    }
+
+    .cards_pedido .img_txt_pedido h1{
+      
+        font-size: 18px;
+    }
+    
+    .cards_pedido{
+
+        height: 60%;
+   
+
+    }
+    
+}
+
+/*
+
+------------------------------SALTO DE LINEA --------------------
+
+*/
+
+
+
+.metodologia_archy{
+    width: 100%;
+    height: 450px;
+    background: green;
+    display: flex;
+    margin-bottom: 100px;
+}
+
+
+
+/*
+
+------------------------------SALTO DE LINEA --------------------
+
+*/
+
+.adminitracion_web{
+    width: 100%;
+    height: 500px;
+    
+}
+
+
+.adminitracion_web .txt_administracion{
+    width: 50%;
+    height: 100%;
+    
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.txt_admin_guia{
+    width: 80%;
+    height: 90%;
+    background: white;
+}
+.txt_admin_guia h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 100;
+    margin-bottom: 30px;
+
+}
+.txt_admin_guia li{
+
+    margin-top: 15px;
+    margin-left: 20px;
+    font-size: 17px;
+
+    
+
+}
+
+.img_administracion{
+    width: 50%;
+    height: 100%;
+   
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_admin_guia{
+    width: 80%;
+    height: 80%;
+    background: white;
+    overflow: hidden;
+
+    
+}
+.img_admin_contenedor{
+
+    width: 65%;
+    height: 65%;
+    border-radius: 10px;
+    z-index: 11;
+    margin-top: 30px;
+    margin-left: 100px;
+    overflow: hidden;
+}
+.img_admin_guia img{
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    border: 1px solid #4f181a;
+}
+
+.img_admin_guia img:hover{
+    transform: scale(1.3);
+}
+.img_border_guia{
+    width: 65%;
+    height: 65%;
+    border: 5px #4f181a solid ;
+    margin-left: 2px;
+    z-index: 10;
+    border-radius: 10px;
+    margin-top: -200px;
+    margin-left: 40px ;
+}
+
+@media (max-width: 900px){
+
+    .adminitracion_web{
+        width: 100%;
+        height: 400px;
+        margin-bottom: 100px;
+        
+    }
+    .txt_admin_guia h1{
+        text-align: center;
+        font-size: 30px;
+        font-weight: 100;
+        margin-bottom: 30px;
+    
+    }
+
+    .txt_admin_guia li{
+
+        margin-top: 15px;
+        margin-left: 20px;
+        font-size: 15px;
+    
+    }
+    .img_admin_guia{
+        width: 80%;
+        height: 80%;
+        background: white;
+        overflow: hidden;
+        
+    
+    }    
+    .img_admin_guia img{
+        width: 80%;
+        height: 100%;
+        transition: 0.5s;
+        border-radius: 10px;
+        
+    }
+    
+    .img_border_guia{
+        width: 45%;
+        height: 65%;
+
+    }
+
+}
+
+
+/*
+------------------------------SALTO DE LINEA --------------------
+
+*/
+
+
+.titule_claves{
+    width: 100%;
+    height: 200px;
+   
+}
+.titule_claves h1{
+    font-size: 70px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.titule_claves p{
+    font-size: 16px;
+    text-align: center;
+}
+.claves_archy{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.seccion_claves{
+    width: 80%;
+    height: 350px;
+    
+    display: grid;
+    grid-template-columns: 40% 40%;
+    gap: 150px;
+    
+}
+
+.aspecto_tener_cuenta{
+   background: rgb(174, 222, 241);
+    gap: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-bottom:10px;
+    border: 1px black solid;
+    overflow: hidden;
+}
+
+.aspecto_tener_cuenta img{
+    width: 100%;
+    height: 60%;
+    transition: 0.5s;
+    margin-top: -20px;
+    z-index: 11;
+}
+.aspecto_tener_cuenta img:hover{
+    transform: scale(1.2);
+    z-index: 11;
+}
+
+.aspecto_tener_cuenta h1{
+    text-align: center;
+    font-size: 40px;
+    z-index: 10;
+
+}
+
+.aspecto_tener_cuenta:hover{
+    box-shadow: 12px 16px 16px black;
+    background: white;
+}
+
+.aspecto_tener_cuenta img{
+    width: 100%;
+    height: 100%;
+}
+
+
+@media(max-width: 900px){
+
+    .seccion_claves{
+        width: 80%;
+        height: 230px;
+        
+        display: grid;
+        grid-template-columns: 40% 40%;
+        gap: 50px;
+        
+    }
+    .aspecto_tener_cuenta h1{
+        text-align: center;
+        font-size: 30px;
+       
+    
+    }
+    .titule_claves h1{
+        margin-top: 200px;
+        
+    }
+    
+
+}
+/*
+
+------------------------------SALTO DE LINEA --------------------
+
+*/
+
+.titule_destacamos_archy{
+    width: 100%;
+    height: 100px;
+    margin-top: 100px;
+    
+}
+
+.titule_destacamos_archy h1{
+    font-size: 50px;
+    text-align: center;
+    font-weight: 100;
+    margin-bottom: 100px;
+}
+
+.desatacamos_archy{
+    width: 100%;
+    height: 400px;
+    margin-bottom: 100px;
+}
+
+
+.cards_destacamos{
+    width: 25%;
+    height: 100%;
+    margin-left: 5%;
+    
+    float: left;
+    overflow: hidden;
+   
+}
+
+
+.destacar_sup_img{
+    width: 80%;
+    height: 40%;
+   
+    margin-left: 34px;
+    overflow: hidden;
+}
+.destacar_sup_img img{
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    
+} 
+ 
+#img_1_des{
+
+    border-radius: 30% 70% 49% 51% / 30% 30% 70% 70% ;
+
+}
+
+#img_1_des:hover{
+    border-radius: 100% 0% 89% 11% / 18% 72% 28% 82%  ;
+}
+
+#img_2_des{
+
+    border-radius: 46% 54% 45% 55% / 100% 99% 1% 0%  ;
+
+}
+
+#img_2_des:hover{
+    border-radius: 66% 34% 45% 55% / 37% 52% 48% 63%  ;
+}
+
+
+#img_3_des{
+
+    border-radius: 5% 95% 45% 55% / 62% 65% 35% 38%  ;
+
+}
+
+#img_3_des:hover{
+    border-radius: 66% 34% 45% 55% / 37% 52% 48% 63%  ;
+}
+
+
+.destacar_abj_txt{
+    width: 100%;
+    height: 60%;
+    
+}
+
+.destacar_abj_txt p{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 20px
+}
+
+@media(max-width:1100px){
+
+    .titule_destacamos_archy{
+        width: 100%;
+        height: 200px;
+        margin-top: 100px;
+        
+    }
+
+    .titule_destacamos_archy h1{
+        font-size: 40px;
+        text-align: center;
+        font-weight: 100;
+        
+    }
+
+    .destacar_abj_txt p{
+        font-size: 18px;
+        text-align: center;
+        
+    }
+
+   
+    
+
+
+
+}
+/*
+
+------------------------------SALTO DE LINEA --------------------
+
+*/
+
+.contactamos_archy{
+    width: 100%;
+    height: 400px;
+   background: silver;
+   margin-bottom: 100px;
+   
+}
+
+.editor_cards_contac{
+
+    float: left;
+    width: 30%;
+    height: 100%;
+    margin-left:3.3% ;
+    transition: 0.5s;
+}
+
+.editor_cards_contac:hover{
+
+    background: white;
+}
+.contactos_left{
+    float: left;
+    width: 10%;
+    height: 100%;
+    
+}
+
+.contactos_left img{
+
+    width: 100%;
+    height: 20px;
+    margin-top: 110px;
+    transition: 0.5s;
+
+}
+.contactos_left .img_ajuste{
+    margin-top: 40px;
+}
+
+.contactos_left .hover_img_cont:hover{
+    transform: rotate(360deg);
+}
+
+
+.contactos_right{
+    float: right;
+    width: 90%;
+    height: 100%;
+}
+
+.editor_cards_contac  h1{
+    font-size: 35px;
+    text-align: center;
+}
+
+.editor_cards_contac p{
+    margin-top: 40px;
+    font-size: 17px;
+    margin-right: 5px;
+    transition: 0.5s;
+   
+}
+
+.editor_cards_contac p:hover{
+    margin-left: 50px;
+}
+
+
+
+.redes_sociales{
+    width: 18%;
+    height: 16%;
+
+    margin-top: 50px;
+    float: left;
+    margin-left: 50px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+.redes_sociales img{
+    width: 100%;
+    height: 100%;
+   
+    transition: 1s;
+}
+
+.redes_sociales img:hover{
+    transform: rotate(360deg);
+}
+
+.redes_sociales:hover{
+    border-radius:0% 100% 35% 65% / 58% 54% 46% 42% ;
+    background: gold;
+    width: 20%;
+    height: 18%;
+    
+}
+
+
+.seccion_info_form{
+    background: white;
+    float: left;
+    width: 30%;
+    height: 100%;
+    margin-left:40px ;
+    transition: 0.5s;
+}
+
+
+
+.seccion_info_form {
+
+    font-size: 25px;
+    text-align: center;
+
+}
+.entrada_datos{
+    margin-top: 20px;
+}
+.label{
+    font-family: cursive;
+    margin-right: 30px;
+   
+   
+}
+.enviar{
+    margin-top: 50px;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: bold;
+}
+
+.enviar:hover{
+    background:silver;
+    box-shadow: 12px 12px 12px black;
+    
+}
+
+.input{
+    border-radius: 5px;
+    margin-left: 5px;
+    width: 150px;
+     margin-left: 10px;
+     height: 24px;
+     transition: 0.5s;
+ 
+}
+
+.input:hover{
+  
+    width: 160px;
+}
+
+
+@media(max-width:1200px){
+
+    .contactamos_archy{
+        width: 100%;
+      
+       
+       background: silver;
+       margin-bottom: 100px;
+      
+       
+    }
+
+    .editor_cards_contac{
+
+        width: 80%;
+        margin-left: 10%;
+
+    }
+
+    .editor_cards_contac  h1{
+        font-size: 45px;
+        text-align: center;
+        margin-left: 100px;
+    }
+    
+    .editor_cards_contac p{
+        margin-top: 60px;
+        font-size: 17px;
+        margin-right: 5px;
+       
+    }
+
+    .seccion_info_form{
+        background: white;
+        float: left;
+        width: 100%;
+        margin-left:40px ;
+        transition: 0.5s;
+    }
+
+    .redes_sociales{
+       margin-left: 10%;
+    }
+
+
+}
+/*
+
+------------------------------SALTO DE LINEA --------------------
+
+*/
+
+.opciones{
+    text-align: center;
+    font-size: 60px;
+    font-weight: 100;
+    margin-top: 100px;
+}
+
+
+.buscar_opciones{
+    width: 100%;
+    height: 300px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+   
+}
+
+
+.cards_opciones{
+    width: 20%;
+    height: 85%;
+    float: left;
+    
+    margin-left: 50px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.img_opciones_buscar{
+    width: 100%;
+    height: 50%;
+    background: pink;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.5s;
+
+}
+
+.img_opciones_buscar:hover{
+    background: skyblue;
+}
+.img_opciones_buscar img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.txt_opciones_buscar{
+    width: 100%;
+    height: 50%;
+    background:  rgb(173, 93, 93);
+    border-radius: 10px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+
+.txt_opciones_buscar h1{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    text-shadow: 1px 2px 3px black;
+    
+}
+
+.txt_opciones_buscar:hover{
+    background: skyblue;
+}
+
+
+@media(max-width:1200px){
+
+    .opciones{
+        font-size: 40px;
+        margin-top: 100px;
+    }
+
+
+    .buscar_opciones{
+        height: 500px;
+        
+        
+    }
+
+    .cards_opciones{
+
+        width: 80%;
+        margin-top: 80px;
+
+    }
+
+    .cards_opciones h1{
+        font-size: 50px;
+    }
+
+
+}
+
+
+
+/*
+
+------------------------------SALTO DE LINEA --------------------
+
+*/
+
+.formulario_footer{
+    width: 100%;
+    height: 600px;
+   
+    
+    
+}
+
+
+.img_formulario{
+    width: 50%;
+    height: 100%;
+    float: left;
+    
+}
+
+.img_formulario h1{
+
+    text-align: center;
+    font-size: 60px;
+    margin-top: 20px;
+    margin-top: 30%;
+
+}
+
+.img_formulario p{
+    margin-top: 20px;
+    font-size: 20px;
+    margin-left: 10%;
+
+}
+
+
+
+
+
+.formulario_formulario{
+    width: 50%;
+    height: 100%;
+    
+    float: right;
+}
+
+.formulario_formulario h1{
+    text-align: center;
+    font-size: 35px;
+
+}
+
+.formulario_formulario p{
+    text-align: center;
+    font-size: 18px;
+}
+
+
+.espacio_formulario{
+    width: 80%;
+    height: 50px;
+    
+    margin-left: 10%;
+    margin-top: 50px;
+}
+
+.nombres{
+    width: 40%;
+    height: 90%;
+    float: left;
+    margin-left: 5%;
+}
+
+.mitad_datos{
+    width: 40%;
+    height: 90%;
+    margin-left: 30%;
+}
+
+.mensaje_formulario{
+    width: 80%;
+    height: 100px ;
+    
+    margin-top: 50px;
+    margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.mensaje{
+    width: 80%;
+    height: 80%;
+}
+
+
+.styles_input{
+    border: 1px  blue solid;
+    color: blue;
+    box-shadow: 2px 2px 47px black;
+}
+
+
+
+
+
+
+
+
+footer{
+    width: 100%;
+    margin-top: 50px;
+    height: 200px;
+    background: rgb(55, 180, 82);
+    margin-top: -10px;
+
+}
+
+footer h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 100;
+}
+
+
+
+.color1 {color: #4f181a;}
+.color2 {color: #7c3327;}
+.color3 {color: #b75e35;}
+.color4 {color: #f99945;}
+.color5 {color: #ffe96a;}

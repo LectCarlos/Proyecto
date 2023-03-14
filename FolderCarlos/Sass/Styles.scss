@@ -1,0 +1,644 @@
+/* ----------------- Variables ----------------- */
+$ColorN: rgb(25, 60, 110);
+$ColorN2: rgb(5, 35, 70);
+$ColorT: rgba(25, 60, 110, .5);
+
+$QColorN: rgb(40, 45, 60);
+$QColorN2: rgb(20, 25, 40);
+$QColorT: rgba(40, 45, 60, .5);
+
+$ColorWT: rgba(255, 255, 255, 0.8);
+
+$None: rgba(0, 0, 0, 0);
+
+$FontColor: rgb(60, 180, 240);
+
+@font-face {
+    font-family: QuickSand;
+    src: url('../Package/Fonts/Quicksand.ttf');
+}
+
+/* ----------------- All ----------------- */
+#Espacio {
+    width: 100%;
+    height: 30px;
+}
+
+#Num {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    border-radius: 100%;
+    background-color: $ColorN;
+    border: 4px solid $ColorN2;
+
+    .Title {
+        font: {
+            size: 22px;
+            weight: bold;
+        }
+
+        top: 50%;
+        left: 50%;
+        color: #FFF;
+        position: absolute;
+        text-align: center;
+        transform: translate(-50%, -50%);
+    }
+}
+
+#Section {
+    position: relative;
+    width: max-content;
+    height: max-content;
+    margin-bottom: 34px;
+    background-color: $ColorN;
+
+    .Text {
+        font: {
+            size: 24px;
+            weight: bold;
+        }
+
+        color: #FFF;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .Block {
+        top: 100%;
+        width: 34px;
+        height: 34px;
+        position: absolute;
+        background-color: $ColorN2;
+    }
+}
+
+
+
+/* ----------------- body ----------------- */
+body {
+    background: {
+        size: 100%;
+        image: url("../Images/Fondo_P3.png");
+    }
+
+    font: {
+        family: QuickSand;
+    }
+
+    p {
+        padding: 5px;
+        border-radius: 10px;
+        background-color: $QColorT;
+    }
+
+}
+
+body.Hoja {
+    background: {
+        size: 100%;
+        image: url("../Images/Fondo_P2.png");
+    }
+
+    p {
+        padding: 0;
+        border-radius: 0;
+        background-color: $None;
+    }
+}
+
+/* ----------------- #Clase ----------------- */
+#Nav {
+    *background-color: $QColorN;
+}
+
+/* ----------------- #Clase ----------------- */
+#Clase {
+    width: 96%;
+    margin: 10px auto;
+}
+
+/* ----------------- #Perfil ----------------- */
+#Perfil {
+    padding: 0;
+
+    .Informacion {
+        padding: 20px;
+        position: relative;
+        margin-bottom: 20px;
+        background-color: $ColorN;
+
+        .card {
+            border: $None;
+            margin-bottom: 20px;
+            background-color: $None;
+
+            .Img {
+                width: 200px;
+                height: 200px;
+                overflow: hidden;
+                position: relative;
+                margin: 40px auto;
+                border-radius: 100%;
+                background-color: white;
+                border: 8px solid $ColorN2;
+
+                img {
+                    top: 0;
+                    left: 50%;
+                    height: 100%;
+                    position: absolute;
+                    transform: translate(-50%, 0);
+                }
+            }
+
+            .Title {
+                font: {
+                    size: 25px;
+                    weight: bold;
+                }
+
+                margin: 0;
+                color: #FFF;
+                margin-top: 15px;
+                text-align: center;
+            }
+
+            .SubTitle {
+                font: {
+                    size: 18px;
+                    weight: bold;
+                }
+
+                margin: 0;
+                margin-top: 15px;
+                color: $FontColor;
+            }
+        }
+
+        .Puntos {
+            left: 50%;
+            width: 30%;
+            bottom: 15px;
+            position: absolute;
+            display: inline-flex;
+            transform: translate(-50%, 0);
+
+            .Point {
+                width: 10px;
+                height: 10px;
+                margin: 0 auto;
+                border-radius: 100%;
+                background-color: $ColorN2;
+            }
+        }
+
+        .Blocks {
+            left: 100%;
+            bottom: 20px;
+            position: absolute;
+            transform: translate(-50%, 0);
+
+            .Block {
+                width: 34px;
+                height: 34px;
+                margin-bottom: 5px;
+                background-color: $ColorN2;
+            }
+        }
+    }
+
+    .Logo {
+        padding: 20px;
+        position: relative;
+        margin-bottom: 20px;
+        background-color: $ColorN;
+
+        .card {
+            margin-bottom: 20px;
+            border: 4px solid $ColorN;
+            background-color: #FFF;
+
+            .Img {
+                width: 200px;
+                margin: 20px auto;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .Title {
+            font: {
+                size: 25px;
+                weight: bold;
+            }
+
+            margin: 0;
+            margin: 15px;
+            color: #FFF;
+            text-align: center;
+        }
+
+        .SubTitle {
+            font: {
+                size: 18px;
+                weight: bold;
+            }
+
+            margin: 0;
+            color: $FontColor;
+            margin-bottom: 15px;
+        }
+
+        .Puntos {
+            left: 50%;
+            width: 30%;
+            bottom: 15px;
+            position: absolute;
+            display: inline-flex;
+            transform: translate(-50%, 0);
+
+            .Point {
+                width: 10px;
+                height: 10px;
+                margin: 0 auto;
+                border-radius: 100%;
+                background-color: $ColorN2;
+            }
+        }
+
+        .Blocks {
+            left: 100%;
+            bottom: 20px;
+            position: absolute;
+            transform: translate(-50%, 0);
+
+            .Block {
+                width: 34px;
+                height: 34px;
+                margin-bottom: 5px;
+                background-color: $ColorN2;
+            }
+        }
+    }
+
+    .Contenido {
+        margin-bottom: 20px;
+        background-color: $ColorWT;
+
+        .Bandera {
+            width: 100%;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            border: 2px solid black;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        #Section {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .card {
+            border: $None;
+            padding: 0 10px;
+            background-color: $None;
+
+            .Text {
+                font: {
+                    size: 18px;
+                    weight: bold;
+                }
+
+                text-indent: 35px;
+            }
+        }
+
+        .card.Contact {
+            padding-left: 45px;
+            padding-right: 10px;
+
+            .list-group {
+                .list-group-item {
+                    padding: 0;
+                    border: $None;
+                    border-radius: 5px;
+                    margin-bottom: 5px;
+                    height: max-content;
+                    background-color: $ColorT;
+
+                    .Link {
+                        transition: .1s;
+                        display: inline-flex;
+                        text-decoration: none;
+
+                        img {
+                            margin: 5px;
+                            width: 22px;
+                            height: 22px;
+                        }
+
+                        .Texto {
+                            font: {
+                                size: 18px;
+                                weight: bold;
+                            }
+
+                            color: #FFF;
+                            padding-top: 2px;
+                            width: max-content;
+                        }
+                    }
+
+                    .Link:hover {
+                        padding-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ----------------- #ContHoja ----------------- */
+#ContHoja {
+    padding: 0;
+    padding-left: 30px;
+    padding-right: 10px;
+
+    .Contenedor {
+        padding: 10px;
+        position: relative;
+        margin-bottom: 25px;
+        background-color: $ColorWT;
+
+        .Blocks.Hor {
+            right: 20px;
+            bottom: 100%;
+            position: absolute;
+            display: inline-flex;
+            transform: translate(0, 50%);
+
+            .Block {
+                width: 34px;
+                height: 34px;
+                margin-right: 5px;
+                background-color: $ColorN2;
+            }
+        }
+
+        .Contenido {
+            width: 80%;
+            margin: 0 auto;
+            position: relative;
+
+            .BoxCard {
+                width: 100%;
+                border: $None;
+                display: inline-flex;
+                background-color: $None;
+
+                .Fecha {
+                    width: 14%;
+                }
+
+                .Parrafo {
+                    width: 86%;
+
+                    .Title {
+                        font: {
+                            size: 26px;
+                            weight: bold;
+                        }
+
+                        margin: 0;
+                        color: $ColorN;
+                    }
+
+                    .Text {
+                        font: {
+                            size: 18px;
+                            weight: bold;
+                        }
+                    }
+                }
+            }
+
+            .list-group {
+                width: 100%;
+                padding-top: 5px;
+
+                .list-group-item {
+                    padding: 0;
+                    border: $None;
+                    display: inline-flex;
+                    margin-bottom: 5px;
+                    background-color: $None;
+
+                    .Skill,
+                    .Link {
+                        width: 40%;
+                        height: 24px;
+                        display: inline-flex;
+
+                        img {
+                            width: 24px;
+                            padding: 2px;
+                            height: 24px;
+                            margin-right: 5px;
+                            border-radius: 5px;
+                            background-color: $ColorN;
+                        }
+
+                        .Text {
+                            font: {
+                                size: 18px;
+                                weight: bold;
+                            }
+
+                            width: max-content;
+                        }
+                    }
+
+                    .progress {
+                        width: 60%;
+                        height: 24px;
+                        box-shadow: inset 0 0 5px black;
+
+                        .progress-bar {
+                            box-shadow: inset 0 0 5px black;
+                        }
+                    }
+
+                    .Link {
+                        width: 100%;
+                        transition: .1s;
+                        text-decoration: none;
+                    }
+
+                    .Link:hover {
+                        padding-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .Contenedor.Card {
+        .Contenido {
+            font: {
+                weight: bold;
+            }
+
+            width: 100%;
+            margin-top: 5px;
+            text-indent: 45px;
+        }
+
+        #Section {
+            margin: 0;
+        }
+    }
+
+    .Contenido.Bars {
+        width: 100%;
+    }
+
+    .row {
+        margin: 0;
+        width: 100%;
+
+        .col-sm-6 {
+            padding: 0;
+            width: 50%;
+        }
+
+        .col-sm-6:first-child {
+            padding-right: 5px;
+        }
+    }
+}
+
+/* ----------------- #Base ----------------- */
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+}
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.Title, .nav-link, .navbar-brand, .lead, h5, h2{
+    font: {
+        weight: bold;
+    }
+
+    color: white;
+    text-decoration: none;
+}
+
+.card {
+    border: $None;
+    background-color: $None;
+}
+
+#TitleC  {
+    font: {
+        weight: bold;
+    }
+}
+
+.lead {
+    padding: 5px;
+    border-radius: 10px;
+    background-color: $QColorT;
+}
+
+.nav-link:hover {
+    color: rgb(0, 102, 255);
+}
+
+#Qatar {
+    background: {
+        image: url('../Images/QatarCopa.png');
+    }
+}
+
+#Base {
+    position: relative;
+    overflow: hidden;
+
+        img {
+        height: 100%;
+        position: absolute;
+    }
+}
+
+.card-body {
+    font: {
+        weight: bold;
+    }
+
+    color: white;
+}
+
+#Firehouse {
+    font-weight: bold;
+    color: white;
+}
+
+img {
+    border-radius: 10px;
+}
+
+.col-md-8 {
+    margin-bottom: 20px;
+}
